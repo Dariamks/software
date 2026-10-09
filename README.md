@@ -48,3 +48,7 @@ brew install python@3.13 python-tk@3.13
 脚本会调用 `getReviewUserList`，按 `--review-job-no`（默认 `S80118`）解析页面选择的复核人；也可用 `FUJFU_REVIEW_USER_ID` 直接指定复核人 ID。复核查询会从 JWT 的 `sub` 读取当前提交用户。脚本使用标准库读取 XLSX，不要求在本地安装 `openpyxl`。
 
 如果银行卡未签约，接口会在确认复核后返回 `transStatus=处理失败` 和 `errorMsg=当前银行卡未签约，请更换银行卡后再试！`，这属于业务结果，脚本会原样写入 JSONL，不会把它误报成成功。
+
+## Windows 自动打包
+
+仓库中的 `.github/workflows/build-windows.yml` 会在推送到 `main` 或手动运行时使用 Windows runner 打包两个文件：`单笔划扣工具.exe`（GUI）和 `单笔划扣批处理.exe`（批量 XLSX 流程）。在 GitHub 的 Actions 页面下载 `single-payment-windows` artifact 即可。

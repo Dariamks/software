@@ -1,0 +1,52 @@
+name: Build Windows executables
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install dependencies
+        run: python -m pip install --upgrade pip && pip install -r requirements.txt pyinstaller
+
+      - name: Build GUI executable
+        run: >-
+          pyinstaller --noconfirm --clean --onefile --noconsole
+          --name "单笔划扣工具"
+          main.py
+
+      - name: Build batch executable
+        run: >-
+          pyinstaller --noconfirm --clean --onefile --console
+          --name "单笔划扣批处理"
+          batch_single_payment.py
+
+      - name: Collect release files
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path release | Out-Null
+          Copy-Item dist\单笔划扣工具.exe release\
+          Copy-Item dist\单笔划扣批处理.exe release\
+          Copy-Item README.md release\README.md
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: single-payment-windows
+          path: release/
+          if-no-files-found: error
