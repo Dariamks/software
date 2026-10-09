@@ -1,0 +1,4976 @@
+# pydisasm version 6.3.0
+# CPython Python bytecode 3.14 (3627)
+#   Disassembled from CPython Python 3.9.6 (default, Jan  9 2026, 11:03:41) 
+# [Clang 17.0.0 (clang-1700.6.4.2)]
+# Timestamp in code: 0 (1970-01-01 08:00:00)
+# Source code size mod 2**32: 0 bytes
+# Method Name:       <module>
+# Filename:          gui.py
+# Argument count:    0
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  0
+# Stack size:        5
+# Flags:             0x00000000 (0x0)
+# First Line:        1
+# Constants:
+#    0: 0
+#    1: None
+#    2: ('ttk', 'scrolledtext', 'messagebox')
+#    3: ('HTTPAdapter',)
+#    4: ('Retry',)
+#    5: ('datetime', 'timedelta')
+#    6: ('ThreadPoolExecutor', 'as_completed')
+#    7: <Code311 code object SinglePaymentProcessor at 0x104f48d00, file gui.py>, line 15
+#    8: 'SinglePaymentProcessor'
+#    9: <Code311 code object LoginDialog at 0x104f48f40, file gui.py>, line 124
+#   10: 'LoginDialog'
+#   11: <Code311 code object Application at 0x104f7a580, file gui.py>, line 189
+#   12: 'Application'
+#   13: '__main__'
+# Names:
+#    0: tkinter
+#    1: tk
+#    2: ttk
+#    3: scrolledtext
+#    4: messagebox
+#    5: threading
+#    6: requests
+#    7: requests.adapters
+#    8: HTTPAdapter
+#    9: urllib3.util.retry
+#   10: Retry
+#   11: json
+#   12: time
+#   13: os
+#   14: base64
+#   15: datetime
+#   16: timedelta
+#   17: concurrent.futures
+#   18: ThreadPoolExecutor
+#   19: as_completed
+#   20: SinglePaymentProcessor
+#   21: Toplevel
+#   22: LoginDialog
+#   23: Tk
+#   24: Application
+#   25: __name__
+#   26: app
+#   27: withdraw
+#   28: login
+#   29: wait_window
+#   30: result
+#   31: deiconify
+#   32: mainloop
+#   33: destroy
+
+  0:           0 RESUME               0
+
+  1:           2 LOAD_SMALL_INT       0
+               4 LOAD_CONST           (None)
+               6 IMPORT_NAME          (tkinter)
+               8 STORE_NAME           (tk)
+
+  2:          10 LOAD_SMALL_INT       0
+              12 LOAD_CONST           (('ttk', 'scrolledtext', 'messagebox'))
+              14 IMPORT_NAME          (tkinter)
+              16 IMPORT_FROM          (ttk)
+              18 STORE_NAME           (ttk)
+              20 IMPORT_FROM          (scrolledtext)
+              22 STORE_NAME           (scrolledtext)
+              24 IMPORT_FROM          (messagebox)
+              26 STORE_NAME           (messagebox)
+              28 POP_TOP
+
+  3:          30 LOAD_SMALL_INT       0
+              32 LOAD_CONST           (None)
+              34 IMPORT_NAME          (threading)
+              36 STORE_NAME           (threading)
+
+  4:          38 LOAD_SMALL_INT       0
+              40 LOAD_CONST           (None)
+              42 IMPORT_NAME          (requests)
+              44 STORE_NAME           (requests)
+
+  5:          46 LOAD_SMALL_INT       0
+              48 LOAD_CONST           (('HTTPAdapter',))
+              50 IMPORT_NAME          (requests.adapters)
+              52 IMPORT_FROM          (HTTPAdapter)
+              54 STORE_NAME           (HTTPAdapter)
+              56 POP_TOP
+
+  6:          58 LOAD_SMALL_INT       0
+              60 LOAD_CONST           (('Retry',))
+              62 IMPORT_NAME          (urllib3.util.retry)
+              64 IMPORT_FROM          (Retry)
+              66 STORE_NAME           (Retry)
+              68 POP_TOP
+
+  7:          70 LOAD_SMALL_INT       0
+              72 LOAD_CONST           (None)
+              74 IMPORT_NAME          (json)
+              76 STORE_NAME           (json)
+
+  8:          78 LOAD_SMALL_INT       0
+              80 LOAD_CONST           (None)
+              82 IMPORT_NAME          (time)
+              84 STORE_NAME           (time)
+
+  9:          86 LOAD_SMALL_INT       0
+              88 LOAD_CONST           (None)
+              90 IMPORT_NAME          (os)
+              92 STORE_NAME           (os)
+
+ 10:          94 LOAD_SMALL_INT       0
+              96 LOAD_CONST           (None)
+              98 IMPORT_NAME          (base64)
+             100 STORE_NAME           (base64)
+
+ 11:         102 LOAD_SMALL_INT       0
+             104 LOAD_CONST           (('datetime', 'timedelta'))
+             106 IMPORT_NAME          (datetime)
+             108 IMPORT_FROM          (datetime)
+             110 STORE_NAME           (datetime)
+             112 IMPORT_FROM          (timedelta)
+             114 STORE_NAME           (timedelta)
+             116 POP_TOP
+
+ 12:         118 LOAD_SMALL_INT       0
+             120 LOAD_CONST           (('ThreadPoolExecutor', 'as_completed'))
+             122 IMPORT_NAME          (concurrent.futures)
+             124 IMPORT_FROM          (ThreadPoolExecutor)
+             126 STORE_NAME           (ThreadPoolExecutor)
+             128 IMPORT_FROM          (as_completed)
+             130 STORE_NAME           (as_completed)
+             132 POP_TOP
+
+ 15:         134 LOAD_BUILD_CLASS
+             136 PUSH_NULL
+             138 LOAD_CONST           (<Code311 code object SinglePaymentProcessor at 0x104f48d00, file gui.py>, line 15)
+             140 MAKE_FUNCTION
+             142 LOAD_CONST           ("SinglePaymentProcessor")
+             144 CALL                 (2 positional)
+             152 STORE_NAME           (SinglePaymentProcessor)
+
+124:         154 LOAD_BUILD_CLASS
+             156 PUSH_NULL
+             158 LOAD_CONST           (<Code311 code object LoginDialog at 0x104f48f40, file gui.py>, line 124)
+             160 MAKE_FUNCTION
+             162 LOAD_CONST           ("LoginDialog")
+             164 LOAD_NAME            (tk)
+             166 LOAD_ATTR            (Toplevel)
+             186 CALL                 (3 positional)
+             194 STORE_NAME           (LoginDialog)
+
+189:         196 LOAD_BUILD_CLASS
+             198 PUSH_NULL
+             200 LOAD_CONST           (<Code311 code object Application at 0x104f7a580, file gui.py>, line 189)
+             202 MAKE_FUNCTION
+             204 LOAD_CONST           ("Application")
+             206 LOAD_NAME            (tk)
+             208 LOAD_ATTR            (Tk)
+             228 CALL                 (3 positional)
+             236 STORE_NAME           (Application)
+
+541:         238 LOAD_NAME            (__name__)
+             240 LOAD_CONST           ("__main__")
+             242 COMPARE_OP           (==)
+             246 POP_JUMP_IF_FALSE    (to 488)
+             250 NOT_TAKEN
+
+543:         252 LOAD_NAME            (Application)
+             254 PUSH_NULL
+             256 CALL                 (0 positional)
+             264 STORE_NAME           (app)
+
+544:         266 LOAD_NAME            (app)
+             268 LOAD_ATTR            (NULL|self + withdraw)
+             288 CALL                 (0 positional)
+             296 POP_TOP
+
+547:         298 LOAD_NAME            (LoginDialog)
+             300 PUSH_NULL
+             302 LOAD_NAME            (app)
+             304 CALL                 (1 positional)
+             312 STORE_NAME           (login)
+
+548:         314 LOAD_NAME            (app)
+             316 LOAD_ATTR            (NULL|self + wait_window)
+             336 LOAD_NAME            (login)
+             338 CALL                 (1 positional)
+             346 POP_TOP
+
+550:         348 LOAD_NAME            (login)
+             350 LOAD_ATTR            (result)
+             370 TO_BOOL
+             378 POP_JUMP_IF_FALSE    (to 452)
+             382 NOT_TAKEN
+
+552:         384 LOAD_NAME            (app)
+             386 LOAD_ATTR            (NULL|self + deiconify)
+             406 CALL                 (0 positional)
+             414 POP_TOP
+
+553:         416 LOAD_NAME            (app)
+             418 LOAD_ATTR            (NULL|self + mainloop)
+             438 CALL                 (0 positional)
+             446 POP_TOP
+             448 LOAD_CONST           (None)
+             450 RETURN_VALUE
+
+556:     >>  452 LOAD_NAME            (app)
+             454 LOAD_ATTR            (NULL|self + destroy)
+             474 CALL                 (0 positional)
+             482 POP_TOP
+             484 LOAD_CONST           (None)
+             486 RETURN_VALUE
+
+541:     >>  488 LOAD_CONST           (None)
+             490 RETURN_VALUE
+
+
+# Method Name:       SinglePaymentProcessor
+# Filename:          gui.py
+# Argument count:    0
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  0
+# Stack size:        2
+# Flags:             0x00000000 (0x0)
+# First Line:        15
+# Constants:
+#    0: 'SinglePaymentProcessor'
+#    1: <Code311 code object __init__ at 0x104f48850, file gui.py>, line 16
+#    2: <Code311 code object set_token at 0x104f488b0, file gui.py>, line 36
+#    3: <Code311 code object check_token_expiry at 0x104f48970, file gui.py>, line 42
+#    4: <Code311 code object search_wait_list at 0x104f48a60, file gui.py>, line 61
+#    5: <Code311 code object get_loan_detail at 0x104f48ac0, file gui.py>, line 71
+#    6: <Code311 code object submit_single_payment at 0x104f48b80, file gui.py>, line 80
+#    7: <Code311 code object search_review_list at 0x104f48c10, file gui.py>, line 88
+#    8: <Code311 code object confirm_review at 0x104f48c70, file gui.py>, line 101
+#    9: <Code311 code object query_repay_statistics at 0x104f48cd0, file gui.py>, line 110
+#   10: ('base_url', 'headers', 'session', 'token')
+#   11: None
+#   12: ('', '', 100)
+# Names:
+#    0: __name__
+#    1: __module__
+#    2: __qualname__
+#    3: __firstlineno__
+#    4: __init__
+#    5: set_token
+#    6: check_token_expiry
+#    7: search_wait_list
+#    8: get_loan_detail
+#    9: submit_single_payment
+#   10: search_review_list
+#   11: confirm_review
+#   12: query_repay_statistics
+#   13: __static_attributes__
+#   14: __classdictcell__
+# Cell variables:
+#    0: __classdict__
+               0 MAKE_CELL            (__classdict__)
+
+ 15:           2 RESUME               0
+               4 LOAD_NAME            (__name__)
+               6 STORE_NAME           (__module__)
+               8 LOAD_CONST           ("SinglePaymentProcessor")
+              10 STORE_NAME           (__qualname__)
+              12 LOAD_SMALL_INT       15
+              14 STORE_NAME           (__firstlineno__)
+              16 LOAD_LOCALS
+              18 STORE_DEREF          (__classdict__)
+
+ 16:          20 LOAD_CONST           (<Code311 code object __init__ at 0x104f48850, file gui.py>, line 16)
+              22 MAKE_FUNCTION
+              24 STORE_NAME           (__init__)
+
+ 36:          26 LOAD_CONST           (<Code311 code object set_token at 0x104f488b0, file gui.py>, line 36)
+              28 MAKE_FUNCTION
+              30 STORE_NAME           (set_token)
+
+ 42:          32 LOAD_CONST           (<Code311 code object check_token_expiry at 0x104f48970, file gui.py>, line 42)
+              34 MAKE_FUNCTION
+              36 STORE_NAME           (check_token_expiry)
+
+ 61:          38 LOAD_CONST           (('', '', 100))
+              40 LOAD_CONST           (<Code311 code object search_wait_list at 0x104f48a60, file gui.py>, line 61)
+              42 MAKE_FUNCTION
+              44 SET_FUNCTION_ATTRIBUTE 1
+              46 STORE_NAME           (search_wait_list)
+
+ 71:          48 LOAD_CONST           (<Code311 code object get_loan_detail at 0x104f48ac0, file gui.py>, line 71)
+              50 MAKE_FUNCTION
+              52 STORE_NAME           (get_loan_detail)
+
+ 80:          54 LOAD_CONST           (<Code311 code object submit_single_payment at 0x104f48b80, file gui.py>, line 80)
+              56 MAKE_FUNCTION
+              58 STORE_NAME           (submit_single_payment)
+
+ 88:          60 LOAD_CONST           (('', '', 100))
+              62 LOAD_CONST           (<Code311 code object search_review_list at 0x104f48c10, file gui.py>, line 88)
+              64 MAKE_FUNCTION
+              66 SET_FUNCTION_ATTRIBUTE 1
+              68 STORE_NAME           (search_review_list)
+
+101:          70 LOAD_CONST           (<Code311 code object confirm_review at 0x104f48c70, file gui.py>, line 101)
+              72 MAKE_FUNCTION
+              74 STORE_NAME           (confirm_review)
+
+110:          76 LOAD_CONST           (<Code311 code object query_repay_statistics at 0x104f48cd0, file gui.py>, line 110)
+              78 MAKE_FUNCTION
+              80 STORE_NAME           (query_repay_statistics)
+              82 LOAD_CONST           (('base_url', 'headers', 'session', 'token'))
+              84 STORE_NAME           (__static_attributes__)
+              86 LOAD_FAST_BORROW     (__classdict__)
+              88 STORE_NAME           (__classdictcell__)
+              90 LOAD_CONST           (None)
+              92 RETURN_VALUE
+
+
+# Method Name:       LoginDialog
+# Filename:          gui.py
+# Argument count:    0
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  0
+# Stack size:        2
+# Flags:             0x00000000 (0x0)
+# First Line:        124
+# Constants:
+#    0: 'LoginDialog'
+#    1: '登录密码对话框'
+#    2: <Code311 code object __init__ at 0x104f48dc0, file gui.py>, line 127
+#    3: <Code311 code object create_widgets at 0x104f48eb0, file gui.py>, line 155
+#    4: <Code311 code object on_login at 0x104f48ee0, file gui.py>, line 174
+#    5: <Code311 code object on_cancel at 0x104f48e20, file gui.py>, line 184
+#    6: ('PASSWORD', 'error_label', 'parent', 'password_entry', 'result')
+# Names:
+#    0: __name__
+#    1: __module__
+#    2: __qualname__
+#    3: __firstlineno__
+#    4: __doc__
+#    5: __init__
+#    6: create_widgets
+#    7: on_login
+#    8: on_cancel
+#    9: __static_attributes__
+#   10: __classdictcell__
+#   11: __classcell__
+# Cell variables:
+#    0: __class__
+#    1: __classdict__
+               0 MAKE_CELL            (__class__)
+               2 MAKE_CELL            (__classdict__)
+
+124:           4 RESUME               0
+               6 LOAD_NAME            (__name__)
+               8 STORE_NAME           (__module__)
+              10 LOAD_CONST           ("LoginDialog")
+              12 STORE_NAME           (__qualname__)
+              14 LOAD_SMALL_INT       124
+              16 STORE_NAME           (__firstlineno__)
+              18 LOAD_LOCALS
+              20 STORE_DEREF          (__classdict__)
+
+125:          22 LOAD_CONST           ("登录密码对话框")
+              24 STORE_NAME           (__doc__)
+
+127:          26 LOAD_FAST_BORROW     (__class__)
+              28 BUILD_TUPLE          1
+              30 LOAD_CONST           (<Code311 code object __init__ at 0x104f48dc0, file gui.py>, line 127)
+              32 MAKE_FUNCTION
+              34 SET_FUNCTION_ATTRIBUTE 8
+              36 STORE_NAME           (__init__)
+
+155:          38 LOAD_CONST           (<Code311 code object create_widgets at 0x104f48eb0, file gui.py>, line 155)
+              40 MAKE_FUNCTION
+              42 STORE_NAME           (create_widgets)
+
+174:          44 LOAD_CONST           (<Code311 code object on_login at 0x104f48ee0, file gui.py>, line 174)
+              46 MAKE_FUNCTION
+              48 STORE_NAME           (on_login)
+
+184:          50 LOAD_CONST           (<Code311 code object on_cancel at 0x104f48e20, file gui.py>, line 184)
+              52 MAKE_FUNCTION
+              54 STORE_NAME           (on_cancel)
+              56 LOAD_CONST           (('PASSWORD', 'error_label', 'parent', 'password_entry', 'result'))
+              58 STORE_NAME           (__static_attributes__)
+              60 LOAD_FAST_BORROW     (__classdict__)
+              62 STORE_NAME           (__classdictcell__)
+              64 LOAD_FAST_BORROW     (__class__)
+              66 COPY                 1
+              68 STORE_NAME           (__classcell__)
+              70 RETURN_VALUE
+
+
+# Method Name:       Application
+# Filename:          gui.py
+# Argument count:    0
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  0
+# Stack size:        2
+# Flags:             0x00000000 (0x0)
+# First Line:        189
+# Constants:
+#    0: 'Application'
+#    1: <Code311 code object __init__ at 0x104f48f70, file gui.py>, line 190
+#    2: <Code311 code object create_widgets at 0x104f7a100, file gui.py>, line 203
+#    3: <Code311 code object on_type_change at 0x104f7a0d0, file gui.py>, line 273
+#    4: <Code311 code object log at 0x104f7a190, file gui.py>, line 280
+#    5: <Code311 code object load_config at 0x104f7a220, file gui.py>, line 287
+#    6: <Code311 code object save_config at 0x104f7a280, file gui.py>, line 298
+#    7: <Code311 code object verify_token at 0x104f7a2b0, file gui.py>, line 304
+#    8: <Code311 code object get_id_list at 0x104f7a310, file gui.py>, line 321
+#    9: <Code311 code object set_running at 0x104f7a340, file gui.py>, line 325
+#   10: <Code311 code object stop_process at 0x104f7a250, file gui.py>, line 332
+#   11: <Code311 code object start_process at 0x104f7a3a0, file gui.py>, line 336
+#   12: <Code311 code object process_single_item at 0x104f7a430, file gui.py>, line 353
+#   13: <Code311 code object process_payment at 0x104f7a4f0, file gui.py>, line 465
+#   14: <Code311 code object query_result at 0x104f7a550, file gui.py>, line 518
+#   15: ('concurrent_var', 'id_text', 'input_frame', 'log_text', 'processor', 'progress_bar', 'progress_label', 'progress_var', 'query_btn', 'query_type', 'running', 'start_btn', 'stop_btn', 'stop_flag', 'token_entry', 'token_status')
+#   16: (5,)
+# Names:
+#    0: __name__
+#    1: __module__
+#    2: __qualname__
+#    3: __firstlineno__
+#    4: __init__
+#    5: create_widgets
+#    6: on_type_change
+#    7: log
+#    8: load_config
+#    9: save_config
+#   10: verify_token
+#   11: get_id_list
+#   12: set_running
+#   13: stop_process
+#   14: start_process
+#   15: process_single_item
+#   16: process_payment
+#   17: query_result
+#   18: __static_attributes__
+#   19: __classdictcell__
+#   20: __classcell__
+# Cell variables:
+#    0: __class__
+#    1: __classdict__
+               0 MAKE_CELL            (__class__)
+               2 MAKE_CELL            (__classdict__)
+
+189:           4 RESUME               0
+               6 LOAD_NAME            (__name__)
+               8 STORE_NAME           (__module__)
+              10 LOAD_CONST           ("Application")
+              12 STORE_NAME           (__qualname__)
+              14 LOAD_SMALL_INT       189
+              16 STORE_NAME           (__firstlineno__)
+              18 LOAD_LOCALS
+              20 STORE_DEREF          (__classdict__)
+
+190:          22 LOAD_FAST_BORROW     (__class__)
+              24 BUILD_TUPLE          1
+              26 LOAD_CONST           (<Code311 code object __init__ at 0x104f48f70, file gui.py>, line 190)
+              28 MAKE_FUNCTION
+              30 SET_FUNCTION_ATTRIBUTE 8
+              32 STORE_NAME           (__init__)
+
+203:          34 LOAD_CONST           (<Code311 code object create_widgets at 0x104f7a100, file gui.py>, line 203)
+              36 MAKE_FUNCTION
+              38 STORE_NAME           (create_widgets)
+
+273:          40 LOAD_CONST           (<Code311 code object on_type_change at 0x104f7a0d0, file gui.py>, line 273)
+              42 MAKE_FUNCTION
+              44 STORE_NAME           (on_type_change)
+
+280:          46 LOAD_CONST           (<Code311 code object log at 0x104f7a190, file gui.py>, line 280)
+              48 MAKE_FUNCTION
+              50 STORE_NAME           (log)
+
+287:          52 LOAD_CONST           (<Code311 code object load_config at 0x104f7a220, file gui.py>, line 287)
+              54 MAKE_FUNCTION
+              56 STORE_NAME           (load_config)
+
+298:          58 LOAD_CONST           (<Code311 code object save_config at 0x104f7a280, file gui.py>, line 298)
+              60 MAKE_FUNCTION
+              62 STORE_NAME           (save_config)
+
+304:          64 LOAD_CONST           (<Code311 code object verify_token at 0x104f7a2b0, file gui.py>, line 304)
+              66 MAKE_FUNCTION
+              68 STORE_NAME           (verify_token)
+
+321:          70 LOAD_CONST           (<Code311 code object get_id_list at 0x104f7a310, file gui.py>, line 321)
+              72 MAKE_FUNCTION
+              74 STORE_NAME           (get_id_list)
+
+325:          76 LOAD_CONST           (<Code311 code object set_running at 0x104f7a340, file gui.py>, line 325)
+              78 MAKE_FUNCTION
+              80 STORE_NAME           (set_running)
+
+332:          82 LOAD_CONST           (<Code311 code object stop_process at 0x104f7a250, file gui.py>, line 332)
+              84 MAKE_FUNCTION
+              86 STORE_NAME           (stop_process)
+
+336:          88 LOAD_CONST           (<Code311 code object start_process at 0x104f7a3a0, file gui.py>, line 336)
+              90 MAKE_FUNCTION
+              92 STORE_NAME           (start_process)
+
+353:          94 LOAD_CONST           (<Code311 code object process_single_item at 0x104f7a430, file gui.py>, line 353)
+              96 MAKE_FUNCTION
+              98 STORE_NAME           (process_single_item)
+
+465:         100 LOAD_CONST           ((5,))
+             102 LOAD_CONST           (<Code311 code object process_payment at 0x104f7a4f0, file gui.py>, line 465)
+             104 MAKE_FUNCTION
+             106 SET_FUNCTION_ATTRIBUTE 1
+             108 STORE_NAME           (process_payment)
+
+518:         110 LOAD_CONST           (<Code311 code object query_result at 0x104f7a550, file gui.py>, line 518)
+             112 MAKE_FUNCTION
+             114 STORE_NAME           (query_result)
+             116 LOAD_CONST           (('concurrent_var', 'id_text', 'input_frame', 'log_text', 'processor', 'progress_bar', 'progress_label', 'progress_var', 'query_btn', 'query_type', 'running', 'start_btn', 'stop_btn', 'stop_flag', 'token_entry', 'token_status'))
+             118 STORE_NAME           (__static_attributes__)
+             120 LOAD_FAST_BORROW     (__classdict__)
+             122 STORE_NAME           (__classdictcell__)
+             124 LOAD_FAST_BORROW     (__class__)
+             126 COPY                 1
+             128 STORE_NAME           (__classcell__)
+             130 RETURN_VALUE
+
+
+# Method Name:       __init__
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  3
+# Stack size:        14
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        16
+# Constants:
+#    0: 'https://rayleigh-inside-gateway.fujfu.com/urge-repayment-api/singlePayment/api/v2'
+#    1: 'Accept'
+#    2: 'application/json'
+#    3: 'Accept-Encoding'
+#    4: 'gzip, deflate, br'
+#    5: 'Accept-Language'
+#    6: 'zh-CN,zh;q=0.9'
+#    7: 'Content-Type'
+#    8: 'Origin'
+#    9: 'https://cuishou.fujfu.com'
+#   10: 'Referer'
+#   11: 'https://cuishou.fujfu.com/'
+#   12: 'User-Agent'
+#   13: 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36'
+#   14: None
+#   15: 0.1
+#   16: ('total', 'backoff_factor')
+#   17: ('pool_connections', 'pool_maxsize', 'max_retries')
+#   18: 'https://'
+#   19: 'http://'
+# Names:
+#    0: base_url
+#    1: headers
+#    2: token
+#    3: requests
+#    4: Session
+#    5: session
+#    6: Retry
+#    7: HTTPAdapter
+#    8: mount
+# Varnames:
+#	self, retry, adapter
+# Positional arguments:
+#	self
+# Local variables:
+#    1: retry
+#    2: adapter
+
+ 16:           0 RESUME               0
+
+ 17:           2 LOAD_CONST           ("https://rayleigh-inside-gateway.fujfu.com/urge-repayment-api/singlePayment/api/v2")
+               4 LOAD_FAST_BORROW     (self)
+               6 STORE_ATTR           (base_url)
+
+ 19:          16 LOAD_CONST           ("Accept")
+              18 LOAD_CONST           ("application/json")
+
+ 20:          20 LOAD_CONST           ("Accept-Encoding")
+              22 LOAD_CONST           ("gzip, deflate, br")
+
+ 21:          24 LOAD_CONST           ("Accept-Language")
+              26 LOAD_CONST           ("zh-CN,zh;q=0.9")
+
+ 22:          28 LOAD_CONST           ("Content-Type")
+              30 LOAD_CONST           ("application/json")
+
+ 23:          32 LOAD_CONST           ("Origin")
+              34 LOAD_CONST           ("https://cuishou.fujfu.com")
+
+ 24:          36 LOAD_CONST           ("Referer")
+              38 LOAD_CONST           ("https://cuishou.fujfu.com/")
+
+ 25:          40 LOAD_CONST           ("User-Agent")
+              42 LOAD_CONST           ("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36")
+
+ 18:          44 BUILD_MAP            7
+              46 LOAD_FAST_BORROW     (self)
+              48 STORE_ATTR           (headers)
+
+ 27:          58 LOAD_CONST           (None)
+              60 LOAD_FAST_BORROW     (self)
+              62 STORE_ATTR           (token)
+
+ 30:          72 LOAD_GLOBAL          (requests)
+              82 LOAD_ATTR            (Session)
+             102 PUSH_NULL
+             104 CALL                 (0 positional)
+             112 LOAD_FAST_BORROW     (self)
+             114 STORE_ATTR           (session)
+
+ 31:         124 LOAD_GLOBAL          (NULL + Retry)
+             134 LOAD_SMALL_INT       3
+             136 LOAD_CONST           (0.1)
+             138 LOAD_CONST           (('total', 'backoff_factor'))
+             140 CALL_KW              2
+             148 STORE_FAST           (retry)
+
+ 32:         150 LOAD_GLOBAL          (NULL + HTTPAdapter)
+             160 LOAD_SMALL_INT       20
+             162 LOAD_SMALL_INT       20
+             164 LOAD_FAST_BORROW     (retry)
+             166 LOAD_CONST           (('pool_connections', 'pool_maxsize', 'max_retries'))
+             168 CALL_KW              3
+             176 STORE_FAST           (adapter)
+
+ 33:         178 LOAD_FAST_BORROW     (self)
+             180 LOAD_ATTR            (session)
+             200 LOAD_ATTR            (NULL|self + mount)
+             220 LOAD_CONST           ("https://")
+             222 LOAD_FAST_BORROW     (adapter)
+             224 CALL                 (2 positional)
+             232 POP_TOP
+
+ 34:         234 LOAD_FAST_BORROW     (self)
+             236 LOAD_ATTR            (session)
+             256 LOAD_ATTR            (NULL|self + mount)
+             276 LOAD_CONST           ("http://")
+             278 LOAD_FAST_BORROW     (adapter)
+             280 CALL                 (2 positional)
+             288 POP_TOP
+             290 LOAD_CONST           (None)
+             292 RETURN_VALUE
+
+
+# Method Name:       set_token
+# Filename:          gui.py
+# Argument count:    2
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  2
+# Stack size:        3
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        36
+# Constants:
+#    0: 'X-User-Token'
+#    1: 'token='
+#    2: 'Cookie'
+#    3: None
+# Names:
+#    0: token
+#    1: headers
+#    2: session
+#    3: update
+# Varnames:
+#	self, token
+# Positional arguments:
+#	self, token
+
+ 36:           0 RESUME               0
+
+ 37:           2 LOAD_FAST_BORROW_LOAD_FAST_BORROW (token, self)
+               4 STORE_ATTR           (token)
+
+ 38:          14 LOAD_FAST_BORROW_LOAD_FAST_BORROW (token, self)
+              16 LOAD_ATTR            (headers)
+              36 LOAD_CONST           ("X-User-Token")
+              38 STORE_SUBSCR
+
+ 39:          42 LOAD_CONST           ("token=")
+              44 LOAD_FAST_BORROW     (token)
+              46 FORMAT_SIMPLE
+              48 BUILD_STRING         2
+              50 LOAD_FAST_BORROW     (self)
+              52 LOAD_ATTR            (headers)
+              72 LOAD_CONST           ("Cookie")
+              74 STORE_SUBSCR
+
+ 40:          78 LOAD_FAST_BORROW     (self)
+              80 LOAD_ATTR            (session)
+             100 LOAD_ATTR            (headers)
+             120 LOAD_ATTR            (NULL|self + update)
+             140 LOAD_FAST_BORROW     (self)
+             142 LOAD_ATTR            (headers)
+             162 CALL                 (1 positional)
+             170 POP_TOP
+             172 LOAD_CONST           (None)
+             174 RETURN_VALUE
+
+
+# Method Name:       check_token_expiry
+# Filename:          gui.py
+# Argument count:    2
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  10
+# Stack size:        6
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        42
+# Constants:
+#    0: '.'
+#    1: '='
+#    2: 'exp'
+#    3: 3600
+#    4: True
+#    5: '有效期至: '
+#    6: '%Y-%m-%d %H:%M'
+#    7: (False, 'Token格式错误')
+#    8: (False, 'Token已过期')
+#    9: (None, '无法验证Token')
+# Names:
+#    0: split
+#    1: len
+#    2: base64
+#    3: urlsafe_b64decode
+#    4: json
+#    5: loads
+#    6: get
+#    7: datetime
+#    8: fromtimestamp
+#    9: now
+#   10: total_seconds
+#   11: strftime
+# Varnames:
+#	self, token, parts, payload, decoded, data, exp_timestamp, exp_time, now, hours_left
+# Positional arguments:
+#	self, token
+# Local variables:
+#    2: parts
+#    3: payload
+#    4: decoded
+#    5: data
+#    6: exp_timestamp
+#    7: exp_time
+#    8: now
+#    9: hours_left
+
+ 42:           0 RESUME               0
+
+ 43:           2 NOP
+
+ 44:           4 LOAD_FAST_BORROW     (token)
+               6 LOAD_ATTR            (NULL|self + split)
+              26 LOAD_CONST           (".")
+              28 CALL                 (1 positional)
+              36 STORE_FAST           (parts)
+
+ 45:          38 LOAD_GLOBAL          (NULL + len)
+              48 LOAD_FAST_BORROW     (parts)
+              50 CALL                 (1 positional)
+              58 LOAD_SMALL_INT       3
+              60 COMPARE_OP           (!=)
+              64 POP_JUMP_IF_FALSE    (to 74)
+              68 NOT_TAKEN
+
+ 46:          70 LOAD_CONST           ((False, 'Token格式错误'))
+              72 RETURN_VALUE
+
+ 47:     >>   74 LOAD_FAST_BORROW     (parts)
+              76 LOAD_SMALL_INT       1
+              78 BINARY_OP            ([])
+              90 STORE_FAST           (payload)
+
+ 48:          92 LOAD_FAST_BORROW     (payload)
+              94 LOAD_CONST           ("=")
+              96 LOAD_SMALL_INT       4
+              98 LOAD_GLOBAL          (NULL + len)
+             108 LOAD_FAST_BORROW     (payload)
+             110 CALL                 (1 positional)
+             118 LOAD_SMALL_INT       4
+             120 BINARY_OP            (%)
+             132 BINARY_OP            (-)
+             144 BINARY_OP            (*)
+             156 BINARY_OP            (+=)
+             168 STORE_FAST           (payload)
+
+ 49:         170 LOAD_GLOBAL          (base64)
+             180 LOAD_ATTR            (urlsafe_b64decode)
+             200 PUSH_NULL
+             202 LOAD_FAST_BORROW     (payload)
+             204 CALL                 (1 positional)
+             212 STORE_FAST           (decoded)
+
+ 50:         214 LOAD_GLOBAL          (json)
+             224 LOAD_ATTR            (loads)
+             244 PUSH_NULL
+             246 LOAD_FAST_BORROW     (decoded)
+             248 CALL                 (1 positional)
+             256 STORE_FAST           (data)
+
+ 51:         258 LOAD_FAST_BORROW     (data)
+             260 LOAD_ATTR            (NULL|self + get)
+             280 LOAD_CONST           ("exp")
+             282 LOAD_SMALL_INT       0
+             284 CALL                 (2 positional)
+             292 STORE_FAST           (exp_timestamp)
+
+ 52:         294 LOAD_GLOBAL          (datetime)
+             304 LOAD_ATTR            (fromtimestamp)
+             324 PUSH_NULL
+             326 LOAD_FAST_BORROW     (exp_timestamp)
+             328 CALL                 (1 positional)
+             336 STORE_FAST           (exp_time)
+
+ 53:         338 LOAD_GLOBAL          (datetime)
+             348 LOAD_ATTR            (now)
+             368 PUSH_NULL
+             370 CALL                 (0 positional)
+             378 STORE_FAST           (now)
+
+ 54:         380 LOAD_FAST_BORROW_LOAD_FAST_BORROW (exp_time, now)
+             382 BINARY_OP            (-)
+             394 LOAD_ATTR            (NULL|self + total_seconds)
+             414 CALL                 (0 positional)
+             422 LOAD_CONST           (3600)
+             424 BINARY_OP            (/)
+             436 STORE_FAST           (hours_left)
+
+ 55:         438 LOAD_FAST_BORROW     (hours_left)
+             440 LOAD_SMALL_INT       0
+             442 COMPARE_OP           (<)
+             446 POP_JUMP_IF_FALSE    (to 456)
+             450 NOT_TAKEN
+
+ 56:         452 LOAD_CONST           ((False, 'Token已过期'))
+             454 RETURN_VALUE
+
+ 57:     >>  456 LOAD_CONST           (True)
+             458 LOAD_CONST           ("有效期至: ")
+             460 LOAD_FAST_BORROW     (exp_time)
+             462 LOAD_ATTR            (NULL|self + strftime)
+             482 LOAD_CONST           ("%Y-%m-%d %H:%M")
+             484 CALL                 (1 positional)
+             492 FORMAT_SIMPLE
+             494 BUILD_STRING         2
+             496 BUILD_TUPLE          2
+             498 RETURN_VALUE
+             500 PUSH_EXC_INFO
+
+ 58:         502 POP_TOP
+
+ 59:         504 LOAD_CONST           ((None, '无法验证Token'))
+             506 SWAP                 (TOS <-> TOS1)
+             508 POP_EXCEPT
+             510 RETURN_VALUE
+             512 COPY                 3
+             514 POP_EXCEPT
+             516 RERAISE              1
+
+ExceptionTable:
+  4 to 70 -> 500 [0]
+  74 to 452 -> 500 [0]
+  456 to 496 -> 500 [0]
+  500 to 506 -> 512 [1] lasti
+
+# Method Name:       search_wait_list
+# Filename:          gui.py
+# Argument count:    4
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  7
+# Stack size:        12
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        61
+# Constants:
+#    0: '/searchWaitSinglePaymentLoanList'
+#    1: 'certId'
+#    2: 'customerName'
+#    3: ''
+#    4: 'contractNo'
+#    5: 'total'
+#    6: 'pageNumber'
+#    7: 'pageSize'
+#    8: ('json', 'timeout')
+#    9: None
+# Names:
+#    0: base_url
+#    1: session
+#    2: post
+#    3: json
+# Varnames:
+#	self, cert_id, contract_no, page_size, url, params, response
+# Positional arguments:
+#	self, cert_id, contract_no, page_size
+# Local variables:
+#    4: url
+#    5: params
+#    6: response
+
+ 61:           0 RESUME               0
+
+ 62:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (base_url)
+              24 FORMAT_SIMPLE
+              26 LOAD_CONST           ("/searchWaitSinglePaymentLoanList")
+              28 BUILD_STRING         2
+              30 STORE_FAST           (url)
+
+ 63:          32 LOAD_CONST           ("certId")
+              34 LOAD_FAST_BORROW     (cert_id)
+              36 LOAD_CONST           ("customerName")
+              38 LOAD_CONST           ("")
+              40 LOAD_CONST           ("contractNo")
+              42 LOAD_FAST_BORROW     (contract_no)
+              44 LOAD_CONST           ("total")
+              46 LOAD_SMALL_INT       1
+              48 LOAD_CONST           ("pageNumber")
+              50 LOAD_SMALL_INT       0
+
+ 64:          52 LOAD_CONST           ("pageSize")
+              54 LOAD_FAST_BORROW     (page_size)
+
+ 63:          56 BUILD_MAP            6
+              58 STORE_FAST           (params)
+
+ 65:          60 NOP
+
+ 66:          62 LOAD_FAST_BORROW     (self)
+              64 LOAD_ATTR            (session)
+              84 LOAD_ATTR            (NULL|self + post)
+             104 LOAD_FAST_BORROW_LOAD_FAST_BORROW (url, params)
+             106 LOAD_SMALL_INT       15
+             108 LOAD_CONST           (('json', 'timeout'))
+             110 CALL_KW              3
+             118 STORE_FAST           (response)
+
+ 67:         120 LOAD_FAST_BORROW     (response)
+             122 LOAD_ATTR            (NULL|self + json)
+             142 CALL                 (0 positional)
+             150 RETURN_VALUE
+             152 PUSH_EXC_INFO
+
+ 68:         154 POP_TOP
+
+ 69:         156 POP_EXCEPT
+             158 LOAD_CONST           (None)
+             160 RETURN_VALUE
+             162 COPY                 3
+             164 POP_EXCEPT
+             166 RERAISE              1
+
+ExceptionTable:
+  62 to 148 -> 152 [0]
+  152 to 154 -> 162 [1] lasti
+
+# Method Name:       get_loan_detail
+# Filename:          gui.py
+# Argument count:    2
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  5
+# Stack size:        5
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        71
+# Constants:
+#    0: '/getWaitSinglePaymentLoanDetail/'
+#    1: ('timeout',)
+#    2: 'code'
+#    3: 'data'
+#    4: None
+# Names:
+#    0: base_url
+#    1: session
+#    2: get
+#    3: json
+# Varnames:
+#	self, serial_no, url, response, result
+# Positional arguments:
+#	self, serial_no
+# Local variables:
+#    2: url
+#    3: response
+#    4: result
+
+ 71:           0 RESUME               0
+
+ 72:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (base_url)
+              24 FORMAT_SIMPLE
+              26 LOAD_CONST           ("/getWaitSinglePaymentLoanDetail/")
+              28 LOAD_FAST_BORROW     (serial_no)
+              30 FORMAT_SIMPLE
+              32 BUILD_STRING         3
+              34 STORE_FAST           (url)
+
+ 73:          36 NOP
+
+ 74:          38 LOAD_FAST_BORROW     (self)
+              40 LOAD_ATTR            (session)
+              60 LOAD_ATTR            (NULL|self + get)
+              80 LOAD_FAST_BORROW     (url)
+              82 LOAD_SMALL_INT       15
+              84 LOAD_CONST           (('timeout',))
+              86 CALL_KW              2
+              94 STORE_FAST           (response)
+
+ 75:          96 LOAD_FAST_BORROW     (response)
+              98 LOAD_ATTR            (NULL|self + json)
+             118 CALL                 (0 positional)
+             126 STORE_FAST           (result)
+
+ 76:         128 LOAD_FAST_BORROW     (result)
+             130 LOAD_ATTR            (NULL|self + get)
+             150 LOAD_CONST           ("code")
+             152 CALL                 (1 positional)
+             160 LOAD_SMALL_INT       0
+             162 COMPARE_OP           (==)
+             166 POP_JUMP_IF_FALSE    (to 206)
+             170 NOT_TAKEN
+             172 LOAD_FAST_BORROW     (result)
+             174 LOAD_ATTR            (NULL|self + get)
+             194 LOAD_CONST           ("data")
+             196 CALL                 (1 positional)
+             204 RETURN_VALUE
+         >>  206 LOAD_CONST           (None)
+             208 RETURN_VALUE
+             210 PUSH_EXC_INFO
+
+ 77:         212 POP_TOP
+
+ 78:         214 POP_EXCEPT
+             216 LOAD_CONST           (None)
+             218 RETURN_VALUE
+             220 COPY                 3
+             222 POP_EXCEPT
+             224 RERAISE              1
+
+ExceptionTable:
+  38 to 202 -> 210 [0]
+  206 to 206 -> 210 [0]
+  210 to 212 -> 220 [1] lasti
+
+# Method Name:       submit_single_payment
+# Filename:          gui.py
+# Argument count:    2
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  4
+# Stack size:        6
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        80
+# Constants:
+#    0: '/submitSinglePaymentData'
+#    1: ('json', 'timeout')
+#    2: None
+# Names:
+#    0: base_url
+#    1: session
+#    2: post
+#    3: json
+# Varnames:
+#	self, payment_data, url, response
+# Positional arguments:
+#	self, payment_data
+# Local variables:
+#    2: url
+#    3: response
+
+ 80:           0 RESUME               0
+
+ 81:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (base_url)
+              24 FORMAT_SIMPLE
+              26 LOAD_CONST           ("/submitSinglePaymentData")
+              28 BUILD_STRING         2
+              30 STORE_FAST           (url)
+
+ 82:          32 NOP
+
+ 83:          34 LOAD_FAST_BORROW     (self)
+              36 LOAD_ATTR            (session)
+              56 LOAD_ATTR            (NULL|self + post)
+              76 LOAD_FAST_BORROW_LOAD_FAST_BORROW (url, payment_data)
+              78 LOAD_SMALL_INT       15
+              80 LOAD_CONST           (('json', 'timeout'))
+              82 CALL_KW              3
+              90 STORE_FAST           (response)
+
+ 84:          92 LOAD_FAST_BORROW     (response)
+              94 LOAD_ATTR            (NULL|self + json)
+             114 CALL                 (0 positional)
+             122 RETURN_VALUE
+             124 PUSH_EXC_INFO
+
+ 85:         126 POP_TOP
+
+ 86:         128 POP_EXCEPT
+             130 LOAD_CONST           (None)
+             132 RETURN_VALUE
+             134 COPY                 3
+             136 POP_EXCEPT
+             138 RERAISE              1
+
+ExceptionTable:
+  34 to 120 -> 124 [0]
+  124 to 126 -> 134 [1] lasti
+
+# Method Name:       search_review_list
+# Filename:          gui.py
+# Argument count:    4
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  7
+# Stack size:        16
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        88
+# Constants:
+#    0: '/searchReviewSinglePaymentTransactionList'
+#    1: 'certId'
+#    2: 'customerName'
+#    3: ''
+#    4: 'contractNo'
+#    5: 'transStatus'
+#    6: '复核中'
+#    7: 'reviewUserId'
+#    8: '68ca71a99f0c1d79fe4b1d15'
+#    9: 'submitUserId'
+#   10: None
+#   11: 'pageNumber'
+#   12: 'pageSize'
+#   13: ('json', 'timeout')
+# Names:
+#    0: base_url
+#    1: session
+#    2: post
+#    3: json
+# Varnames:
+#	self, cert_id, contract_no, page_size, url, params, response
+# Positional arguments:
+#	self, cert_id, contract_no, page_size
+# Local variables:
+#    4: url
+#    5: params
+#    6: response
+
+ 88:           0 RESUME               0
+
+ 89:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (base_url)
+              24 FORMAT_SIMPLE
+              26 LOAD_CONST           ("/searchReviewSinglePaymentTransactionList")
+              28 BUILD_STRING         2
+              30 STORE_FAST           (url)
+
+ 91:          32 LOAD_CONST           ("certId")
+              34 LOAD_FAST_BORROW     (cert_id)
+              36 LOAD_CONST           ("customerName")
+              38 LOAD_CONST           ("")
+              40 LOAD_CONST           ("contractNo")
+              42 LOAD_FAST_BORROW     (contract_no)
+              44 LOAD_CONST           ("transStatus")
+              46 LOAD_CONST           ("复核中")
+
+ 92:          48 LOAD_CONST           ("reviewUserId")
+              50 LOAD_CONST           ("68ca71a99f0c1d79fe4b1d15")
+              52 LOAD_CONST           ("submitUserId")
+              54 LOAD_CONST           (None)
+
+ 93:          56 LOAD_CONST           ("pageNumber")
+              58 LOAD_SMALL_INT       0
+              60 LOAD_CONST           ("pageSize")
+              62 LOAD_FAST_BORROW     (page_size)
+
+ 90:          64 BUILD_MAP            8
+              66 STORE_FAST           (params)
+
+ 95:          68 NOP
+
+ 96:          70 LOAD_FAST_BORROW     (self)
+              72 LOAD_ATTR            (session)
+              92 LOAD_ATTR            (NULL|self + post)
+             112 LOAD_FAST_BORROW_LOAD_FAST_BORROW (url, params)
+             114 LOAD_SMALL_INT       15
+             116 LOAD_CONST           (('json', 'timeout'))
+             118 CALL_KW              3
+             126 STORE_FAST           (response)
+
+ 97:         128 LOAD_FAST_BORROW     (response)
+             130 LOAD_ATTR            (NULL|self + json)
+             150 CALL                 (0 positional)
+             158 RETURN_VALUE
+             160 PUSH_EXC_INFO
+
+ 98:         162 POP_TOP
+
+ 99:         164 POP_EXCEPT
+             166 LOAD_CONST           (None)
+             168 RETURN_VALUE
+             170 COPY                 3
+             172 POP_EXCEPT
+             174 RERAISE              1
+
+ExceptionTable:
+  70 to 156 -> 160 [0]
+  160 to 162 -> 170 [1] lasti
+
+# Method Name:       confirm_review
+# Filename:          gui.py
+# Argument count:    2
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  6
+# Stack size:        7
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        101
+# Constants:
+#    0: '/confirmReviewSinglePaymentTransaction'
+#    1: 'id'
+#    2: ('json', 'timeout')
+#    3: None
+# Names:
+#    0: base_url
+#    1: str
+#    2: session
+#    3: post
+#    4: json
+# Varnames:
+#	self, id_list, url, id, data, response
+# Positional arguments:
+#	self, id_list
+# Local variables:
+#    2: url
+#    3: id
+#    4: data
+#    5: response
+
+101:           0 RESUME               0
+
+102:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (base_url)
+              24 FORMAT_SIMPLE
+              26 LOAD_CONST           ("/confirmReviewSinglePaymentTransaction")
+              28 BUILD_STRING         2
+              30 STORE_FAST           (url)
+
+103:          32 LOAD_FAST_BORROW     (id_list)
+              34 GET_ITER
+              36 LOAD_FAST_AND_CLEAR  (id)
+              38 SWAP                 (TOS <-> TOS1)
+              40 BUILD_LIST           0
+              42 SWAP                 (TOS <-> TOS1)
+              44 FOR_ITER             (to 80)
+              48 STORE_FAST           (id)
+              50 LOAD_CONST           ("id")
+              52 LOAD_GLOBAL          (NULL + str)
+              62 LOAD_FAST_BORROW     (id)
+              64 CALL                 (1 positional)
+              72 BUILD_MAP            1
+              74 LIST_APPEND          2
+              76 JUMP_BACKWARD        (to 44)
+         >>   80 END_FOR
+              82 POP_ITER
+              84 STORE_FAST           (data)
+              86 STORE_FAST           (id)
+
+104:          88 NOP
+
+105:          90 LOAD_FAST_BORROW     (self)
+              92 LOAD_ATTR            (session)
+             112 LOAD_ATTR            (NULL|self + post)
+             132 LOAD_FAST_BORROW_LOAD_FAST_BORROW (url, data)
+             134 LOAD_SMALL_INT       15
+             136 LOAD_CONST           (('json', 'timeout'))
+             138 CALL_KW              3
+             146 STORE_FAST           (response)
+
+106:         148 LOAD_FAST_BORROW     (response)
+             150 LOAD_ATTR            (NULL|self + json)
+             170 CALL                 (0 positional)
+             178 RETURN_VALUE
+             180 SWAP                 (TOS <-> TOS1)
+             182 POP_TOP
+
+103:         184 SWAP                 (TOS <-> TOS1)
+             186 STORE_FAST           (id)
+             188 RERAISE              0
+             190 PUSH_EXC_INFO
+
+107:         192 POP_TOP
+
+108:         194 POP_EXCEPT
+             196 LOAD_CONST           (None)
+             198 RETURN_VALUE
+             200 COPY                 3
+             202 POP_EXCEPT
+             204 RERAISE              1
+
+ExceptionTable:
+  40 to 82 -> 180 [2]
+  90 to 176 -> 190 [0]
+  190 to 192 -> 200 [1] lasti
+
+# Method Name:       query_repay_statistics
+# Filename:          gui.py
+# Argument count:    2
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  8
+# Stack size:        14
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        110
+# Constants:
+#    0: 'https://rayleigh-inside-gateway.fujfu.com/urge-repayment-api/repayRecord/api/repayRecordDetailStatistics'
+#    1: '%Y/%m/%d'
+#    2: ('days',)
+#    3: 'credit'
+#    4: 'repayDateStart'
+#    5: 'repayDateEnd'
+#    6: 'overdueLevel'
+#    7: 'commissionOverdueLevel'
+#    8: 'pageNum'
+#    9: 'pageSize'
+#   10: ('json', 'timeout')
+#   11: 'code'
+#   12: 'data'
+#   13: None
+# Names:
+#    0: datetime
+#    1: now
+#    2: strftime
+#    3: timedelta
+#    4: session
+#    5: post
+#    6: json
+#    7: get
+# Varnames:
+#	self, cert_id, url, end_date, start_date, params, response, result
+# Positional arguments:
+#	self, cert_id
+# Local variables:
+#    2: url
+#    3: end_date
+#    4: start_date
+#    5: params
+#    6: response
+#    7: result
+
+110:           0 RESUME               0
+
+111:           2 LOAD_CONST           ("https://rayleigh-inside-gateway.fujfu.com/urge-repayment-api/repayRecord/api/repayRecordDetailStatistics")
+               4 STORE_FAST           (url)
+
+112:           6 LOAD_GLOBAL          (datetime)
+              16 LOAD_ATTR            (now)
+              36 PUSH_NULL
+              38 CALL                 (0 positional)
+              46 LOAD_ATTR            (NULL|self + strftime)
+              66 LOAD_CONST           ("%Y/%m/%d")
+              68 CALL                 (1 positional)
+              76 STORE_FAST           (end_date)
+
+113:          78 LOAD_GLOBAL          (datetime)
+              88 LOAD_ATTR            (now)
+             108 PUSH_NULL
+             110 CALL                 (0 positional)
+             118 LOAD_GLOBAL          (NULL + timedelta)
+             128 LOAD_SMALL_INT       30
+             130 LOAD_CONST           (('days',))
+             132 CALL_KW              1
+             140 BINARY_OP            (-)
+             152 LOAD_ATTR            (NULL|self + strftime)
+             172 LOAD_CONST           ("%Y/%m/%d")
+             174 CALL                 (1 positional)
+             182 STORE_FAST           (start_date)
+
+114:         184 LOAD_CONST           ("credit")
+             186 LOAD_FAST_BORROW     (cert_id)
+             188 LOAD_CONST           ("repayDateStart")
+             190 LOAD_FAST_BORROW     (start_date)
+             192 LOAD_CONST           ("repayDateEnd")
+             194 LOAD_FAST_BORROW     (end_date)
+             196 LOAD_CONST           ("overdueLevel")
+             198 BUILD_LIST           0
+
+115:         200 LOAD_CONST           ("commissionOverdueLevel")
+             202 BUILD_LIST           0
+             204 LOAD_CONST           ("pageNum")
+             206 LOAD_SMALL_INT       1
+             208 LOAD_CONST           ("pageSize")
+             210 LOAD_SMALL_INT       100
+
+114:         212 BUILD_MAP            7
+             214 STORE_FAST           (params)
+
+116:         216 NOP
+
+117:         218 LOAD_FAST_BORROW     (self)
+             220 LOAD_ATTR            (session)
+             240 LOAD_ATTR            (NULL|self + post)
+             260 LOAD_FAST_BORROW_LOAD_FAST_BORROW (url, params)
+             262 LOAD_SMALL_INT       15
+             264 LOAD_CONST           (('json', 'timeout'))
+             266 CALL_KW              3
+             274 STORE_FAST           (response)
+
+118:         276 LOAD_FAST_BORROW     (response)
+             278 LOAD_ATTR            (NULL|self + json)
+             298 CALL                 (0 positional)
+             306 STORE_FAST           (result)
+
+119:         308 LOAD_FAST_BORROW     (result)
+             310 LOAD_ATTR            (NULL|self + get)
+             330 LOAD_CONST           ("code")
+             332 CALL                 (1 positional)
+             340 LOAD_SMALL_INT       0
+             342 COMPARE_OP           (==)
+             346 POP_JUMP_IF_FALSE    (to 386)
+             350 NOT_TAKEN
+             352 LOAD_FAST_BORROW     (result)
+             354 LOAD_ATTR            (NULL|self + get)
+             374 LOAD_CONST           ("data")
+             376 CALL                 (1 positional)
+             384 RETURN_VALUE
+         >>  386 LOAD_CONST           (None)
+             388 RETURN_VALUE
+             390 PUSH_EXC_INFO
+
+120:         392 POP_TOP
+
+121:         394 POP_EXCEPT
+             396 LOAD_CONST           (None)
+             398 RETURN_VALUE
+             400 COPY                 3
+             402 POP_EXCEPT
+             404 RERAISE              1
+
+ExceptionTable:
+  218 to 382 -> 390 [0]
+  386 to 386 -> 390 [0]
+  390 to 392 -> 400 [1] lasti
+
+# Method Name:       __init__
+# Filename:          gui.py
+# Argument count:    2
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  4
+# Stack size:        6
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        127
+# Constants:
+#    0: False
+#    1: 'srfubaodai'
+#    2: '登录验证'
+#    3: '300x150'
+#    4: 'WM_DELETE_WINDOW'
+#    5: '+'
+#    6: None
+# Names:
+#    0: super
+#    1: __init__
+#    2: parent
+#    3: result
+#    4: PASSWORD
+#    5: title
+#    6: geometry
+#    7: resizable
+#    8: protocol
+#    9: on_cancel
+#   10: create_widgets
+#   11: update_idletasks
+#   12: winfo_screenwidth
+#   13: winfo_width
+#   14: winfo_screenheight
+#   15: winfo_height
+#   16: lift
+#   17: focus_force
+#   18: password_entry
+#   19: focus_set
+# Varnames:
+#	self, parent, x, y
+# Positional arguments:
+#	self, parent
+# Local variables:
+#    2: x
+#    3: y
+# Free variables:
+#    0: __class__
+               0 COPY_FREE_VARS       1
+
+127:           2 RESUME               0
+
+128:           4 LOAD_GLOBAL          (super)
+              14 LOAD_DEREF           (__class__)
+              16 LOAD_FAST_BORROW     (self)
+              18 LOAD_SUPER_ATTR      (NULL|self + __init__)
+              22 LOAD_FAST_BORROW     (parent)
+              24 CALL                 (1 positional)
+              32 POP_TOP
+
+129:          34 LOAD_FAST_BORROW_LOAD_FAST_BORROW (parent, self)
+              36 STORE_ATTR           (parent)
+
+130:          46 LOAD_CONST           (False)
+              48 LOAD_FAST_BORROW     (self)
+              50 STORE_ATTR           (result)
+
+133:          60 LOAD_CONST           ("srfubaodai")
+              62 LOAD_FAST_BORROW     (self)
+              64 STORE_ATTR           (PASSWORD)
+
+135:          74 LOAD_FAST_BORROW     (self)
+              76 LOAD_ATTR            (NULL|self + title)
+              96 LOAD_CONST           ("登录验证")
+              98 CALL                 (1 positional)
+             106 POP_TOP
+
+136:         108 LOAD_FAST_BORROW     (self)
+             110 LOAD_ATTR            (NULL|self + geometry)
+             130 LOAD_CONST           ("300x150")
+             132 CALL                 (1 positional)
+             140 POP_TOP
+
+137:         142 LOAD_FAST_BORROW     (self)
+             144 LOAD_ATTR            (NULL|self + resizable)
+             164 LOAD_CONST           (False)
+             166 LOAD_CONST           (False)
+             168 CALL                 (2 positional)
+             176 POP_TOP
+
+140:         178 LOAD_FAST_BORROW     (self)
+             180 LOAD_ATTR            (NULL|self + protocol)
+             200 LOAD_CONST           ("WM_DELETE_WINDOW")
+             202 LOAD_FAST_BORROW     (self)
+             204 LOAD_ATTR            (on_cancel)
+             224 CALL                 (2 positional)
+             232 POP_TOP
+
+142:         234 LOAD_FAST_BORROW     (self)
+             236 LOAD_ATTR            (NULL|self + create_widgets)
+             256 CALL                 (0 positional)
+             264 POP_TOP
+
+145:         266 LOAD_FAST_BORROW     (self)
+             268 LOAD_ATTR            (NULL|self + update_idletasks)
+             288 CALL                 (0 positional)
+             296 POP_TOP
+
+146:         298 LOAD_FAST_BORROW     (self)
+             300 LOAD_ATTR            (NULL|self + winfo_screenwidth)
+             320 CALL                 (0 positional)
+             328 LOAD_FAST_BORROW     (self)
+             330 LOAD_ATTR            (NULL|self + winfo_width)
+             350 CALL                 (0 positional)
+             358 BINARY_OP            (-)
+             370 LOAD_SMALL_INT       2
+             372 BINARY_OP            (//)
+             384 STORE_FAST           (x)
+
+147:         386 LOAD_FAST_BORROW     (self)
+             388 LOAD_ATTR            (NULL|self + winfo_screenheight)
+             408 CALL                 (0 positional)
+             416 LOAD_FAST_BORROW     (self)
+             418 LOAD_ATTR            (NULL|self + winfo_height)
+             438 CALL                 (0 positional)
+             446 BINARY_OP            (-)
+             458 LOAD_SMALL_INT       2
+             460 BINARY_OP            (//)
+             472 STORE_FAST           (y)
+
+148:         474 LOAD_FAST_BORROW     (self)
+             476 LOAD_ATTR            (NULL|self + geometry)
+             496 LOAD_CONST           ("+")
+             498 LOAD_FAST_BORROW     (x)
+             500 FORMAT_SIMPLE
+             502 LOAD_CONST           ("+")
+             504 LOAD_FAST_BORROW     (y)
+             506 FORMAT_SIMPLE
+             508 BUILD_STRING         4
+             510 CALL                 (1 positional)
+             518 POP_TOP
+
+151:         520 LOAD_FAST_BORROW     (self)
+             522 LOAD_ATTR            (NULL|self + lift)
+             542 CALL                 (0 positional)
+             550 POP_TOP
+
+152:         552 LOAD_FAST_BORROW     (self)
+             554 LOAD_ATTR            (NULL|self + focus_force)
+             574 CALL                 (0 positional)
+             582 POP_TOP
+
+153:         584 LOAD_FAST_BORROW     (self)
+             586 LOAD_ATTR            (password_entry)
+             606 LOAD_ATTR            (NULL|self + focus_set)
+             626 CALL                 (0 positional)
+             634 POP_TOP
+             636 LOAD_CONST           (None)
+             638 RETURN_VALUE
+
+
+# Method Name:       create_widgets
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  3
+# Stack size:        7
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        155
+# Constants:
+#    0: 20
+#    1: ('padding',)
+#    2: True
+#    3: ('fill', 'expand')
+#    4: '请输入密码:'
+#    5: ''
+#    6: ('text', 'font')
+#    7: ('pady',)
+#    8: '*'
+#    9: ('show', 'width', 'font')
+#   10: '<Return>'
+#   11: <Code311 code object <lambda> at 0x104f48e80, file gui.py>, line 163
+#   12: 'red'
+#   13: ('text', 'foreground')
+#   14: '登录'
+#   15: ('text', 'command', 'width')
+#   16: ('side', 'padx')
+#   17: '退出'
+#   18: None
+#   19: ('', 11)
+#   20: (0, 10)
+# Names:
+#    0: ttk
+#    1: Frame
+#    2: pack
+#    3: tk
+#    4: BOTH
+#    5: Label
+#    6: Entry
+#    7: password_entry
+#    8: bind
+#    9: error_label
+#   10: Button
+#   11: on_login
+#   12: LEFT
+#   13: on_cancel
+# Varnames:
+#	self, frame, btn_frame
+# Positional arguments:
+#	self
+# Local variables:
+#    1: frame
+#    2: btn_frame
+# Cell variables:
+#    0: self
+               0 MAKE_CELL            (self)
+
+155:           2 RESUME               0
+
+156:           4 LOAD_GLOBAL          (ttk)
+              14 LOAD_ATTR            (Frame)
+              34 PUSH_NULL
+              36 LOAD_DEREF           (self)
+              38 LOAD_SMALL_INT       20
+              40 LOAD_CONST           (('padding',))
+              42 CALL_KW              2
+              50 STORE_FAST           (frame)
+
+157:          52 LOAD_FAST_BORROW     (frame)
+              54 LOAD_ATTR            (NULL|self + pack)
+              74 LOAD_GLOBAL          (tk)
+              84 LOAD_ATTR            (BOTH)
+             104 LOAD_CONST           (True)
+             106 LOAD_CONST           (('fill', 'expand'))
+             108 CALL_KW              2
+             116 POP_TOP
+
+159:         118 LOAD_GLOBAL          (ttk)
+             128 LOAD_ATTR            (Label)
+             148 PUSH_NULL
+             150 LOAD_FAST_BORROW     (frame)
+             152 LOAD_CONST           ("请输入密码:")
+             154 LOAD_CONST           (('', 11))
+             156 LOAD_CONST           (('text', 'font'))
+             158 CALL_KW              3
+             166 LOAD_ATTR            (NULL|self + pack)
+             186 LOAD_CONST           ((0, 10))
+             188 LOAD_CONST           (('pady',))
+             190 CALL_KW              1
+             198 POP_TOP
+
+161:         200 LOAD_GLOBAL          (ttk)
+             210 LOAD_ATTR            (Entry)
+             230 PUSH_NULL
+             232 LOAD_FAST_BORROW     (frame)
+             234 LOAD_CONST           ("*")
+             236 LOAD_SMALL_INT       25
+             238 LOAD_CONST           (('', 11))
+             240 LOAD_CONST           (('show', 'width', 'font'))
+             242 CALL_KW              4
+             250 LOAD_DEREF           (self)
+             252 STORE_ATTR           (password_entry)
+
+162:         262 LOAD_DEREF           (self)
+             264 LOAD_ATTR            (password_entry)
+             284 LOAD_ATTR            (NULL|self + pack)
+             304 LOAD_SMALL_INT       5
+             306 LOAD_CONST           (('pady',))
+             308 CALL_KW              1
+             316 POP_TOP
+
+163:         318 LOAD_DEREF           (self)
+             320 LOAD_ATTR            (password_entry)
+             340 LOAD_ATTR            (NULL|self + bind)
+             360 LOAD_CONST           ("<Return>")
+             362 LOAD_FAST_BORROW     (self)
+             364 BUILD_TUPLE          1
+             366 LOAD_CONST           (<Code311 code object <lambda> at 0x104f48e80, file gui.py>, line 163)
+             368 MAKE_FUNCTION
+             370 SET_FUNCTION_ATTRIBUTE 8
+             372 CALL                 (2 positional)
+             380 POP_TOP
+
+165:         382 LOAD_GLOBAL          (ttk)
+             392 LOAD_ATTR            (Label)
+             412 PUSH_NULL
+             414 LOAD_FAST_BORROW     (frame)
+             416 LOAD_CONST           ("")
+             418 LOAD_CONST           ("red")
+             420 LOAD_CONST           (('text', 'foreground'))
+             422 CALL_KW              3
+             430 LOAD_DEREF           (self)
+             432 STORE_ATTR           (error_label)
+
+166:         442 LOAD_DEREF           (self)
+             444 LOAD_ATTR            (error_label)
+             464 LOAD_ATTR            (NULL|self + pack)
+             484 LOAD_SMALL_INT       5
+             486 LOAD_CONST           (('pady',))
+             488 CALL_KW              1
+             496 POP_TOP
+
+168:         498 LOAD_GLOBAL          (ttk)
+             508 LOAD_ATTR            (Frame)
+             528 PUSH_NULL
+             530 LOAD_FAST_BORROW     (frame)
+             532 CALL                 (1 positional)
+             540 STORE_FAST           (btn_frame)
+
+169:         542 LOAD_FAST_BORROW     (btn_frame)
+             544 LOAD_ATTR            (NULL|self + pack)
+             564 LOAD_SMALL_INT       10
+             566 LOAD_CONST           (('pady',))
+             568 CALL_KW              1
+             576 POP_TOP
+
+171:         578 LOAD_GLOBAL          (ttk)
+             588 LOAD_ATTR            (Button)
+             608 PUSH_NULL
+             610 LOAD_FAST_BORROW     (btn_frame)
+             612 LOAD_CONST           ("登录")
+             614 LOAD_DEREF           (self)
+             616 LOAD_ATTR            (on_login)
+             636 LOAD_SMALL_INT       10
+             638 LOAD_CONST           (('text', 'command', 'width'))
+             640 CALL_KW              4
+             648 LOAD_ATTR            (NULL|self + pack)
+             668 LOAD_GLOBAL          (tk)
+             678 LOAD_ATTR            (LEFT)
+             698 LOAD_SMALL_INT       5
+             700 LOAD_CONST           (('side', 'padx'))
+             702 CALL_KW              2
+             710 POP_TOP
+
+172:         712 LOAD_GLOBAL          (ttk)
+             722 LOAD_ATTR            (Button)
+             742 PUSH_NULL
+             744 LOAD_FAST_BORROW     (btn_frame)
+             746 LOAD_CONST           ("退出")
+             748 LOAD_DEREF           (self)
+             750 LOAD_ATTR            (on_cancel)
+             770 LOAD_SMALL_INT       10
+             772 LOAD_CONST           (('text', 'command', 'width'))
+             774 CALL_KW              4
+             782 LOAD_ATTR            (NULL|self + pack)
+             802 LOAD_GLOBAL          (tk)
+             812 LOAD_ATTR            (LEFT)
+             832 LOAD_SMALL_INT       5
+             834 LOAD_CONST           (('side', 'padx'))
+             836 CALL_KW              2
+             844 POP_TOP
+             846 LOAD_CONST           (None)
+             848 RETURN_VALUE
+
+
+# Method Name:       on_login
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  2
+# Stack size:        4
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        174
+# Constants:
+#    0: True
+#    1: '密码错误，请重试'
+#    2: ('text',)
+#    3: None
+# Names:
+#    0: password_entry
+#    1: get
+#    2: PASSWORD
+#    3: result
+#    4: destroy
+#    5: error_label
+#    6: config
+#    7: delete
+#    8: tk
+#    9: END
+#   10: focus_set
+# Varnames:
+#	self, password
+# Positional arguments:
+#	self
+# Local variables:
+#    1: password
+
+174:           0 RESUME               0
+
+175:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (password_entry)
+              24 LOAD_ATTR            (NULL|self + get)
+              44 CALL                 (0 positional)
+              52 STORE_FAST           (password)
+
+176:          54 LOAD_FAST_BORROW_LOAD_FAST_BORROW (password, self)
+              56 LOAD_ATTR            (PASSWORD)
+              76 COMPARE_OP           (==)
+              80 POP_JUMP_IF_FALSE    (to 136)
+              84 NOT_TAKEN
+
+177:          86 LOAD_CONST           (True)
+              88 LOAD_FAST_BORROW     (self)
+              90 STORE_ATTR           (result)
+
+178:         100 LOAD_FAST_BORROW     (self)
+             102 LOAD_ATTR            (NULL|self + destroy)
+             122 CALL                 (0 positional)
+             130 POP_TOP
+             132 LOAD_CONST           (None)
+             134 RETURN_VALUE
+
+180:     >>  136 LOAD_FAST_BORROW     (self)
+             138 LOAD_ATTR            (error_label)
+             158 LOAD_ATTR            (NULL|self + config)
+             178 LOAD_CONST           ("密码错误，请重试")
+             180 LOAD_CONST           (('text',))
+             182 CALL_KW              1
+             190 POP_TOP
+
+181:         192 LOAD_FAST_BORROW     (self)
+             194 LOAD_ATTR            (password_entry)
+             214 LOAD_ATTR            (NULL|self + delete)
+             234 LOAD_SMALL_INT       0
+             236 LOAD_GLOBAL          (tk)
+             246 LOAD_ATTR            (END)
+             266 CALL                 (2 positional)
+             274 POP_TOP
+
+182:         276 LOAD_FAST_BORROW     (self)
+             278 LOAD_ATTR            (password_entry)
+             298 LOAD_ATTR            (NULL|self + focus_set)
+             318 CALL                 (0 positional)
+             326 POP_TOP
+             328 LOAD_CONST           (None)
+             330 RETURN_VALUE
+
+
+# Method Name:       on_cancel
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  1
+# Stack size:        2
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        184
+# Constants:
+#    0: False
+#    1: None
+# Names:
+#    0: result
+#    1: destroy
+# Varnames:
+#	self
+# Positional arguments:
+#	self
+
+184:           0 RESUME               0
+
+185:           2 LOAD_CONST           (False)
+               4 LOAD_FAST_BORROW     (self)
+               6 STORE_ATTR           (result)
+
+186:          16 LOAD_FAST_BORROW     (self)
+              18 LOAD_ATTR            (NULL|self + destroy)
+              38 CALL                 (0 positional)
+              46 POP_TOP
+              48 LOAD_CONST           (None)
+              50 RETURN_VALUE
+
+
+# Method Name:       __init__
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  1
+# Stack size:        4
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        190
+# Constants:
+#    0: '单笔划扣工具 v1.0'
+#    1: '700x650'
+#    2: True
+#    3: False
+#    4: None
+# Names:
+#    0: super
+#    1: __init__
+#    2: title
+#    3: geometry
+#    4: resizable
+#    5: SinglePaymentProcessor
+#    6: processor
+#    7: running
+#    8: stop_flag
+#    9: create_widgets
+#   10: load_config
+# Varnames:
+#	self
+# Positional arguments:
+#	self
+# Free variables:
+#    0: __class__
+               0 COPY_FREE_VARS       1
+
+190:           2 RESUME               0
+
+191:           4 LOAD_GLOBAL          (super)
+              14 LOAD_DEREF           (__class__)
+              16 LOAD_FAST_BORROW     (self)
+              18 LOAD_SUPER_ATTR      (NULL|self + __init__)
+              22 CALL                 (0 positional)
+              30 POP_TOP
+
+192:          32 LOAD_FAST_BORROW     (self)
+              34 LOAD_ATTR            (NULL|self + title)
+              54 LOAD_CONST           ("单笔划扣工具 v1.0")
+              56 CALL                 (1 positional)
+              64 POP_TOP
+
+193:          66 LOAD_FAST_BORROW     (self)
+              68 LOAD_ATTR            (NULL|self + geometry)
+              88 LOAD_CONST           ("700x650")
+              90 CALL                 (1 positional)
+              98 POP_TOP
+
+194:         100 LOAD_FAST_BORROW     (self)
+             102 LOAD_ATTR            (NULL|self + resizable)
+             122 LOAD_CONST           (True)
+             124 LOAD_CONST           (True)
+             126 CALL                 (2 positional)
+             134 POP_TOP
+
+196:         136 LOAD_GLOBAL          (NULL + SinglePaymentProcessor)
+             146 CALL                 (0 positional)
+             154 LOAD_FAST_BORROW     (self)
+             156 STORE_ATTR           (processor)
+
+197:         166 LOAD_CONST           (False)
+             168 LOAD_FAST_BORROW     (self)
+             170 STORE_ATTR           (running)
+
+198:         180 LOAD_CONST           (False)
+             182 LOAD_FAST_BORROW     (self)
+             184 STORE_ATTR           (stop_flag)
+
+200:         194 LOAD_FAST_BORROW     (self)
+             196 LOAD_ATTR            (NULL|self + create_widgets)
+             216 CALL                 (0 positional)
+             224 POP_TOP
+
+201:         226 LOAD_FAST_BORROW     (self)
+             228 LOAD_ATTR            (NULL|self + load_config)
+             248 CALL                 (0 positional)
+             256 POP_TOP
+             258 LOAD_CONST           (None)
+             260 RETURN_VALUE
+
+
+# Method Name:       create_widgets
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  7
+# Stack size:        8
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        203
+# Constants:
+#    0: 'Token设置'
+#    1: ('text', 'padding')
+#    2: ('fill', 'padx', 'pady')
+#    3: 'Token:'
+#    4: ('text',)
+#    5: ('row', 'column', 'sticky')
+#    6: ('width',)
+#    7: ('row', 'column', 'padx', 'pady')
+#    8: '未设置'
+#    9: 'gray'
+#   10: ('text', 'foreground')
+#   11: ('row', 'column', 'padx')
+#   12: '验证Token'
+#   13: ('text', 'command')
+#   14: ('row', 'column', 'pady', 'sticky')
+#   15: '设置'
+#   16: 'cert_id'
+#   17: ('value',)
+#   18: '身份证号'
+#   19: ('text', 'variable', 'value', 'command')
+#   20: ('side', 'padx')
+#   21: '合同编号'
+#   22: 'contract_no'
+#   23: ('orient',)
+#   24: ('side', 'fill', 'padx')
+#   25: '并发数:'
+#   26: '5'
+#   27: 'readonly'
+#   28: ('textvariable', 'values', 'width', 'state')
+#   29: '身份证号列表（每行一个）'
+#   30: True
+#   31: ('fill', 'expand', 'padx', 'pady')
+#   32: ('height', 'width')
+#   33: ('fill', 'expand')
+#   34: ('padding',)
+#   35: ('fill', 'padx')
+#   36: '开始划扣并复核'
+#   37: ('text', 'command', 'width')
+#   38: '查询结果'
+#   39: '停止'
+#   40: ('text', 'command', 'width', 'state')
+#   41: '就绪'
+#   42: ('textvariable',)
+#   43: ('side',)
+#   44: 400
+#   45: 'determinate'
+#   46: ('length', 'mode')
+#   47: ('side', 'fill', 'expand', 'padx')
+#   48: '运行日志'
+#   49: ('height', 'width', 'state')
+#   50: None
+#   51: ('1', '3', '5', '10', '15', '20')
+# Names:
+#    0: ttk
+#    1: LabelFrame
+#    2: pack
+#    3: tk
+#    4: X
+#    5: Label
+#    6: grid
+#    7: W
+#    8: Entry
+#    9: token_entry
+#   10: token_status
+#   11: Button
+#   12: verify_token
+#   13: StringVar
+#   14: query_type
+#   15: Radiobutton
+#   16: on_type_change
+#   17: LEFT
+#   18: Separator
+#   19: VERTICAL
+#   20: Y
+#   21: concurrent_var
+#   22: Combobox
+#   23: input_frame
+#   24: BOTH
+#   25: scrolledtext
+#   26: ScrolledText
+#   27: id_text
+#   28: Frame
+#   29: start_process
+#   30: start_btn
+#   31: query_result
+#   32: query_btn
+#   33: stop_process
+#   34: DISABLED
+#   35: stop_btn
+#   36: progress_var
+#   37: progress_label
+#   38: Progressbar
+#   39: progress_bar
+#   40: RIGHT
+#   41: log_text
+# Varnames:
+#	self, token_frame, type_frame, concurrent_combo, btn_frame, progress_frame, log_frame
+# Positional arguments:
+#	self
+# Local variables:
+#    1: token_frame
+#    2: type_frame
+#    3: concurrent_combo
+#    4: btn_frame
+#    5: progress_frame
+#    6: log_frame
+
+203:           0 RESUME               0
+
+205:           2 LOAD_GLOBAL          (ttk)
+              12 LOAD_ATTR            (LabelFrame)
+              32 PUSH_NULL
+              34 LOAD_FAST_BORROW     (self)
+              36 LOAD_CONST           ("Token设置")
+              38 LOAD_SMALL_INT       10
+              40 LOAD_CONST           (('text', 'padding'))
+              42 CALL_KW              3
+              50 STORE_FAST           (token_frame)
+
+206:          52 LOAD_FAST_BORROW     (token_frame)
+              54 LOAD_ATTR            (NULL|self + pack)
+              74 LOAD_GLOBAL          (tk)
+              84 LOAD_ATTR            (X)
+             104 LOAD_SMALL_INT       10
+             106 LOAD_SMALL_INT       5
+             108 LOAD_CONST           (('fill', 'padx', 'pady'))
+             110 CALL_KW              3
+             118 POP_TOP
+
+208:         120 LOAD_GLOBAL          (ttk)
+             130 LOAD_ATTR            (Label)
+             150 PUSH_NULL
+             152 LOAD_FAST_BORROW     (token_frame)
+             154 LOAD_CONST           ("Token:")
+             156 LOAD_CONST           (('text',))
+             158 CALL_KW              2
+             166 LOAD_ATTR            (NULL|self + grid)
+             186 LOAD_SMALL_INT       0
+             188 LOAD_SMALL_INT       0
+             190 LOAD_GLOBAL          (tk)
+             200 LOAD_ATTR            (W)
+             220 LOAD_CONST           (('row', 'column', 'sticky'))
+             222 CALL_KW              3
+             230 POP_TOP
+
+209:         232 LOAD_GLOBAL          (ttk)
+             242 LOAD_ATTR            (Entry)
+             262 PUSH_NULL
+             264 LOAD_FAST_BORROW     (token_frame)
+             266 LOAD_SMALL_INT       70
+             268 LOAD_CONST           (('width',))
+             270 CALL_KW              2
+             278 LOAD_FAST_BORROW     (self)
+             280 STORE_ATTR           (token_entry)
+
+210:         290 LOAD_FAST_BORROW     (self)
+             292 LOAD_ATTR            (token_entry)
+             312 LOAD_ATTR            (NULL|self + grid)
+             332 LOAD_SMALL_INT       0
+             334 LOAD_SMALL_INT       1
+             336 LOAD_SMALL_INT       5
+             338 LOAD_SMALL_INT       2
+             340 LOAD_CONST           (('row', 'column', 'padx', 'pady'))
+             342 CALL_KW              4
+             350 POP_TOP
+
+212:         352 LOAD_GLOBAL          (ttk)
+             362 LOAD_ATTR            (Label)
+             382 PUSH_NULL
+             384 LOAD_FAST_BORROW     (token_frame)
+             386 LOAD_CONST           ("未设置")
+             388 LOAD_CONST           ("gray")
+             390 LOAD_CONST           (('text', 'foreground'))
+             392 CALL_KW              3
+             400 LOAD_FAST_BORROW     (self)
+             402 STORE_ATTR           (token_status)
+
+213:         412 LOAD_FAST_BORROW     (self)
+             414 LOAD_ATTR            (token_status)
+             434 LOAD_ATTR            (NULL|self + grid)
+             454 LOAD_SMALL_INT       0
+             456 LOAD_SMALL_INT       2
+             458 LOAD_SMALL_INT       5
+             460 LOAD_CONST           (('row', 'column', 'padx'))
+             462 CALL_KW              3
+             470 POP_TOP
+
+215:         472 LOAD_GLOBAL          (ttk)
+             482 LOAD_ATTR            (Button)
+             502 PUSH_NULL
+             504 LOAD_FAST_BORROW     (token_frame)
+             506 LOAD_CONST           ("验证Token")
+             508 LOAD_FAST_BORROW     (self)
+             510 LOAD_ATTR            (verify_token)
+             530 LOAD_CONST           (('text', 'command'))
+             532 CALL_KW              3
+             540 LOAD_ATTR            (NULL|self + grid)
+             560 LOAD_SMALL_INT       1
+             562 LOAD_SMALL_INT       1
+             564 LOAD_SMALL_INT       5
+             566 LOAD_GLOBAL          (tk)
+             576 LOAD_ATTR            (W)
+             596 LOAD_CONST           (('row', 'column', 'pady', 'sticky'))
+             598 CALL_KW              4
+             606 POP_TOP
+
+218:         608 LOAD_GLOBAL          (ttk)
+             618 LOAD_ATTR            (LabelFrame)
+             638 PUSH_NULL
+             640 LOAD_FAST_BORROW     (self)
+             642 LOAD_CONST           ("设置")
+             644 LOAD_SMALL_INT       10
+             646 LOAD_CONST           (('text', 'padding'))
+             648 CALL_KW              3
+             656 STORE_FAST           (type_frame)
+
+219:         658 LOAD_FAST_BORROW     (type_frame)
+             660 LOAD_ATTR            (NULL|self + pack)
+             680 LOAD_GLOBAL          (tk)
+             690 LOAD_ATTR            (X)
+             710 LOAD_SMALL_INT       10
+             712 LOAD_SMALL_INT       5
+             714 LOAD_CONST           (('fill', 'padx', 'pady'))
+             716 CALL_KW              3
+             724 POP_TOP
+
+221:         726 LOAD_GLOBAL          (tk)
+             736 LOAD_ATTR            (StringVar)
+             756 PUSH_NULL
+             758 LOAD_CONST           ("cert_id")
+             760 LOAD_CONST           (('value',))
+             762 CALL_KW              1
+             770 LOAD_FAST_BORROW     (self)
+             772 STORE_ATTR           (query_type)
+
+222:         782 LOAD_GLOBAL          (ttk)
+             792 LOAD_ATTR            (Radiobutton)
+             812 PUSH_NULL
+             814 LOAD_FAST_BORROW     (type_frame)
+             816 LOAD_CONST           ("身份证号")
+             818 LOAD_FAST_BORROW     (self)
+             820 LOAD_ATTR            (query_type)
+             840 LOAD_CONST           ("cert_id")
+
+223:         842 LOAD_FAST_BORROW     (self)
+             844 LOAD_ATTR            (on_type_change)
+
+222:         864 LOAD_CONST           (('text', 'variable', 'value', 'command'))
+             866 CALL_KW              5
+
+223:         874 LOAD_ATTR            (NULL|self + pack)
+             894 LOAD_GLOBAL          (tk)
+             904 LOAD_ATTR            (LEFT)
+             924 LOAD_SMALL_INT       10
+             926 LOAD_CONST           (('side', 'padx'))
+             928 CALL_KW              2
+             936 POP_TOP
+
+224:         938 LOAD_GLOBAL          (ttk)
+             948 LOAD_ATTR            (Radiobutton)
+             968 PUSH_NULL
+             970 LOAD_FAST_BORROW     (type_frame)
+             972 LOAD_CONST           ("合同编号")
+             974 LOAD_FAST_BORROW     (self)
+             976 LOAD_ATTR            (query_type)
+             996 LOAD_CONST           ("contract_no")
+
+225:         998 LOAD_FAST_BORROW     (self)
+            1000 LOAD_ATTR            (on_type_change)
+
+224:        1020 LOAD_CONST           (('text', 'variable', 'value', 'command'))
+            1022 CALL_KW              5
+
+225:        1030 LOAD_ATTR            (NULL|self + pack)
+            1050 LOAD_GLOBAL          (tk)
+            1060 LOAD_ATTR            (LEFT)
+            1080 LOAD_SMALL_INT       10
+            1082 LOAD_CONST           (('side', 'padx'))
+            1084 CALL_KW              2
+            1092 POP_TOP
+
+227:        1094 LOAD_GLOBAL          (ttk)
+            1104 LOAD_ATTR            (Separator)
+            1124 PUSH_NULL
+            1126 LOAD_FAST_BORROW     (type_frame)
+            1128 LOAD_GLOBAL          (tk)
+            1138 LOAD_ATTR            (VERTICAL)
+            1158 LOAD_CONST           (('orient',))
+            1160 CALL_KW              2
+            1168 LOAD_ATTR            (NULL|self + pack)
+            1188 LOAD_GLOBAL          (tk)
+            1198 LOAD_ATTR            (LEFT)
+            1218 LOAD_GLOBAL          (tk)
+            1228 LOAD_ATTR            (Y)
+            1248 LOAD_SMALL_INT       15
+            1250 LOAD_CONST           (('side', 'fill', 'padx'))
+            1252 CALL_KW              3
+            1260 POP_TOP
+
+229:        1262 LOAD_GLOBAL          (ttk)
+            1272 LOAD_ATTR            (Label)
+            1292 PUSH_NULL
+            1294 LOAD_FAST_BORROW     (type_frame)
+            1296 LOAD_CONST           ("并发数:")
+            1298 LOAD_CONST           (('text',))
+            1300 CALL_KW              2
+            1308 LOAD_ATTR            (NULL|self + pack)
+            1328 LOAD_GLOBAL          (tk)
+            1338 LOAD_ATTR            (LEFT)
+            1358 LOAD_SMALL_INT       5
+            1360 LOAD_CONST           (('side', 'padx'))
+            1362 CALL_KW              2
+            1370 POP_TOP
+
+230:        1372 LOAD_GLOBAL          (tk)
+            1382 LOAD_ATTR            (StringVar)
+            1402 PUSH_NULL
+            1404 LOAD_CONST           ("5")
+            1406 LOAD_CONST           (('value',))
+            1408 CALL_KW              1
+            1416 LOAD_FAST_BORROW     (self)
+            1418 STORE_ATTR           (concurrent_var)
+
+231:        1428 LOAD_GLOBAL          (ttk)
+            1438 LOAD_ATTR            (Combobox)
+            1458 PUSH_NULL
+            1460 LOAD_FAST_BORROW_LOAD_FAST_BORROW (type_frame, self)
+            1462 LOAD_ATTR            (concurrent_var)
+
+232:        1482 BUILD_LIST           0
+            1484 LOAD_CONST           (('1', '3', '5', '10', '15', '20'))
+            1486 LIST_EXTEND          1
+            1488 LOAD_SMALL_INT       5
+            1490 LOAD_CONST           ("readonly")
+
+231:        1492 LOAD_CONST           (('textvariable', 'values', 'width', 'state'))
+            1494 CALL_KW              5
+            1502 STORE_FAST           (concurrent_combo)
+
+233:        1504 LOAD_FAST_BORROW     (concurrent_combo)
+            1506 LOAD_ATTR            (NULL|self + pack)
+            1526 LOAD_GLOBAL          (tk)
+            1536 LOAD_ATTR            (LEFT)
+            1556 LOAD_SMALL_INT       5
+            1558 LOAD_CONST           (('side', 'padx'))
+            1560 CALL_KW              2
+            1568 POP_TOP
+
+236:        1570 LOAD_GLOBAL          (ttk)
+            1580 LOAD_ATTR            (LabelFrame)
+            1600 PUSH_NULL
+            1602 LOAD_FAST_BORROW     (self)
+            1604 LOAD_CONST           ("身份证号列表（每行一个）")
+            1606 LOAD_SMALL_INT       10
+            1608 LOAD_CONST           (('text', 'padding'))
+            1610 CALL_KW              3
+            1618 LOAD_FAST_BORROW     (self)
+            1620 STORE_ATTR           (input_frame)
+
+237:        1630 LOAD_FAST_BORROW     (self)
+            1632 LOAD_ATTR            (input_frame)
+            1652 LOAD_ATTR            (NULL|self + pack)
+            1672 LOAD_GLOBAL          (tk)
+            1682 LOAD_ATTR            (BOTH)
+            1702 LOAD_CONST           (True)
+            1704 LOAD_SMALL_INT       10
+            1706 LOAD_SMALL_INT       5
+            1708 LOAD_CONST           (('fill', 'expand', 'padx', 'pady'))
+            1710 CALL_KW              4
+            1718 POP_TOP
+
+239:        1720 LOAD_GLOBAL          (scrolledtext)
+            1730 LOAD_ATTR            (ScrolledText)
+            1750 PUSH_NULL
+            1752 LOAD_FAST_BORROW     (self)
+            1754 LOAD_ATTR            (input_frame)
+            1774 LOAD_SMALL_INT       6
+            1776 LOAD_SMALL_INT       80
+            1778 LOAD_CONST           (('height', 'width'))
+            1780 CALL_KW              3
+            1788 LOAD_FAST_BORROW     (self)
+            1790 STORE_ATTR           (id_text)
+
+240:        1800 LOAD_FAST_BORROW     (self)
+            1802 LOAD_ATTR            (id_text)
+            1822 LOAD_ATTR            (NULL|self + pack)
+            1842 LOAD_GLOBAL          (tk)
+            1852 LOAD_ATTR            (BOTH)
+            1872 LOAD_CONST           (True)
+            1874 LOAD_CONST           (('fill', 'expand'))
+            1876 CALL_KW              2
+            1884 POP_TOP
+
+243:        1886 LOAD_GLOBAL          (ttk)
+            1896 LOAD_ATTR            (Frame)
+            1916 PUSH_NULL
+            1918 LOAD_FAST_BORROW     (self)
+            1920 LOAD_SMALL_INT       10
+            1922 LOAD_CONST           (('padding',))
+            1924 CALL_KW              2
+            1932 STORE_FAST           (btn_frame)
+
+244:        1934 LOAD_FAST_BORROW     (btn_frame)
+            1936 LOAD_ATTR            (NULL|self + pack)
+            1956 LOAD_GLOBAL          (tk)
+            1966 LOAD_ATTR            (X)
+            1986 LOAD_SMALL_INT       10
+            1988 LOAD_CONST           (('fill', 'padx'))
+            1990 CALL_KW              2
+            1998 POP_TOP
+
+246:        2000 LOAD_GLOBAL          (ttk)
+            2010 LOAD_ATTR            (Button)
+            2030 PUSH_NULL
+            2032 LOAD_FAST_BORROW     (btn_frame)
+            2034 LOAD_CONST           ("开始划扣并复核")
+            2036 LOAD_FAST_BORROW     (self)
+            2038 LOAD_ATTR            (start_process)
+            2058 LOAD_SMALL_INT       18
+            2060 LOAD_CONST           (('text', 'command', 'width'))
+            2062 CALL_KW              4
+            2070 LOAD_FAST_BORROW     (self)
+            2072 STORE_ATTR           (start_btn)
+
+247:        2082 LOAD_FAST_BORROW     (self)
+            2084 LOAD_ATTR            (start_btn)
+            2104 LOAD_ATTR            (NULL|self + grid)
+            2124 LOAD_SMALL_INT       0
+            2126 LOAD_SMALL_INT       0
+            2128 LOAD_SMALL_INT       5
+            2130 LOAD_CONST           (('row', 'column', 'padx'))
+            2132 CALL_KW              3
+            2140 POP_TOP
+
+249:        2142 LOAD_GLOBAL          (ttk)
+            2152 LOAD_ATTR            (Button)
+            2172 PUSH_NULL
+            2174 LOAD_FAST_BORROW     (btn_frame)
+            2176 LOAD_CONST           ("查询结果")
+            2178 LOAD_FAST_BORROW     (self)
+            2180 LOAD_ATTR            (query_result)
+            2200 LOAD_SMALL_INT       15
+            2202 LOAD_CONST           (('text', 'command', 'width'))
+            2204 CALL_KW              4
+            2212 LOAD_FAST_BORROW     (self)
+            2214 STORE_ATTR           (query_btn)
+
+250:        2224 LOAD_FAST_BORROW     (self)
+            2226 LOAD_ATTR            (query_btn)
+            2246 LOAD_ATTR            (NULL|self + grid)
+            2266 LOAD_SMALL_INT       0
+            2268 LOAD_SMALL_INT       1
+            2270 LOAD_SMALL_INT       5
+            2272 LOAD_CONST           (('row', 'column', 'padx'))
+            2274 CALL_KW              3
+            2282 POP_TOP
+
+252:        2284 LOAD_GLOBAL          (ttk)
+            2294 LOAD_ATTR            (Button)
+            2314 PUSH_NULL
+            2316 LOAD_FAST_BORROW     (btn_frame)
+            2318 LOAD_CONST           ("停止")
+            2320 LOAD_FAST_BORROW     (self)
+            2322 LOAD_ATTR            (stop_process)
+            2342 LOAD_SMALL_INT       15
+            2344 LOAD_GLOBAL          (tk)
+            2354 LOAD_ATTR            (DISABLED)
+            2374 LOAD_CONST           (('text', 'command', 'width', 'state'))
+            2376 CALL_KW              5
+            2384 LOAD_FAST_BORROW     (self)
+            2386 STORE_ATTR           (stop_btn)
+
+253:        2396 LOAD_FAST_BORROW     (self)
+            2398 LOAD_ATTR            (stop_btn)
+            2418 LOAD_ATTR            (NULL|self + grid)
+            2438 LOAD_SMALL_INT       0
+            2440 LOAD_SMALL_INT       2
+            2442 LOAD_SMALL_INT       5
+            2444 LOAD_CONST           (('row', 'column', 'padx'))
+            2446 CALL_KW              3
+            2454 POP_TOP
+
+256:        2456 LOAD_GLOBAL          (ttk)
+            2466 LOAD_ATTR            (Frame)
+            2486 PUSH_NULL
+            2488 LOAD_FAST_BORROW     (self)
+            2490 LOAD_SMALL_INT       5
+            2492 LOAD_CONST           (('padding',))
+            2494 CALL_KW              2
+            2502 STORE_FAST           (progress_frame)
+
+257:        2504 LOAD_FAST_BORROW     (progress_frame)
+            2506 LOAD_ATTR            (NULL|self + pack)
+            2526 LOAD_GLOBAL          (tk)
+            2536 LOAD_ATTR            (X)
+            2556 LOAD_SMALL_INT       10
+            2558 LOAD_CONST           (('fill', 'padx'))
+            2560 CALL_KW              2
+            2568 POP_TOP
+
+259:        2570 LOAD_GLOBAL          (tk)
+            2580 LOAD_ATTR            (StringVar)
+            2600 PUSH_NULL
+            2602 LOAD_CONST           ("就绪")
+            2604 LOAD_CONST           (('value',))
+            2606 CALL_KW              1
+            2614 LOAD_FAST_BORROW     (self)
+            2616 STORE_ATTR           (progress_var)
+
+260:        2626 LOAD_GLOBAL          (ttk)
+            2636 LOAD_ATTR            (Label)
+            2656 PUSH_NULL
+            2658 LOAD_FAST_BORROW_LOAD_FAST_BORROW (progress_frame, self)
+            2660 LOAD_ATTR            (progress_var)
+            2680 LOAD_CONST           (('textvariable',))
+            2682 CALL_KW              2
+            2690 LOAD_FAST_BORROW     (self)
+            2692 STORE_ATTR           (progress_label)
+
+261:        2702 LOAD_FAST_BORROW     (self)
+            2704 LOAD_ATTR            (progress_label)
+            2724 LOAD_ATTR            (NULL|self + pack)
+            2744 LOAD_GLOBAL          (tk)
+            2754 LOAD_ATTR            (LEFT)
+            2774 LOAD_CONST           (('side',))
+            2776 CALL_KW              1
+            2784 POP_TOP
+
+263:        2786 LOAD_GLOBAL          (ttk)
+            2796 LOAD_ATTR            (Progressbar)
+            2816 PUSH_NULL
+            2818 LOAD_FAST_BORROW     (progress_frame)
+            2820 LOAD_CONST           (400)
+            2822 LOAD_CONST           ("determinate")
+            2824 LOAD_CONST           (('length', 'mode'))
+            2826 CALL_KW              3
+            2834 LOAD_FAST_BORROW     (self)
+            2836 STORE_ATTR           (progress_bar)
+
+264:        2846 LOAD_FAST_BORROW     (self)
+            2848 LOAD_ATTR            (progress_bar)
+            2868 LOAD_ATTR            (NULL|self + pack)
+            2888 LOAD_GLOBAL          (tk)
+            2898 LOAD_ATTR            (RIGHT)
+            2918 LOAD_GLOBAL          (tk)
+            2928 LOAD_ATTR            (X)
+            2948 LOAD_CONST           (True)
+            2950 LOAD_SMALL_INT       10
+            2952 LOAD_CONST           (('side', 'fill', 'expand', 'padx'))
+            2954 CALL_KW              4
+            2962 POP_TOP
+
+267:        2964 LOAD_GLOBAL          (ttk)
+            2974 LOAD_ATTR            (LabelFrame)
+            2994 PUSH_NULL
+            2996 LOAD_FAST_BORROW     (self)
+            2998 LOAD_CONST           ("运行日志")
+            3000 LOAD_SMALL_INT       10
+            3002 LOAD_CONST           (('text', 'padding'))
+            3004 CALL_KW              3
+            3012 STORE_FAST           (log_frame)
+
+268:        3014 LOAD_FAST_BORROW     (log_frame)
+            3016 LOAD_ATTR            (NULL|self + pack)
+            3036 LOAD_GLOBAL          (tk)
+            3046 LOAD_ATTR            (BOTH)
+            3066 LOAD_CONST           (True)
+            3068 LOAD_SMALL_INT       10
+            3070 LOAD_SMALL_INT       5
+            3072 LOAD_CONST           (('fill', 'expand', 'padx', 'pady'))
+            3074 CALL_KW              4
+            3082 POP_TOP
+
+270:        3084 LOAD_GLOBAL          (scrolledtext)
+            3094 LOAD_ATTR            (ScrolledText)
+            3114 PUSH_NULL
+            3116 LOAD_FAST_BORROW     (log_frame)
+            3118 LOAD_SMALL_INT       12
+            3120 LOAD_SMALL_INT       80
+            3122 LOAD_GLOBAL          (tk)
+            3132 LOAD_ATTR            (DISABLED)
+            3152 LOAD_CONST           (('height', 'width', 'state'))
+            3154 CALL_KW              4
+            3162 LOAD_FAST_BORROW     (self)
+            3164 STORE_ATTR           (log_text)
+
+271:        3174 LOAD_FAST_BORROW     (self)
+            3176 LOAD_ATTR            (log_text)
+            3196 LOAD_ATTR            (NULL|self + pack)
+            3216 LOAD_GLOBAL          (tk)
+            3226 LOAD_ATTR            (BOTH)
+            3246 LOAD_CONST           (True)
+            3248 LOAD_CONST           (('fill', 'expand'))
+            3250 CALL_KW              2
+            3258 POP_TOP
+            3260 LOAD_CONST           (None)
+            3262 RETURN_VALUE
+
+
+# Method Name:       on_type_change
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  1
+# Stack size:        4
+# Flags:             0x0c000003 (0x8000000 | 0x4000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        273
+# Constants:
+#    0: '切换查询类型时更新标签'
+#    1: 'cert_id'
+#    2: '身份证号列表（每行一个）'
+#    3: ('text',)
+#    4: '合同编号列表（每行一个）'
+#    5: None
+# Names:
+#    0: query_type
+#    1: get
+#    2: input_frame
+#    3: config
+# Varnames:
+#	self
+# Positional arguments:
+#	self
+
+273:           0 RESUME               0
+
+275:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (query_type)
+              24 LOAD_ATTR            (NULL|self + get)
+              44 CALL                 (0 positional)
+              52 LOAD_CONST           ("cert_id")
+              54 COMPARE_OP           (==)
+              58 POP_JUMP_IF_FALSE    (to 124)
+              62 NOT_TAKEN
+
+276:          64 LOAD_FAST_BORROW     (self)
+              66 LOAD_ATTR            (input_frame)
+              86 LOAD_ATTR            (NULL|self + config)
+             106 LOAD_CONST           ("身份证号列表（每行一个）")
+             108 LOAD_CONST           (('text',))
+             110 CALL_KW              1
+             118 POP_TOP
+             120 LOAD_CONST           (None)
+             122 RETURN_VALUE
+
+278:     >>  124 LOAD_FAST_BORROW     (self)
+             126 LOAD_ATTR            (input_frame)
+             146 LOAD_ATTR            (NULL|self + config)
+             166 LOAD_CONST           ("合同编号列表（每行一个）")
+             168 LOAD_CONST           (('text',))
+             170 CALL_KW              1
+             178 POP_TOP
+             180 LOAD_CONST           (None)
+             182 RETURN_VALUE
+
+
+# Method Name:       log
+# Filename:          gui.py
+# Argument count:    2
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  3
+# Stack size:        8
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        280
+# Constants:
+#    0: ('state',)
+#    1: '%H:%M:%S'
+#    2: '['
+#    3: '] '
+#    4: '\n'
+#    5: None
+# Names:
+#    0: log_text
+#    1: config
+#    2: tk
+#    3: NORMAL
+#    4: datetime
+#    5: now
+#    6: strftime
+#    7: insert
+#    8: END
+#    9: see
+#   10: DISABLED
+# Varnames:
+#	self, message, timestamp
+# Positional arguments:
+#	self, message
+# Local variables:
+#    2: timestamp
+
+280:           0 RESUME               0
+
+281:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (log_text)
+              24 LOAD_ATTR            (NULL|self + config)
+              44 LOAD_GLOBAL          (tk)
+              54 LOAD_ATTR            (NORMAL)
+              74 LOAD_CONST           (('state',))
+              76 CALL_KW              1
+              84 POP_TOP
+
+282:          86 LOAD_GLOBAL          (datetime)
+              96 LOAD_ATTR            (now)
+             116 PUSH_NULL
+             118 CALL                 (0 positional)
+             126 LOAD_ATTR            (NULL|self + strftime)
+             146 LOAD_CONST           ("%H:%M:%S")
+             148 CALL                 (1 positional)
+             156 STORE_FAST           (timestamp)
+
+283:         158 LOAD_FAST_BORROW     (self)
+             160 LOAD_ATTR            (log_text)
+             180 LOAD_ATTR            (NULL|self + insert)
+             200 LOAD_GLOBAL          (tk)
+             210 LOAD_ATTR            (END)
+             230 LOAD_CONST           ("[")
+             232 LOAD_FAST_BORROW     (timestamp)
+             234 FORMAT_SIMPLE
+             236 LOAD_CONST           ("] ")
+             238 LOAD_FAST_BORROW     (message)
+             240 FORMAT_SIMPLE
+             242 LOAD_CONST           ("\n")
+             244 BUILD_STRING         5
+             246 CALL                 (2 positional)
+             254 POP_TOP
+
+284:         256 LOAD_FAST_BORROW     (self)
+             258 LOAD_ATTR            (log_text)
+             278 LOAD_ATTR            (NULL|self + see)
+             298 LOAD_GLOBAL          (tk)
+             308 LOAD_ATTR            (END)
+             328 CALL                 (1 positional)
+             336 POP_TOP
+
+285:         338 LOAD_FAST_BORROW     (self)
+             340 LOAD_ATTR            (log_text)
+             360 LOAD_ATTR            (NULL|self + config)
+             380 LOAD_GLOBAL          (tk)
+             390 LOAD_ATTR            (DISABLED)
+             410 LOAD_CONST           (('state',))
+             412 CALL_KW              1
+             420 POP_TOP
+             422 LOAD_CONST           (None)
+             424 RETURN_VALUE
+
+
+# Method Name:       load_config
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  3
+# Stack size:        7
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        287
+# Constants:
+#    0: 'token.txt'
+#    1: 'r'
+#    2: None
+#    3: 'id_list.txt'
+# Names:
+#    0: os
+#    1: path
+#    2: exists
+#    3: open
+#    4: read
+#    5: strip
+#    6: token_entry
+#    7: insert
+#    8: verify_token
+#    9: id_text
+#   10: tk
+#   11: END
+# Varnames:
+#	self, f, token
+# Positional arguments:
+#	self
+# Local variables:
+#    1: f
+#    2: token
+
+287:           0 RESUME               0
+
+288:           2 LOAD_GLOBAL          (os)
+              12 LOAD_ATTR            (path)
+              32 LOAD_ATTR            (NULL|self + exists)
+              52 LOAD_CONST           ("token.txt")
+              54 CALL                 (1 positional)
+              62 TO_BOOL
+              70 POP_JUMP_IF_FALSE    (to 298)
+              74 NOT_TAKEN
+
+289:          76 LOAD_GLOBAL          (NULL + open)
+              86 LOAD_CONST           ("token.txt")
+              88 LOAD_CONST           ("r")
+              90 CALL                 (2 positional)
+              98 COPY                 1
+             100 LOAD_SPECIAL         1
+             102 SWAP                 (TOS <-> TOS1)
+             104 SWAP                 (TOS <-> TOS2)
+             106 LOAD_SPECIAL         0
+             108 CALL                 (0 positional)
+             116 STORE_FAST           (f)
+
+290:         118 LOAD_FAST_BORROW     (f)
+             120 LOAD_ATTR            (NULL|self + read)
+             140 CALL                 (0 positional)
+             148 LOAD_ATTR            (NULL|self + strip)
+             168 CALL                 (0 positional)
+             176 STORE_FAST           (token)
+
+291:         178 LOAD_FAST_BORROW     (token)
+             180 TO_BOOL
+             188 POP_JUMP_IF_FALSE    (to 282)
+             192 NOT_TAKEN
+
+292:         194 LOAD_FAST_BORROW     (self)
+             196 LOAD_ATTR            (token_entry)
+             216 LOAD_ATTR            (NULL|self + insert)
+             236 LOAD_SMALL_INT       0
+             238 LOAD_FAST_BORROW     (token)
+             240 CALL                 (2 positional)
+             248 POP_TOP
+
+293:         250 LOAD_FAST_BORROW     (self)
+             252 LOAD_ATTR            (NULL|self + verify_token)
+             272 CALL                 (0 positional)
+             280 POP_TOP
+
+289:     >>  282 LOAD_CONST           (None)
+             284 LOAD_CONST           (None)
+             286 LOAD_CONST           (None)
+             288 CALL                 (3 positional)
+             296 POP_TOP
+
+294:     >>  298 LOAD_GLOBAL          (os)
+             308 LOAD_ATTR            (path)
+             328 LOAD_ATTR            (NULL|self + exists)
+             348 LOAD_CONST           ("id_list.txt")
+             350 CALL                 (1 positional)
+             358 TO_BOOL
+             366 POP_JUMP_IF_FALSE    (to 546)
+             370 NOT_TAKEN
+
+295:         372 LOAD_GLOBAL          (NULL + open)
+             382 LOAD_CONST           ("id_list.txt")
+             384 LOAD_CONST           ("r")
+             386 CALL                 (2 positional)
+             394 COPY                 1
+             396 LOAD_SPECIAL         1
+             398 SWAP                 (TOS <-> TOS1)
+             400 SWAP                 (TOS <-> TOS2)
+             402 LOAD_SPECIAL         0
+             404 CALL                 (0 positional)
+             412 STORE_FAST           (f)
+
+296:         414 LOAD_FAST_BORROW     (self)
+             416 LOAD_ATTR            (id_text)
+             436 LOAD_ATTR            (NULL|self + insert)
+             456 LOAD_GLOBAL          (tk)
+             466 LOAD_ATTR            (END)
+             486 LOAD_FAST_BORROW     (f)
+             488 LOAD_ATTR            (NULL|self + read)
+             508 CALL                 (0 positional)
+             516 CALL                 (2 positional)
+             524 POP_TOP
+
+295:         526 LOAD_CONST           (None)
+             528 LOAD_CONST           (None)
+             530 LOAD_CONST           (None)
+             532 CALL                 (3 positional)
+             540 POP_TOP
+             542 LOAD_CONST           (None)
+             544 RETURN_VALUE
+
+294:     >>  546 LOAD_CONST           (None)
+             548 RETURN_VALUE
+
+289:         550 PUSH_EXC_INFO
+             552 WITH_EXCEPT_START
+             554 TO_BOOL
+             562 POP_JUMP_IF_TRUE     (to 570)
+             566 NOT_TAKEN
+             568 RERAISE              2
+         >>  570 POP_TOP
+             572 POP_EXCEPT
+             574 POP_TOP
+             576 POP_TOP
+             578 POP_TOP
+             580 JUMP_BACKWARD_NO_INTERRUPT (to 298)
+             582 COPY                 3
+             584 POP_EXCEPT
+             586 RERAISE              1
+
+295:         588 PUSH_EXC_INFO
+             590 WITH_EXCEPT_START
+             592 TO_BOOL
+             600 POP_JUMP_IF_TRUE     (to 608)
+             604 NOT_TAKEN
+             606 RERAISE              2
+         >>  608 POP_TOP
+             610 POP_EXCEPT
+             612 POP_TOP
+             614 POP_TOP
+             616 POP_TOP
+             618 LOAD_CONST           (None)
+             620 RETURN_VALUE
+             622 COPY                 3
+             624 POP_EXCEPT
+             626 RERAISE              1
+
+ExceptionTable:
+  116 to 280 -> 550 [2] lasti
+  412 to 524 -> 588 [2] lasti
+  550 to 570 -> 582 [4] lasti
+  588 to 608 -> 622 [4] lasti
+
+# Method Name:       save_config
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  2
+# Stack size:        8
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        298
+# Constants:
+#    0: 'token.txt'
+#    1: 'w'
+#    2: None
+#    3: 'id_list.txt'
+#    4: '1.0'
+# Names:
+#    0: open
+#    1: write
+#    2: token_entry
+#    3: get
+#    4: strip
+#    5: id_text
+#    6: tk
+#    7: END
+# Varnames:
+#	self, f
+# Positional arguments:
+#	self
+# Local variables:
+#    1: f
+
+298:           0 RESUME               0
+
+299:           2 LOAD_GLOBAL          (NULL + open)
+              12 LOAD_CONST           ("token.txt")
+              14 LOAD_CONST           ("w")
+              16 CALL                 (2 positional)
+              24 COPY                 1
+              26 LOAD_SPECIAL         1
+              28 SWAP                 (TOS <-> TOS1)
+              30 SWAP                 (TOS <-> TOS2)
+              32 LOAD_SPECIAL         0
+              34 CALL                 (0 positional)
+              42 STORE_FAST           (f)
+
+300:          44 LOAD_FAST_BORROW     (f)
+              46 LOAD_ATTR            (NULL|self + write)
+              66 LOAD_FAST_BORROW     (self)
+              68 LOAD_ATTR            (token_entry)
+              88 LOAD_ATTR            (NULL|self + get)
+             108 CALL                 (0 positional)
+             116 LOAD_ATTR            (NULL|self + strip)
+             136 CALL                 (0 positional)
+             144 CALL                 (1 positional)
+             152 POP_TOP
+
+299:         154 LOAD_CONST           (None)
+             156 LOAD_CONST           (None)
+             158 LOAD_CONST           (None)
+             160 CALL                 (3 positional)
+             168 POP_TOP
+
+301:         170 LOAD_GLOBAL          (NULL + open)
+             180 LOAD_CONST           ("id_list.txt")
+             182 LOAD_CONST           ("w")
+             184 CALL                 (2 positional)
+             192 COPY                 1
+             194 LOAD_SPECIAL         1
+             196 SWAP                 (TOS <-> TOS1)
+             198 SWAP                 (TOS <-> TOS2)
+             200 LOAD_SPECIAL         0
+             202 CALL                 (0 positional)
+             210 STORE_FAST           (f)
+
+302:         212 LOAD_FAST_BORROW     (f)
+             214 LOAD_ATTR            (NULL|self + write)
+             234 LOAD_FAST_BORROW     (self)
+             236 LOAD_ATTR            (id_text)
+             256 LOAD_ATTR            (NULL|self + get)
+             276 LOAD_CONST           ("1.0")
+             278 LOAD_GLOBAL          (tk)
+             288 LOAD_ATTR            (END)
+             308 CALL                 (2 positional)
+             316 LOAD_ATTR            (NULL|self + strip)
+             336 CALL                 (0 positional)
+             344 CALL                 (1 positional)
+             352 POP_TOP
+
+301:         354 LOAD_CONST           (None)
+             356 LOAD_CONST           (None)
+             358 LOAD_CONST           (None)
+             360 CALL                 (3 positional)
+             368 POP_TOP
+             370 LOAD_CONST           (None)
+             372 RETURN_VALUE
+
+299:         374 PUSH_EXC_INFO
+             376 WITH_EXCEPT_START
+             378 TO_BOOL
+             386 POP_JUMP_IF_TRUE     (to 394)
+             390 NOT_TAKEN
+             392 RERAISE              2
+         >>  394 POP_TOP
+             396 POP_EXCEPT
+             398 POP_TOP
+             400 POP_TOP
+             402 POP_TOP
+             404 JUMP_BACKWARD_NO_INTERRUPT (to 170)
+             406 COPY                 3
+             408 POP_EXCEPT
+             410 RERAISE              1
+
+301:         412 PUSH_EXC_INFO
+             414 WITH_EXCEPT_START
+             416 TO_BOOL
+             424 POP_JUMP_IF_TRUE     (to 432)
+             428 NOT_TAKEN
+             430 RERAISE              2
+         >>  432 POP_TOP
+             434 POP_EXCEPT
+             436 POP_TOP
+             438 POP_TOP
+             440 POP_TOP
+             442 LOAD_CONST           (None)
+             444 RETURN_VALUE
+             446 COPY                 3
+             448 POP_EXCEPT
+             450 RERAISE              1
+
+ExceptionTable:
+  42 to 152 -> 374 [2] lasti
+  210 to 352 -> 412 [2] lasti
+  374 to 394 -> 406 [4] lasti
+  412 to 432 -> 446 [4] lasti
+
+# Method Name:       verify_token
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  4
+# Stack size:        5
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        304
+# Constants:
+#    0: '请输入Token'
+#    1: 'red'
+#    2: ('text', 'foreground')
+#    3: False
+#    4: 'green'
+#    5: True
+# Names:
+#    0: token_entry
+#    1: get
+#    2: strip
+#    3: token_status
+#    4: config
+#    5: processor
+#    6: set_token
+#    7: check_token_expiry
+#    8: save_config
+# Varnames:
+#	self, token, valid, msg
+# Positional arguments:
+#	self
+# Local variables:
+#    1: token
+#    2: valid
+#    3: msg
+
+304:           0 RESUME               0
+
+305:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (token_entry)
+              24 LOAD_ATTR            (NULL|self + get)
+              44 CALL                 (0 positional)
+              52 LOAD_ATTR            (NULL|self + strip)
+              72 CALL                 (0 positional)
+              80 STORE_FAST           (token)
+
+306:          82 LOAD_FAST_BORROW     (token)
+              84 TO_BOOL
+              92 POP_JUMP_IF_TRUE     (to 160)
+              96 NOT_TAKEN
+
+307:          98 LOAD_FAST_BORROW     (self)
+             100 LOAD_ATTR            (token_status)
+             120 LOAD_ATTR            (NULL|self + config)
+             140 LOAD_CONST           ("请输入Token")
+             142 LOAD_CONST           ("red")
+             144 LOAD_CONST           (('text', 'foreground'))
+             146 CALL_KW              2
+             154 POP_TOP
+
+308:         156 LOAD_CONST           (False)
+             158 RETURN_VALUE
+
+310:     >>  160 LOAD_FAST_BORROW     (self)
+             162 LOAD_ATTR            (processor)
+             182 LOAD_ATTR            (NULL|self + set_token)
+             202 LOAD_FAST_BORROW     (token)
+             204 CALL                 (1 positional)
+             212 POP_TOP
+
+311:         214 LOAD_FAST_BORROW     (self)
+             216 LOAD_ATTR            (processor)
+             236 LOAD_ATTR            (NULL|self + check_token_expiry)
+             256 LOAD_FAST_BORROW     (token)
+             258 CALL                 (1 positional)
+             266 UNPACK_SEQUENCE      2
+             270 STORE_FAST_STORE_FAST (valid, msg)
+
+313:         272 LOAD_FAST_BORROW     (valid)
+             274 TO_BOOL
+             282 POP_JUMP_IF_FALSE    (to 382)
+             286 NOT_TAKEN
+
+314:         288 LOAD_FAST_BORROW     (self)
+             290 LOAD_ATTR            (token_status)
+             310 LOAD_ATTR            (NULL|self + config)
+             330 LOAD_FAST_BORROW     (msg)
+             332 LOAD_CONST           ("green")
+             334 LOAD_CONST           (('text', 'foreground'))
+             336 CALL_KW              2
+             344 POP_TOP
+
+315:         346 LOAD_FAST_BORROW     (self)
+             348 LOAD_ATTR            (NULL|self + save_config)
+             368 CALL                 (0 positional)
+             376 POP_TOP
+
+316:         378 LOAD_CONST           (True)
+             380 RETURN_VALUE
+
+318:     >>  382 LOAD_FAST_BORROW     (self)
+             384 LOAD_ATTR            (token_status)
+             404 LOAD_ATTR            (NULL|self + config)
+             424 LOAD_FAST_BORROW     (msg)
+             426 LOAD_CONST           ("red")
+             428 LOAD_CONST           (('text', 'foreground'))
+             430 CALL_KW              2
+             438 POP_TOP
+
+319:         440 LOAD_CONST           (False)
+             442 RETURN_VALUE
+
+
+# Method Name:       get_id_list
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  3
+# Stack size:        5
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        321
+# Constants:
+#    0: '1.0'
+#    1: '\n'
+# Names:
+#    0: id_text
+#    1: get
+#    2: tk
+#    3: END
+#    4: split
+#    5: strip
+# Varnames:
+#	self, text, line
+# Positional arguments:
+#	self
+# Local variables:
+#    1: text
+#    2: line
+
+321:           0 RESUME               0
+
+322:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (id_text)
+              24 LOAD_ATTR            (NULL|self + get)
+              44 LOAD_CONST           ("1.0")
+              46 LOAD_GLOBAL          (tk)
+              56 LOAD_ATTR            (END)
+              76 CALL                 (2 positional)
+              84 STORE_FAST           (text)
+
+323:          86 LOAD_FAST_BORROW     (text)
+              88 LOAD_ATTR            (NULL|self + split)
+             108 LOAD_CONST           ("\n")
+             110 CALL                 (1 positional)
+             118 GET_ITER
+             120 LOAD_FAST_AND_CLEAR  (line)
+             122 SWAP                 (TOS <-> TOS1)
+             124 BUILD_LIST           0
+             126 SWAP                 (TOS <-> TOS1)
+             128 FOR_ITER             (to 216)
+             132 STORE_FAST_LOAD_FAST (line, line)
+             134 LOAD_ATTR            (NULL|self + strip)
+             154 CALL                 (0 positional)
+             162 TO_BOOL
+             170 POP_JUMP_IF_TRUE     (to 180)
+             174 NOT_TAKEN
+             176 JUMP_BACKWARD        (to 128)
+         >>  180 LOAD_FAST_BORROW     (line)
+             182 LOAD_ATTR            (NULL|self + strip)
+             202 CALL                 (0 positional)
+             210 LIST_APPEND          2
+             212 JUMP_BACKWARD        (to 128)
+         >>  216 END_FOR
+             218 POP_ITER
+             220 SWAP                 (TOS <-> TOS1)
+             222 STORE_FAST           (line)
+             224 RETURN_VALUE
+             226 SWAP                 (TOS <-> TOS1)
+             228 POP_TOP
+
+323:         230 SWAP                 (TOS <-> TOS1)
+         >>  232 STORE_FAST           (line)
+             234 RERAISE              0
+
+ExceptionTable:
+  124 to 168 -> 226 [2]
+  180 to 218 -> 226 [2]
+
+# Method Name:       set_running
+# Filename:          gui.py
+# Argument count:    2
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  3
+# Stack size:        4
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        325
+# Constants:
+#    0: ('state',)
+#    1: None
+# Names:
+#    0: running
+#    1: tk
+#    2: DISABLED
+#    3: NORMAL
+#    4: start_btn
+#    5: config
+#    6: query_btn
+#    7: stop_btn
+# Varnames:
+#	self, running, state
+# Positional arguments:
+#	self, running
+# Local variables:
+#    2: state
+
+325:           0 RESUME               0
+
+326:           2 LOAD_FAST_BORROW_LOAD_FAST_BORROW (running, self)
+               4 STORE_ATTR           (running)
+
+327:          14 LOAD_FAST_BORROW     (running)
+              16 TO_BOOL
+              24 POP_JUMP_IF_FALSE    (to 62)
+              28 NOT_TAKEN
+              30 LOAD_GLOBAL          (tk)
+              40 LOAD_ATTR            (DISABLED)
+              60 JUMP_FORWARD         (to 92)
+         >>   62 LOAD_GLOBAL          (tk)
+              72 LOAD_ATTR            (NORMAL)
+         >>   92 STORE_FAST           (state)
+
+328:          94 LOAD_FAST_BORROW     (self)
+              96 LOAD_ATTR            (start_btn)
+             116 LOAD_ATTR            (NULL|self + config)
+             136 LOAD_FAST_BORROW     (state)
+             138 LOAD_CONST           (('state',))
+             140 CALL_KW              1
+             148 POP_TOP
+
+329:         150 LOAD_FAST_BORROW     (self)
+             152 LOAD_ATTR            (query_btn)
+             172 LOAD_ATTR            (NULL|self + config)
+             192 LOAD_FAST_BORROW     (state)
+             194 LOAD_CONST           (('state',))
+             196 CALL_KW              1
+             204 POP_TOP
+
+330:         206 LOAD_FAST_BORROW     (self)
+             208 LOAD_ATTR            (stop_btn)
+             228 LOAD_ATTR            (NULL|self + config)
+             248 LOAD_FAST_BORROW     (running)
+             250 TO_BOOL
+             258 POP_JUMP_IF_FALSE    (to 296)
+             262 NOT_TAKEN
+             264 LOAD_GLOBAL          (tk)
+             274 LOAD_ATTR            (NORMAL)
+             294 JUMP_FORWARD         (to 326)
+         >>  296 LOAD_GLOBAL          (tk)
+             306 LOAD_ATTR            (DISABLED)
+         >>  326 LOAD_CONST           (('state',))
+             328 CALL_KW              1
+             336 POP_TOP
+             338 LOAD_CONST           (None)
+             340 RETURN_VALUE
+
+
+# Method Name:       stop_process
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  1
+# Stack size:        3
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        332
+# Constants:
+#    0: True
+#    1: '正在停止...'
+#    2: None
+# Names:
+#    0: stop_flag
+#    1: log
+# Varnames:
+#	self
+# Positional arguments:
+#	self
+
+332:           0 RESUME               0
+
+333:           2 LOAD_CONST           (True)
+               4 LOAD_FAST_BORROW     (self)
+               6 STORE_ATTR           (stop_flag)
+
+334:          16 LOAD_FAST_BORROW     (self)
+              18 LOAD_ATTR            (NULL|self + log)
+              38 LOAD_CONST           ("正在停止...")
+              40 CALL                 (1 positional)
+              48 POP_TOP
+              50 LOAD_CONST           (None)
+              52 RETURN_VALUE
+
+
+# Method Name:       start_process
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  4
+# Stack size:        6
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        336
+# Constants:
+#    0: '错误'
+#    1: '请先设置有效的Token'
+#    2: None
+#    3: '请输入身份证号或合同编号'
+#    4: False
+#    5: True
+#    6: ('target', 'args', 'daemon')
+# Names:
+#    0: verify_token
+#    1: messagebox
+#    2: showerror
+#    3: get_id_list
+#    4: save_config
+#    5: stop_flag
+#    6: set_running
+#    7: query_type
+#    8: get
+#    9: int
+#   10: concurrent_var
+#   11: threading
+#   12: Thread
+#   13: process_payment
+#   14: start
+# Varnames:
+#	self, id_list, query_type, concurrent
+# Positional arguments:
+#	self
+# Local variables:
+#    1: id_list
+#    2: query_type
+#    3: concurrent
+
+336:           0 RESUME               0
+
+337:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (NULL|self + verify_token)
+              24 CALL                 (0 positional)
+              32 TO_BOOL
+              40 POP_JUMP_IF_TRUE     (to 96)
+              44 NOT_TAKEN
+
+338:          46 LOAD_GLOBAL          (messagebox)
+              56 LOAD_ATTR            (showerror)
+              76 PUSH_NULL
+              78 LOAD_CONST           ("错误")
+              80 LOAD_CONST           ("请先设置有效的Token")
+              82 CALL                 (2 positional)
+              90 POP_TOP
+
+339:          92 LOAD_CONST           (None)
+              94 RETURN_VALUE
+
+341:     >>   96 LOAD_FAST_BORROW     (self)
+              98 LOAD_ATTR            (NULL|self + get_id_list)
+             118 CALL                 (0 positional)
+             126 STORE_FAST           (id_list)
+
+342:         128 LOAD_FAST_BORROW     (id_list)
+             130 TO_BOOL
+             138 POP_JUMP_IF_TRUE     (to 194)
+             142 NOT_TAKEN
+
+343:         144 LOAD_GLOBAL          (messagebox)
+             154 LOAD_ATTR            (showerror)
+             174 PUSH_NULL
+             176 LOAD_CONST           ("错误")
+             178 LOAD_CONST           ("请输入身份证号或合同编号")
+             180 CALL                 (2 positional)
+             188 POP_TOP
+
+344:         190 LOAD_CONST           (None)
+             192 RETURN_VALUE
+
+346:     >>  194 LOAD_FAST_BORROW     (self)
+             196 LOAD_ATTR            (NULL|self + save_config)
+             216 CALL                 (0 positional)
+             224 POP_TOP
+
+347:         226 LOAD_CONST           (False)
+             228 LOAD_FAST_BORROW     (self)
+             230 STORE_ATTR           (stop_flag)
+
+348:         240 LOAD_FAST_BORROW     (self)
+             242 LOAD_ATTR            (NULL|self + set_running)
+             262 LOAD_CONST           (True)
+             264 CALL                 (1 positional)
+             272 POP_TOP
+
+349:         274 LOAD_FAST_BORROW     (self)
+             276 LOAD_ATTR            (query_type)
+             296 LOAD_ATTR            (NULL|self + get)
+             316 CALL                 (0 positional)
+             324 STORE_FAST           (query_type)
+
+350:         326 LOAD_GLOBAL          (NULL + int)
+             336 LOAD_FAST_BORROW     (self)
+             338 LOAD_ATTR            (concurrent_var)
+             358 LOAD_ATTR            (NULL|self + get)
+             378 CALL                 (0 positional)
+             386 CALL                 (1 positional)
+             394 STORE_FAST           (concurrent)
+
+351:         396 LOAD_GLOBAL          (threading)
+             406 LOAD_ATTR            (Thread)
+             426 PUSH_NULL
+             428 LOAD_FAST_BORROW     (self)
+             430 LOAD_ATTR            (process_payment)
+             450 LOAD_FAST_BORROW_LOAD_FAST_BORROW (id_list, query_type)
+             452 LOAD_FAST_BORROW     (concurrent)
+             454 BUILD_TUPLE          3
+             456 LOAD_CONST           (True)
+             458 LOAD_CONST           (('target', 'args', 'daemon'))
+             460 CALL_KW              3
+             468 LOAD_ATTR            (NULL|self + start)
+             488 CALL                 (0 positional)
+             496 POP_TOP
+             498 LOAD_CONST           (None)
+             500 RETURN_VALUE
+
+
+# Method Name:       process_single_item
+# Filename:          gui.py
+# Argument count:    3
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  20
+# Stack size:        14
+# Flags:             0x0c000003 (0x8000000 | 0x4000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        353
+# Constants:
+#    0: '处理单个身份证号/合同号的划扣和复核'
+#    1: 'item'
+#    2: 'success'
+#    3: 'fail'
+#    4: 'confirmed'
+#    5: 'logs'
+#    6: 'cert_id'
+#    7: ('cert_id',)
+#    8: ('contract_no',)
+#    9: 'code'
+#   10: '  查询失败'
+#   11: 'data'
+#   12: 'content'
+#   13: '  没有待划扣记录'
+#   14: '  找到 '
+#   15: ' 条待划扣记录'
+#   16: 'serialNo'
+#   17: 'contractNo'
+#   18: '    '
+#   19: ': 获取详情失败'
+#   20: 'actualPayAmt'
+#   21: 'currentPeriodPaymentAmt'
+#   22: 'payAccountNo'
+#   23: '0'
+#   24: '0.00'
+#   25: ': 金额为0，跳过'
+#   26: ': 无支付账号，跳过'
+#   27: 'customerName'
+#   28: 'productType'
+#   29: 'businessSum'
+#   30: 'certId'
+#   31: 'channelSource'
+#   32: 'customerId'
+#   33: 'overdueAmt'
+#   34: 'overdueInterestAmt'
+#   35: 'payAccountName'
+#   36: 'payFailFee'
+#   37: 'payInterestAmt'
+#   38: 'payPrincipalAmt'
+#   39: 'payPrincipalPenaltyAmt'
+#   40: 'payServiceFee'
+#   41: 'principalBalance'
+#   42: 'putoutDate'
+#   43: 'reviewUserId'
+#   44: '6870ed07ec2c476c784971b3'
+#   45: 'submitOpinion'
+#   46: '申请扣款'
+#   47: ': 划扣成功 ¥'
+#   48: ': 划扣失败'
+#   49: 0.2
+#   50: 'transStatus'
+#   51: '复核中'
+#   52: 'id'
+#   53: '  ✓ 复核成功 '
+#   54: ' 条'
+#   55: '  ✗ 复核失败'
+# Names:
+#    0: processor
+#    1: search_wait_list
+#    2: get
+#    3: append
+#    4: len
+#    5: stop_flag
+#    6: get_loan_detail
+#    7: submit_single_payment
+#    8: time
+#    9: sleep
+#   10: search_review_list
+#   11: confirm_review
+# Varnames:
+#	self, item, query_type, result, search_result, content, loan, serial_no, contract_no, detail, actual_pay, current_pay, pay_account, payment_data, submit_result, review_result, review_content, r, review_ids, confirm_result
+# Positional arguments:
+#	self, item, query_type
+# Local variables:
+#    3: result
+#    4: search_result
+#    5: content
+#    6: loan
+#    7: serial_no
+#    8: contract_no
+#    9: detail
+#   10: actual_pay
+#   11: current_pay
+#   12: pay_account
+#   13: payment_data
+#   14: submit_result
+#   15: review_result
+#   16: review_content
+#   17: r
+#   18: review_ids
+#   19: confirm_result
+
+353:           0 RESUME               0
+
+355:           2 LOAD_CONST           ("item")
+               4 LOAD_FAST_BORROW     (item)
+               6 LOAD_CONST           ("success")
+               8 LOAD_SMALL_INT       0
+              10 LOAD_CONST           ("fail")
+              12 LOAD_SMALL_INT       0
+              14 LOAD_CONST           ("confirmed")
+              16 LOAD_SMALL_INT       0
+              18 LOAD_CONST           ("logs")
+              20 BUILD_LIST           0
+              22 BUILD_MAP            5
+              24 STORE_FAST           (result)
+
+358:          26 LOAD_FAST_BORROW     (query_type)
+              28 LOAD_CONST           ("cert_id")
+              30 COMPARE_OP           (==)
+              34 POP_JUMP_IF_FALSE    (to 98)
+              38 NOT_TAKEN
+
+359:          40 LOAD_FAST_BORROW     (self)
+              42 LOAD_ATTR            (processor)
+              62 LOAD_ATTR            (NULL|self + search_wait_list)
+              82 LOAD_FAST_BORROW     (item)
+              84 LOAD_CONST           (('cert_id',))
+              86 CALL_KW              1
+              94 STORE_FAST           (search_result)
+              96 JUMP_FORWARD         (to 154)
+
+361:     >>   98 LOAD_FAST_BORROW     (self)
+             100 LOAD_ATTR            (processor)
+             120 LOAD_ATTR            (NULL|self + search_wait_list)
+             140 LOAD_FAST_BORROW     (item)
+             142 LOAD_CONST           (('contract_no',))
+             144 CALL_KW              1
+             152 STORE_FAST           (search_result)
+
+363:     >>  154 LOAD_FAST_BORROW     (search_result)
+             156 TO_BOOL
+             164 POP_JUMP_IF_FALSE    (to 214)
+             168 NOT_TAKEN
+             170 LOAD_FAST_BORROW     (search_result)
+             172 LOAD_ATTR            (NULL|self + get)
+             192 LOAD_CONST           ("code")
+             194 CALL                 (1 positional)
+             202 LOAD_SMALL_INT       0
+             204 COMPARE_OP           (!=)
+             208 POP_JUMP_IF_FALSE    (to 266)
+             212 NOT_TAKEN
+
+364:     >>  214 LOAD_FAST_BORROW     (result)
+             216 LOAD_CONST           ("logs")
+             218 BINARY_OP            ([])
+             230 LOAD_ATTR            (NULL|self + append)
+             250 LOAD_CONST           ("  查询失败")
+             252 CALL                 (1 positional)
+             260 POP_TOP
+
+365:         262 LOAD_FAST_BORROW     (result)
+             264 RETURN_VALUE
+
+367:     >>  266 LOAD_FAST_BORROW     (search_result)
+             268 LOAD_ATTR            (NULL|self + get)
+             288 LOAD_CONST           ("data")
+             290 BUILD_MAP            0
+             292 CALL                 (2 positional)
+             300 LOAD_ATTR            (NULL|self + get)
+             320 LOAD_CONST           ("content")
+             322 BUILD_LIST           0
+             324 CALL                 (2 positional)
+             332 STORE_FAST           (content)
+
+368:         334 LOAD_FAST_BORROW     (content)
+             336 TO_BOOL
+             344 POP_JUMP_IF_TRUE     (to 402)
+             348 NOT_TAKEN
+
+369:         350 LOAD_FAST_BORROW     (result)
+             352 LOAD_CONST           ("logs")
+             354 BINARY_OP            ([])
+             366 LOAD_ATTR            (NULL|self + append)
+             386 LOAD_CONST           ("  没有待划扣记录")
+             388 CALL                 (1 positional)
+             396 POP_TOP
+
+370:         398 LOAD_FAST_BORROW     (result)
+             400 RETURN_VALUE
+
+372:     >>  402 LOAD_FAST_BORROW     (result)
+             404 LOAD_CONST           ("logs")
+             406 BINARY_OP            ([])
+             418 LOAD_ATTR            (NULL|self + append)
+             438 LOAD_CONST           ("  找到 ")
+             440 LOAD_GLOBAL          (NULL + len)
+             450 LOAD_FAST_BORROW     (content)
+             452 CALL                 (1 positional)
+             460 FORMAT_SIMPLE
+             462 LOAD_CONST           (" 条待划扣记录")
+             464 BUILD_STRING         3
+             466 CALL                 (1 positional)
+             474 POP_TOP
+
+375:         476 LOAD_FAST_BORROW     (content)
+             478 GET_ITER
+             480 EXTENDED_ARG         (768)
+             482 FOR_ITER             (to 2236)
+             486 STORE_FAST           (loan)
+
+376:         488 LOAD_FAST_BORROW     (self)
+             490 LOAD_ATTR            (stop_flag)
+             510 TO_BOOL
+             518 POP_JUMP_IF_FALSE    (to 530)
+             522 NOT_TAKEN
+
+377:         524 POP_TOP
+             526 EXTENDED_ARG         (768)
+             528 JUMP_FORWARD         (to 2240)
+
+379:     >>  530 LOAD_FAST_BORROW     (loan)
+             532 LOAD_ATTR            (NULL|self + get)
+             552 LOAD_CONST           ("serialNo")
+             554 CALL                 (1 positional)
+             562 STORE_FAST           (serial_no)
+
+380:         564 LOAD_FAST_BORROW     (loan)
+             566 LOAD_ATTR            (NULL|self + get)
+             586 LOAD_CONST           ("contractNo")
+             588 CALL                 (1 positional)
+             596 STORE_FAST           (contract_no)
+
+383:         598 LOAD_FAST_BORROW     (self)
+             600 LOAD_ATTR            (processor)
+             620 LOAD_ATTR            (NULL|self + get_loan_detail)
+             640 LOAD_FAST_BORROW     (serial_no)
+             642 CALL                 (1 positional)
+             650 STORE_FAST           (detail)
+
+384:         652 LOAD_FAST_BORROW     (detail)
+             654 TO_BOOL
+             662 POP_JUMP_IF_TRUE     (to 770)
+             666 NOT_TAKEN
+
+385:         668 LOAD_FAST_BORROW     (result)
+             670 LOAD_CONST           ("logs")
+             672 BINARY_OP            ([])
+             684 LOAD_ATTR            (NULL|self + append)
+             704 LOAD_CONST           ("    ")
+             706 LOAD_FAST_BORROW     (contract_no)
+             708 FORMAT_SIMPLE
+             710 LOAD_CONST           (": 获取详情失败")
+             712 BUILD_STRING         3
+             714 CALL                 (1 positional)
+             722 POP_TOP
+
+386:         724 LOAD_FAST_BORROW     (result)
+             726 LOAD_CONST           ("fail")
+             728 COPY                 2
+             730 COPY                 2
+             732 BINARY_OP            ([])
+             744 LOAD_SMALL_INT       1
+             746 BINARY_OP            (+=)
+             758 SWAP                 (TOS <-> TOS2)
+             760 SWAP                 (TOS <-> TOS1)
+             762 STORE_SUBSCR
+
+387:         766 JUMP_BACKWARD        (to 480)
+
+390:     >>  770 LOAD_FAST_BORROW     (detail)
+             772 LOAD_ATTR            (NULL|self + get)
+             792 LOAD_CONST           ("actualPayAmt")
+             794 CALL                 (1 positional)
+             802 STORE_FAST           (actual_pay)
+
+391:         804 LOAD_FAST_BORROW     (detail)
+             806 LOAD_ATTR            (NULL|self + get)
+             826 LOAD_CONST           ("currentPeriodPaymentAmt")
+             828 CALL                 (1 positional)
+             836 STORE_FAST           (current_pay)
+
+392:         838 LOAD_FAST_BORROW     (detail)
+             840 LOAD_ATTR            (NULL|self + get)
+             860 LOAD_CONST           ("payAccountNo")
+             862 CALL                 (1 positional)
+             870 STORE_FAST           (pay_account)
+
+394:         872 LOAD_FAST_BORROW     (actual_pay)
+             874 TO_BOOL
+             882 POP_JUMP_IF_FALSE    (to 916)
+             886 NOT_TAKEN
+             888 LOAD_FAST_BORROW     (actual_pay)
+             890 LOAD_CONST           ("0")
+             892 COMPARE_OP           (==)
+             896 POP_JUMP_IF_TRUE     (to 916)
+             900 NOT_TAKEN
+             902 LOAD_FAST_BORROW     (actual_pay)
+             904 LOAD_CONST           ("0.00")
+             906 COMPARE_OP           (==)
+             910 POP_JUMP_IF_FALSE    (to 1056)
+             914 NOT_TAKEN
+
+395:     >>  916 LOAD_FAST_BORROW     (current_pay)
+             918 TO_BOOL
+             926 POP_JUMP_IF_FALSE    (to 952)
+             930 NOT_TAKEN
+             932 LOAD_FAST_BORROW     (current_pay)
+             934 LOAD_CONST           ("0")
+             936 COMPARE_OP           (!=)
+             940 POP_JUMP_IF_FALSE    (to 952)
+             944 NOT_TAKEN
+
+396:         946 LOAD_FAST            (current_pay)
+             948 STORE_FAST           (actual_pay)
+             950 JUMP_FORWARD         (to 1056)
+
+398:     >>  952 LOAD_FAST_BORROW     (result)
+             954 LOAD_CONST           ("logs")
+             956 BINARY_OP            ([])
+             968 LOAD_ATTR            (NULL|self + append)
+             988 LOAD_CONST           ("    ")
+             990 LOAD_FAST_BORROW     (contract_no)
+             992 FORMAT_SIMPLE
+             994 LOAD_CONST           (": 金额为0，跳过")
+             996 BUILD_STRING         3
+             998 CALL                 (1 positional)
+            1006 POP_TOP
+
+399:        1008 LOAD_FAST_BORROW     (result)
+            1010 LOAD_CONST           ("fail")
+            1012 COPY                 2
+            1014 COPY                 2
+            1016 BINARY_OP            ([])
+            1028 LOAD_SMALL_INT       1
+            1030 BINARY_OP            (+=)
+            1042 SWAP                 (TOS <-> TOS2)
+            1044 SWAP                 (TOS <-> TOS1)
+            1046 STORE_SUBSCR
+
+400:        1050 EXTENDED_ARG         (256)
+            1052 JUMP_BACKWARD        (to 480)
+
+402:     >> 1056 LOAD_FAST_BORROW     (pay_account)
+            1058 TO_BOOL
+            1066 POP_JUMP_IF_TRUE     (to 1176)
+            1070 NOT_TAKEN
+
+403:        1072 LOAD_FAST_BORROW     (result)
+            1074 LOAD_CONST           ("logs")
+            1076 BINARY_OP            ([])
+            1088 LOAD_ATTR            (NULL|self + append)
+            1108 LOAD_CONST           ("    ")
+            1110 LOAD_FAST_BORROW     (contract_no)
+            1112 FORMAT_SIMPLE
+            1114 LOAD_CONST           (": 无支付账号，跳过")
+            1116 BUILD_STRING         3
+            1118 CALL                 (1 positional)
+            1126 POP_TOP
+
+404:        1128 LOAD_FAST_BORROW     (result)
+            1130 LOAD_CONST           ("fail")
+            1132 COPY                 2
+            1134 COPY                 2
+            1136 BINARY_OP            ([])
+            1148 LOAD_SMALL_INT       1
+            1150 BINARY_OP            (+=)
+            1162 SWAP                 (TOS <-> TOS2)
+            1164 SWAP                 (TOS <-> TOS1)
+            1166 STORE_SUBSCR
+
+405:        1170 EXTENDED_ARG         (256)
+            1172 JUMP_BACKWARD        (to 480)
+
+408:     >> 1176 BUILD_MAP            0
+
+409:        1178 LOAD_CONST           ("serialNo")
+            1180 LOAD_FAST_BORROW     (detail)
+            1182 LOAD_ATTR            (NULL|self + get)
+            1202 LOAD_CONST           ("serialNo")
+            1204 CALL                 (1 positional)
+
+408:        1212 MAP_ADD              1
+
+410:        1214 LOAD_CONST           ("contractNo")
+            1216 LOAD_FAST_BORROW     (detail)
+            1218 LOAD_ATTR            (NULL|self + get)
+            1238 LOAD_CONST           ("contractNo")
+            1240 CALL                 (1 positional)
+
+408:        1248 MAP_ADD              1
+
+411:        1250 LOAD_CONST           ("customerName")
+            1252 LOAD_FAST_BORROW     (detail)
+            1254 LOAD_ATTR            (NULL|self + get)
+            1274 LOAD_CONST           ("customerName")
+            1276 CALL                 (1 positional)
+
+408:        1284 MAP_ADD              1
+
+412:        1286 LOAD_CONST           ("productType")
+            1288 LOAD_FAST_BORROW     (detail)
+            1290 LOAD_ATTR            (NULL|self + get)
+            1310 LOAD_CONST           ("productType")
+            1312 CALL                 (1 positional)
+
+408:        1320 MAP_ADD              1
+
+413:        1322 LOAD_CONST           ("actualPayAmt")
+            1324 LOAD_FAST_BORROW     (actual_pay)
+
+408:        1326 MAP_ADD              1
+
+414:        1328 LOAD_CONST           ("businessSum")
+            1330 LOAD_FAST_BORROW     (detail)
+            1332 LOAD_ATTR            (NULL|self + get)
+            1352 LOAD_CONST           ("businessSum")
+            1354 CALL                 (1 positional)
+
+408:        1362 MAP_ADD              1
+
+415:        1364 LOAD_CONST           ("certId")
+            1366 LOAD_FAST_BORROW     (detail)
+            1368 LOAD_ATTR            (NULL|self + get)
+            1388 LOAD_CONST           ("certId")
+            1390 CALL                 (1 positional)
+
+408:        1398 MAP_ADD              1
+
+416:        1400 LOAD_CONST           ("channelSource")
+            1402 LOAD_FAST_BORROW     (detail)
+            1404 LOAD_ATTR            (NULL|self + get)
+            1424 LOAD_CONST           ("channelSource")
+            1426 CALL                 (1 positional)
+
+408:        1434 MAP_ADD              1
+
+417:        1436 LOAD_CONST           ("currentPeriodPaymentAmt")
+            1438 LOAD_FAST_BORROW     (detail)
+            1440 LOAD_ATTR            (NULL|self + get)
+            1460 LOAD_CONST           ("currentPeriodPaymentAmt")
+            1462 CALL                 (1 positional)
+
+408:        1470 MAP_ADD              1
+
+418:        1472 LOAD_CONST           ("customerId")
+            1474 LOAD_FAST_BORROW     (detail)
+            1476 LOAD_ATTR            (NULL|self + get)
+            1496 LOAD_CONST           ("customerId")
+            1498 CALL                 (1 positional)
+
+408:        1506 MAP_ADD              1
+
+419:        1508 LOAD_CONST           ("overdueAmt")
+            1510 LOAD_FAST_BORROW     (detail)
+            1512 LOAD_ATTR            (NULL|self + get)
+            1532 LOAD_CONST           ("overdueAmt")
+            1534 CALL                 (1 positional)
+
+408:        1542 MAP_ADD              1
+
+420:        1544 LOAD_CONST           ("overdueInterestAmt")
+            1546 LOAD_FAST_BORROW     (detail)
+            1548 LOAD_ATTR            (NULL|self + get)
+            1568 LOAD_CONST           ("overdueInterestAmt")
+            1570 CALL                 (1 positional)
+
+408:        1578 MAP_ADD              1
+
+421:        1580 LOAD_CONST           ("payAccountName")
+            1582 LOAD_FAST_BORROW     (detail)
+            1584 LOAD_ATTR            (NULL|self + get)
+            1604 LOAD_CONST           ("payAccountName")
+            1606 CALL                 (1 positional)
+
+408:        1614 MAP_ADD              1
+
+422:        1616 LOAD_CONST           ("payAccountNo")
+            1618 LOAD_FAST_BORROW     (detail)
+            1620 LOAD_ATTR            (NULL|self + get)
+            1640 LOAD_CONST           ("payAccountNo")
+            1642 CALL                 (1 positional)
+
+408:        1650 MAP_ADD              1
+
+423:        1652 LOAD_CONST           ("payFailFee")
+            1654 LOAD_FAST_BORROW     (detail)
+            1656 LOAD_ATTR            (NULL|self + get)
+            1676 LOAD_CONST           ("payFailFee")
+            1678 CALL                 (1 positional)
+
+408:        1686 MAP_ADD              1
+
+424:        1688 LOAD_CONST           ("payInterestAmt")
+            1690 LOAD_FAST_BORROW     (detail)
+            1692 LOAD_ATTR            (NULL|self + get)
+            1712 LOAD_CONST           ("payInterestAmt")
+            1714 CALL                 (1 positional)
+
+408:        1722 MAP_ADD              1
+
+425:        1724 LOAD_CONST           ("payPrincipalAmt")
+            1726 LOAD_FAST_BORROW     (detail)
+            1728 LOAD_ATTR            (NULL|self + get)
+            1748 LOAD_CONST           ("payPrincipalAmt")
+            1750 CALL                 (1 positional)
+
+408:        1758 MAP_ADD              1
+
+426:        1760 LOAD_CONST           ("payPrincipalPenaltyAmt")
+            1762 LOAD_FAST_BORROW     (detail)
+            1764 LOAD_ATTR            (NULL|self + get)
+            1784 LOAD_CONST           ("payPrincipalPenaltyAmt")
+            1786 CALL                 (1 positional)
+
+427:        1794 LOAD_CONST           ("payServiceFee")
+            1796 LOAD_FAST_BORROW     (detail)
+            1798 LOAD_ATTR            (NULL|self + get)
+            1818 LOAD_CONST           ("payServiceFee")
+            1820 CALL                 (1 positional)
+
+428:        1828 LOAD_CONST           ("principalBalance")
+            1830 LOAD_FAST_BORROW     (detail)
+            1832 LOAD_ATTR            (NULL|self + get)
+            1852 LOAD_CONST           ("principalBalance")
+            1854 CALL                 (1 positional)
+
+429:        1862 LOAD_CONST           ("putoutDate")
+            1864 LOAD_FAST_BORROW     (detail)
+            1866 LOAD_ATTR            (NULL|self + get)
+            1886 LOAD_CONST           ("putoutDate")
+            1888 CALL                 (1 positional)
+
+430:        1896 LOAD_CONST           ("reviewUserId")
+            1898 LOAD_CONST           ("6870ed07ec2c476c784971b3")
+
+431:        1900 LOAD_CONST           ("submitOpinion")
+            1902 LOAD_CONST           ("申请扣款")
+
+408:        1904 BUILD_MAP            6
+            1906 DICT_UPDATE          1
+            1908 STORE_FAST           (payment_data)
+
+435:        1910 LOAD_FAST_BORROW     (self)
+            1912 LOAD_ATTR            (processor)
+            1932 LOAD_ATTR            (NULL|self + submit_single_payment)
+            1952 LOAD_FAST_BORROW     (payment_data)
+            1954 CALL                 (1 positional)
+            1962 STORE_FAST           (submit_result)
+
+436:        1964 LOAD_FAST_BORROW     (submit_result)
+            1966 TO_BOOL
+            1974 POP_JUMP_IF_FALSE    (to 2132)
+            1978 NOT_TAKEN
+            1980 LOAD_FAST_BORROW     (submit_result)
+            1982 LOAD_ATTR            (NULL|self + get)
+            2002 LOAD_CONST           ("code")
+            2004 CALL                 (1 positional)
+            2012 LOAD_SMALL_INT       0
+            2014 COMPARE_OP           (==)
+            2018 POP_JUMP_IF_FALSE    (to 2132)
+            2022 NOT_TAKEN
+
+437:        2024 LOAD_FAST_BORROW     (result)
+            2026 LOAD_CONST           ("logs")
+            2028 BINARY_OP            ([])
+            2040 LOAD_ATTR            (NULL|self + append)
+            2060 LOAD_CONST           ("    ")
+            2062 LOAD_FAST_BORROW     (contract_no)
+            2064 FORMAT_SIMPLE
+            2066 LOAD_CONST           (": 划扣成功 ¥")
+            2068 LOAD_FAST_BORROW     (actual_pay)
+            2070 FORMAT_SIMPLE
+            2072 BUILD_STRING         4
+            2074 CALL                 (1 positional)
+            2082 POP_TOP
+
+438:        2084 LOAD_FAST_BORROW     (result)
+            2086 LOAD_CONST           ("success")
+            2088 COPY                 2
+            2090 COPY                 2
+            2092 BINARY_OP            ([])
+            2104 LOAD_SMALL_INT       1
+            2106 BINARY_OP            (+=)
+            2118 SWAP                 (TOS <-> TOS2)
+            2120 SWAP                 (TOS <-> TOS1)
+            2122 STORE_SUBSCR
+            2126 EXTENDED_ARG         (768)
+            2128 JUMP_BACKWARD        (to 480)
+
+440:     >> 2132 LOAD_FAST_BORROW     (result)
+            2134 LOAD_CONST           ("logs")
+            2136 BINARY_OP            ([])
+            2148 LOAD_ATTR            (NULL|self + append)
+            2168 LOAD_CONST           ("    ")
+            2170 LOAD_FAST_BORROW     (contract_no)
+            2172 FORMAT_SIMPLE
+            2174 LOAD_CONST           (": 划扣失败")
+            2176 BUILD_STRING         3
+            2178 CALL                 (1 positional)
+            2186 POP_TOP
+
+441:        2188 LOAD_FAST_BORROW     (result)
+            2190 LOAD_CONST           ("fail")
+            2192 COPY                 2
+            2194 COPY                 2
+            2196 BINARY_OP            ([])
+            2208 LOAD_SMALL_INT       1
+            2210 BINARY_OP            (+=)
+            2222 SWAP                 (TOS <-> TOS2)
+            2224 SWAP                 (TOS <-> TOS1)
+            2226 STORE_SUBSCR
+            2230 EXTENDED_ARG         (768)
+            2232 JUMP_BACKWARD        (to 480)
+
+375:     >> 2236 END_FOR
+            2238 POP_ITER
+
+444:     >> 2240 LOAD_FAST_BORROW     (result)
+            2242 LOAD_CONST           ("success")
+            2244 BINARY_OP            ([])
+            2256 LOAD_SMALL_INT       0
+            2258 COMPARE_OP           (>)
+            2262 EXTENDED_ARG         (256)
+            2264 POP_JUMP_IF_FALSE    (to 3004)
+            2268 NOT_TAKEN
+            2270 LOAD_FAST_BORROW     (self)
+            2272 LOAD_ATTR            (stop_flag)
+            2292 TO_BOOL
+            2300 EXTENDED_ARG         (256)
+            2302 POP_JUMP_IF_TRUE     (to 3004)
+            2306 NOT_TAKEN
+
+445:        2308 LOAD_GLOBAL          (time)
+            2318 LOAD_ATTR            (sleep)
+            2338 PUSH_NULL
+            2340 LOAD_CONST           (0.2)
+            2342 CALL                 (1 positional)
+            2350 POP_TOP
+
+446:        2352 LOAD_FAST_BORROW     (query_type)
+            2354 LOAD_CONST           ("cert_id")
+            2356 COMPARE_OP           (==)
+            2360 POP_JUMP_IF_FALSE    (to 2424)
+            2364 NOT_TAKEN
+
+447:        2366 LOAD_FAST_BORROW     (self)
+            2368 LOAD_ATTR            (processor)
+            2388 LOAD_ATTR            (NULL|self + search_review_list)
+            2408 LOAD_FAST_BORROW     (item)
+            2410 LOAD_CONST           (('cert_id',))
+            2412 CALL_KW              1
+            2420 STORE_FAST           (review_result)
+            2422 JUMP_FORWARD         (to 2480)
+
+449:     >> 2424 LOAD_FAST_BORROW     (self)
+            2426 LOAD_ATTR            (processor)
+            2446 LOAD_ATTR            (NULL|self + search_review_list)
+            2466 LOAD_FAST_BORROW     (item)
+            2468 LOAD_CONST           (('contract_no',))
+            2470 CALL_KW              1
+            2478 STORE_FAST           (review_result)
+
+451:     >> 2480 LOAD_FAST_BORROW     (review_result)
+            2482 TO_BOOL
+            2490 POP_JUMP_IF_FALSE    (to 3004)
+            2494 NOT_TAKEN
+            2496 LOAD_FAST_BORROW     (review_result)
+            2498 LOAD_ATTR            (NULL|self + get)
+            2518 LOAD_CONST           ("code")
+            2520 CALL                 (1 positional)
+            2528 LOAD_SMALL_INT       0
+            2530 COMPARE_OP           (==)
+            2534 POP_JUMP_IF_FALSE    (to 3004)
+            2538 NOT_TAKEN
+
+452:        2540 LOAD_FAST_BORROW     (review_result)
+            2542 LOAD_ATTR            (NULL|self + get)
+            2562 LOAD_CONST           ("data")
+            2564 BUILD_MAP            0
+            2566 CALL                 (2 positional)
+            2574 LOAD_ATTR            (NULL|self + get)
+            2594 LOAD_CONST           ("content")
+            2596 BUILD_LIST           0
+            2598 CALL                 (2 positional)
+            2606 STORE_FAST           (review_content)
+
+453:        2608 LOAD_FAST_BORROW     (review_content)
+            2610 GET_ITER
+            2612 LOAD_FAST_AND_CLEAR  (r)
+            2614 SWAP                 (TOS <-> TOS1)
+            2616 BUILD_LIST           0
+            2618 SWAP                 (TOS <-> TOS1)
+            2620 FOR_ITER             (to 2712)
+            2624 STORE_FAST           (r)
+            2626 LOAD_FAST_BORROW     (r)
+            2628 LOAD_ATTR            (NULL|self + get)
+            2648 LOAD_CONST           ("transStatus")
+            2650 CALL                 (1 positional)
+            2658 LOAD_CONST           ("复核中")
+            2660 COMPARE_OP           (==)
+            2664 POP_JUMP_IF_TRUE     (to 2674)
+            2668 NOT_TAKEN
+            2670 JUMP_BACKWARD        (to 2620)
+         >> 2674 LOAD_FAST_BORROW     (r)
+            2676 LOAD_ATTR            (NULL|self + get)
+            2696 LOAD_CONST           ("id")
+            2698 CALL                 (1 positional)
+            2706 LIST_APPEND          2
+            2708 JUMP_BACKWARD        (to 2620)
+         >> 2712 END_FOR
+            2714 POP_ITER
+            2716 STORE_FAST           (review_ids)
+            2718 STORE_FAST           (r)
+
+455:        2720 LOAD_FAST_BORROW     (review_ids)
+            2722 TO_BOOL
+            2730 POP_JUMP_IF_FALSE    (to 3004)
+            2734 NOT_TAKEN
+
+456:        2736 LOAD_FAST_BORROW     (self)
+            2738 LOAD_ATTR            (processor)
+            2758 LOAD_ATTR            (NULL|self + confirm_review)
+            2778 LOAD_FAST_BORROW     (review_ids)
+            2780 CALL                 (1 positional)
+            2788 STORE_FAST           (confirm_result)
+
+457:        2790 LOAD_FAST_BORROW     (confirm_result)
+            2792 TO_BOOL
+            2800 POP_JUMP_IF_FALSE    (to 2956)
+         >> 2804 NOT_TAKEN
+            2806 LOAD_FAST_BORROW     (confirm_result)
+            2808 LOAD_ATTR            (NULL|self + get)
+            2828 LOAD_CONST           ("code")
+            2830 CALL                 (1 positional)
+            2838 LOAD_SMALL_INT       0
+            2840 COMPARE_OP           (==)
+            2844 POP_JUMP_IF_FALSE    (to 2956)
+            2848 NOT_TAKEN
+
+458:        2850 LOAD_FAST_BORROW     (result)
+            2852 LOAD_CONST           ("logs")
+            2854 BINARY_OP            ([])
+            2866 LOAD_ATTR            (NULL|self + append)
+            2886 LOAD_CONST           ("  ✓ 复核成功 ")
+            2888 LOAD_GLOBAL          (NULL + len)
+            2898 LOAD_FAST_BORROW     (review_ids)
+            2900 CALL                 (1 positional)
+            2908 FORMAT_SIMPLE
+            2910 LOAD_CONST           (" 条")
+            2912 BUILD_STRING         3
+            2914 CALL                 (1 positional)
+            2922 POP_TOP
+
+459:        2924 LOAD_GLOBAL          (NULL + len)
+            2934 LOAD_FAST_BORROW     (review_ids)
+            2936 CALL                 (1 positional)
+            2944 LOAD_FAST_BORROW     (result)
+            2946 LOAD_CONST           ("confirmed")
+            2948 STORE_SUBSCR
+
+463:        2952 LOAD_FAST_BORROW     (result)
+            2954 RETURN_VALUE
+
+461:     >> 2956 LOAD_FAST_BORROW     (result)
+            2958 LOAD_CONST           ("logs")
+            2960 BINARY_OP            ([])
+            2972 LOAD_ATTR            (NULL|self + append)
+            2992 LOAD_CONST           ("  ✗ 复核失败")
+            2994 CALL                 (1 positional)
+            3002 POP_TOP
+
+463:     >> 3004 LOAD_FAST_BORROW     (result)
+            3006 RETURN_VALUE
+            3008 SWAP                 (TOS <-> TOS1)
+            3010 POP_TOP
+
+453:        3012 SWAP                 (TOS <-> TOS1)
+            3014 STORE_FAST           (r)
+            3016 RERAISE              0
+
+ExceptionTable:
+  2616 to 2662 -> 3008 [2]
+  2674 to 2714 -> 3008 [2]
+
+# Method Name:       process_payment
+# Filename:          gui.py
+# Argument count:    4
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  20
+# Stack size:        16
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        465
+# Constants:
+#    0: 0
+#    1: 'cert_id'
+#    2: '身份证号'
+#    3: '合同编号'
+#    4: '开始处理 '
+#    5: ' 个'
+#    6: '，并发数: '
+#    7: ('max_workers',)
+#    8: False
+#    9: ('wait',)
+#   10: 'success'
+#   11: 'fail'
+#   12: 'confirmed'
+#   13: '\n['
+#   14: '/'
+#   15: '] '
+#   16: 'logs'
+#   17: ': 处理异常 - '
+#   18: None
+#   19: '处理中: '
+#   20: 'value'
+#   21: '完成: 划扣'
+#   22: ', 复核'
+#   23: ', 失败'
+#   24: '\n'
+#   25: '全部完成: 划扣 '
+#   26: ' 条, 复核 '
+#   27: ' 条, 失败 '
+#   28: ' 条'
+#   29: '耗时: '
+#   30: '.1f'
+#   31: '秒, 速度: '
+#   32: '条/分钟'
+#   33: '=================================================='
+# Names:
+#    0: len
+#    1: time
+#    2: log
+#    3: ThreadPoolExecutor
+#    4: submit
+#    5: process_single_item
+#    6: as_completed
+#    7: stop_flag
+#    8: shutdown
+#    9: result
+#   10: Exception
+#   11: str
+#   12: progress_var
+#   13: set
+#   14: progress_bar
+#   15: set_running
+# Varnames:
+#	self, id_list, query_type, concurrent, total_success, total_fail, total_confirmed, total_count, processed, type_name, start_time, executor, item, futures, future, result, log, e, elapsed, speed
+# Positional arguments:
+#	self, id_list, query_type, concurrent
+# Local variables:
+#    4: total_success
+#    5: total_fail
+#    6: total_confirmed
+#    7: total_count
+#    8: processed
+#    9: type_name
+#   10: start_time
+#   11: executor
+#   12: item
+#   13: futures
+#   14: future
+#   15: result
+#   16: log
+#   17: e
+#   18: elapsed
+#   19: speed
+
+465:           0 RESUME               0
+
+466:           2 LOAD_SMALL_INT       0
+               4 STORE_FAST           (total_success)
+
+467:           6 LOAD_SMALL_INT       0
+               8 STORE_FAST           (total_fail)
+
+468:          10 LOAD_SMALL_INT       0
+              12 STORE_FAST           (total_confirmed)
+
+469:          14 LOAD_GLOBAL          (NULL + len)
+              24 LOAD_FAST_BORROW     (id_list)
+              26 CALL                 (1 positional)
+              34 STORE_FAST           (total_count)
+
+470:          36 LOAD_SMALL_INT       0
+              38 STORE_FAST           (processed)
+
+472:          40 LOAD_FAST_BORROW     (query_type)
+              42 LOAD_CONST           ("cert_id")
+              44 COMPARE_OP           (==)
+              48 POP_JUMP_IF_FALSE    (to 58)
+              52 NOT_TAKEN
+              54 LOAD_CONST           ("身份证号")
+              56 JUMP_FORWARD         (to 60)
+         >>   58 LOAD_CONST           ("合同编号")
+         >>   60 STORE_FAST           (type_name)
+
+473:          62 LOAD_GLOBAL          (time)
+              72 LOAD_ATTR            (time)
+              92 PUSH_NULL
+              94 CALL                 (0 positional)
+             102 STORE_FAST           (start_time)
+
+475:         104 LOAD_FAST_BORROW     (self)
+             106 LOAD_ATTR            (NULL|self + log)
+             126 LOAD_CONST           ("开始处理 ")
+             128 LOAD_FAST_BORROW     (total_count)
+             130 FORMAT_SIMPLE
+             132 LOAD_CONST           (" 个")
+             134 LOAD_FAST_BORROW     (type_name)
+             136 FORMAT_SIMPLE
+             138 LOAD_CONST           ("，并发数: ")
+             140 LOAD_FAST_BORROW     (concurrent)
+             142 FORMAT_SIMPLE
+             144 BUILD_STRING         6
+             146 CALL                 (1 positional)
+             154 POP_TOP
+
+478:         156 LOAD_GLOBAL          (NULL + ThreadPoolExecutor)
+             166 LOAD_FAST_BORROW     (concurrent)
+             168 LOAD_CONST           (('max_workers',))
+             170 CALL_KW              1
+             178 COPY                 1
+             180 LOAD_SPECIAL         1
+             182 SWAP                 (TOS <-> TOS1)
+             184 SWAP                 (TOS <-> TOS2)
+             186 LOAD_SPECIAL         0
+             188 CALL                 (0 positional)
+             196 STORE_FAST           (executor)
+
+479:         198 LOAD_FAST_BORROW     (id_list)
+             200 GET_ITER
+             202 LOAD_FAST_AND_CLEAR  (item)
+             204 SWAP                 (TOS <-> TOS1)
+             206 BUILD_MAP            0
+             208 SWAP                 (TOS <-> TOS1)
+             210 FOR_ITER             (to 276)
+             214 STORE_FAST_LOAD_FAST (item, executor)
+             216 LOAD_ATTR            (NULL|self + submit)
+             236 LOAD_FAST_BORROW     (self)
+             238 LOAD_ATTR            (process_single_item)
+             258 LOAD_FAST_BORROW_LOAD_FAST_BORROW (item, query_type)
+             260 CALL                 (3 positional)
+             268 LOAD_FAST_BORROW     (item)
+             270 MAP_ADD              2
+             272 JUMP_BACKWARD        (to 210)
+         >>  276 END_FOR
+             278 POP_ITER
+             280 STORE_FAST           (futures)
+             282 STORE_FAST           (item)
+
+481:         284 LOAD_GLOBAL          (NULL + as_completed)
+             294 LOAD_FAST_BORROW     (futures)
+             296 CALL                 (1 positional)
+             304 GET_ITER
+             306 FOR_ITER             (to 790)
+             310 STORE_FAST           (future)
+
+482:         312 LOAD_FAST_BORROW     (self)
+             314 LOAD_ATTR            (stop_flag)
+             334 TO_BOOL
+         >>  342 POP_JUMP_IF_FALSE    (to 388)
+             346 NOT_TAKEN
+
+483:         348 LOAD_FAST_BORROW     (executor)
+             350 LOAD_ATTR            (NULL|self + shutdown)
+             370 LOAD_CONST           (False)
+             372 LOAD_CONST           (('wait',))
+             374 CALL_KW              1
+             382 POP_TOP
+
+484:         384 POP_TOP
+             386 JUMP_FORWARD         (to 794)
+
+486:     >>  388 LOAD_FAST_BORROW_LOAD_FAST_BORROW (futures, future)
+             390 BINARY_OP            ([])
+             402 STORE_FAST           (item)
+
+487:         404 LOAD_FAST_BORROW     (processed)
+             406 LOAD_SMALL_INT       1
+             408 BINARY_OP            (+=)
+             420 STORE_FAST           (processed)
+
+489:         422 NOP
+
+490:         424 LOAD_FAST_BORROW     (future)
+             426 LOAD_ATTR            (NULL|self + result)
+             446 CALL                 (0 positional)
+             454 STORE_FAST           (result)
+
+491:         456 LOAD_FAST_BORROW_LOAD_FAST_BORROW (total_success, result)
+             458 LOAD_CONST           ("success")
+             460 BINARY_OP            ([])
+             472 BINARY_OP            (+=)
+             484 STORE_FAST           (total_success)
+
+492:         486 LOAD_FAST_BORROW_LOAD_FAST_BORROW (total_fail, result)
+             488 LOAD_CONST           ("fail")
+             490 BINARY_OP            ([])
+             502 BINARY_OP            (+=)
+             514 STORE_FAST           (total_fail)
+
+493:         516 LOAD_FAST_BORROW_LOAD_FAST_BORROW (total_confirmed, result)
+             518 LOAD_CONST           ("confirmed")
+             520 BINARY_OP            ([])
+             532 BINARY_OP            (+=)
+             544 STORE_FAST           (total_confirmed)
+
+496:         546 LOAD_FAST_BORROW     (self)
+             548 LOAD_ATTR            (NULL|self + log)
+             568 LOAD_CONST           ("\n[")
+             570 LOAD_FAST_BORROW     (processed)
+             572 FORMAT_SIMPLE
+             574 LOAD_CONST           ("/")
+             576 LOAD_FAST_BORROW     (total_count)
+             578 FORMAT_SIMPLE
+             580 LOAD_CONST           ("] ")
+             582 LOAD_FAST_BORROW     (item)
+             584 FORMAT_SIMPLE
+             586 BUILD_STRING         6
+             588 CALL                 (1 positional)
+             596 POP_TOP
+
+497:         598 LOAD_FAST_BORROW     (result)
+             600 LOAD_CONST           ("logs")
+             602 BINARY_OP            ([])
+             614 GET_ITER
+             616 FOR_ITER             (to 660)
+             620 STORE_FAST           (log)
+
+498:         622 LOAD_FAST_BORROW     (self)
+             624 LOAD_ATTR            (NULL|self + log)
+             644 LOAD_FAST_BORROW     (log)
+             646 CALL                 (1 positional)
+             654 POP_TOP
+             656 JUMP_BACKWARD        (to 616)
+
+497:     >>  660 END_FOR
+             662 POP_ITER
+
+505:         664 LOAD_FAST_BORROW     (self)
+             666 LOAD_ATTR            (progress_var)
+             686 LOAD_ATTR            (NULL|self + set)
+             706 LOAD_CONST           ("处理中: ")
+             708 LOAD_FAST_BORROW     (processed)
+             710 FORMAT_SIMPLE
+             712 LOAD_CONST           ("/")
+             714 LOAD_FAST_BORROW     (total_count)
+             716 FORMAT_SIMPLE
+             718 BUILD_STRING         4
+             720 CALL                 (1 positional)
+             728 POP_TOP
+
+506:         730 LOAD_FAST_BORROW_LOAD_FAST_BORROW (processed, total_count)
+             732 BINARY_OP            (/)
+             744 LOAD_SMALL_INT       100
+             746 BINARY_OP            (*)
+             758 LOAD_FAST_BORROW     (self)
+             760 LOAD_ATTR            (progress_bar)
+             780 LOAD_CONST           ("value")
+             782 STORE_SUBSCR
+             786 JUMP_BACKWARD        (to 306)
+
+481:     >>  790 END_FOR
+             792 POP_ITER
+
+478:     >>  794 LOAD_CONST           (None)
+             796 LOAD_CONST           (None)
+             798 LOAD_CONST           (None)
+             800 CALL                 (3 positional)
+             808 POP_TOP
+
+508:         810 LOAD_GLOBAL          (time)
+             820 LOAD_ATTR            (time)
+             840 PUSH_NULL
+             842 CALL                 (0 positional)
+             850 LOAD_FAST_BORROW     (start_time)
+             852 BINARY_OP            (-)
+             864 STORE_FAST           (elapsed)
+
+509:         866 LOAD_FAST_BORROW     (elapsed)
+             868 LOAD_SMALL_INT       0
+             870 COMPARE_OP           (>)
+             874 POP_JUMP_IF_FALSE    (to 912)
+             878 NOT_TAKEN
+             880 LOAD_FAST_BORROW     (processed)
+             882 LOAD_FAST_BORROW     (elapsed)
+             884 BINARY_OP            (/)
+             896 LOAD_SMALL_INT       60
+             898 BINARY_OP            (*)
+             910 JUMP_FORWARD         (to 914)
+         >>  912 LOAD_SMALL_INT       0
+         >>  914 STORE_FAST           (speed)
+
+511:         916 LOAD_SMALL_INT       100
+             918 LOAD_FAST_BORROW     (self)
+             920 LOAD_ATTR            (progress_bar)
+             940 LOAD_CONST           ("value")
+             942 STORE_SUBSCR
+
+512:         946 LOAD_FAST_BORROW     (self)
+             948 LOAD_ATTR            (progress_var)
+             968 LOAD_ATTR            (NULL|self + set)
+             988 LOAD_CONST           ("完成: 划扣")
+             990 LOAD_FAST_BORROW     (total_success)
+             992 FORMAT_SIMPLE
+             994 LOAD_CONST           (", 复核")
+             996 LOAD_FAST_BORROW     (total_confirmed)
+             998 FORMAT_SIMPLE
+            1000 LOAD_CONST           (", 失败")
+            1002 LOAD_FAST_BORROW     (total_fail)
+            1004 FORMAT_SIMPLE
+            1006 BUILD_STRING         6
+            1008 CALL                 (1 positional)
+            1016 POP_TOP
+
+513:        1018 LOAD_FAST_BORROW     (self)
+            1020 LOAD_ATTR            (NULL|self + log)
+            1040 LOAD_CONST           ("\n")
+            1042 LOAD_CONST           ("==================================================")
+            1044 FORMAT_SIMPLE
+            1046 BUILD_STRING         2
+            1048 CALL                 (1 positional)
+            1056 POP_TOP
+
+514:        1058 LOAD_FAST_BORROW     (self)
+            1060 LOAD_ATTR            (NULL|self + log)
+            1080 LOAD_CONST           ("全部完成: 划扣 ")
+            1082 LOAD_FAST_BORROW     (total_success)
+            1084 FORMAT_SIMPLE
+            1086 LOAD_CONST           (" 条, 复核 ")
+            1088 LOAD_FAST_BORROW     (total_confirmed)
+            1090 FORMAT_SIMPLE
+            1092 LOAD_CONST           (" 条, 失败 ")
+            1094 LOAD_FAST_BORROW     (total_fail)
+            1096 FORMAT_SIMPLE
+            1098 LOAD_CONST           (" 条")
+            1100 BUILD_STRING         7
+            1102 CALL                 (1 positional)
+            1110 POP_TOP
+
+515:        1112 LOAD_FAST_BORROW     (self)
+            1114 LOAD_ATTR            (NULL|self + log)
+            1134 LOAD_CONST           ("耗时: ")
+            1136 LOAD_FAST_BORROW     (elapsed)
+            1138 LOAD_CONST           (".1f")
+            1140 FORMAT_WITH_SPEC
+            1142 LOAD_CONST           ("秒, 速度: ")
+            1144 LOAD_FAST_BORROW     (speed)
+            1146 LOAD_CONST           (".1f")
+            1148 FORMAT_WITH_SPEC
+            1150 LOAD_CONST           ("条/分钟")
+            1152 BUILD_STRING         5
+            1154 CALL                 (1 positional)
+            1162 POP_TOP
+
+516:        1164 LOAD_FAST_BORROW     (self)
+            1166 LOAD_ATTR            (NULL|self + set_running)
+            1186 LOAD_CONST           (False)
+            1188 CALL                 (1 positional)
+            1196 POP_TOP
+            1198 LOAD_CONST           (None)
+            1200 RETURN_VALUE
+            1202 SWAP                 (TOS <-> TOS1)
+            1204 POP_TOP
+
+479:        1206 SWAP                 (TOS <-> TOS1)
+            1208 STORE_FAST           (item)
+            1210 RERAISE              0
+            1212 PUSH_EXC_INFO
+
+500:        1214 LOAD_GLOBAL          (Exception)
+            1224 CHECK_EXC_MATCH
+            1226 POP_JUMP_IF_FALSE    (to 1348)
+            1230 NOT_TAKEN
+            1232 STORE_FAST           (e)
+
+501:        1234 LOAD_FAST            (self)
+            1236 LOAD_ATTR            (NULL|self + log)
+            1256 LOAD_CONST           ("\n[")
+            1258 LOAD_FAST            (processed)
+            1260 FORMAT_SIMPLE
+            1262 LOAD_CONST           ("/")
+            1264 LOAD_FAST            (total_count)
+            1266 FORMAT_SIMPLE
+            1268 LOAD_CONST           ("] ")
+            1270 LOAD_FAST            (item)
+            1272 FORMAT_SIMPLE
+         >> 1274 LOAD_CONST           (": 处理异常 - ")
+            1276 LOAD_GLOBAL          (NULL + str)
+            1286 LOAD_FAST            (e)
+            1288 CALL                 (1 positional)
+            1296 FORMAT_SIMPLE
+            1298 BUILD_STRING         8
+            1300 CALL                 (1 positional)
+            1308 POP_TOP
+
+502:        1310 LOAD_FAST            (total_fail)
+            1312 LOAD_SMALL_INT       1
+            1314 BINARY_OP            (+=)
+            1326 STORE_FAST           (total_fail)
+            1328 POP_EXCEPT
+            1330 LOAD_CONST           (None)
+            1332 STORE_FAST           (e)
+            1334 DELETE_FAST          (e)
+            1336 EXTENDED_ARG         (256)
+            1338 JUMP_BACKWARD_NO_INTERRUPT (to 664)
+            1340 LOAD_CONST           (None)
+            1342 STORE_FAST           (e)
+            1344 DELETE_FAST          (e)
+            1346 RERAISE              1
+
+500:     >> 1348 RERAISE              0
+            1350 COPY                 3
+            1352 POP_EXCEPT
+            1354 RERAISE              1
+
+478:        1356 PUSH_EXC_INFO
+            1358 WITH_EXCEPT_START
+            1360 TO_BOOL
+            1368 POP_JUMP_IF_TRUE     (to 1376)
+            1372 NOT_TAKEN
+            1374 RERAISE              2
+         >> 1376 POP_TOP
+            1378 POP_EXCEPT
+            1380 POP_TOP
+            1382 POP_TOP
+            1384 POP_TOP
+            1386 EXTENDED_ARG         (256)
+            1388 JUMP_BACKWARD_NO_INTERRUPT (to 810)
+            1390 COPY                 3
+            1392 POP_EXCEPT
+            1394 RERAISE              1
+
+ExceptionTable:
+  196 to 204 -> 1356 [2] lasti
+  206 to 278 -> 1202 [4]
+  280 to 420 -> 1356 [2] lasti
+  424 to 662 -> 1212 [3]
+  664 to 792 -> 1356 [2] lasti
+  1202 to 1210 -> 1356 [2] lasti
+  1212 to 1232 -> 1350 [4] lasti
+  1234 to 1326 -> 1340 [4] lasti
+  1328 to 1338 -> 1356 [2] lasti
+  1340 to 1348 -> 1350 [4] lasti
+  1350 to 1354 -> 1356 [2] lasti
+  1356 to 1376 -> 1390 [4] lasti
+
+# Method Name:       query_result
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  4
+# Stack size:        8
+# Flags:             0x08000003 (0x8000000 | NEWLOCALS | OPTIMIZED)
+# First Line:        518
+# Constants:
+#    0: '错误'
+#    1: '请先设置有效的Token'
+#    2: None
+#    3: '请输入身份证号'
+#    4: '\n========== 查询还款结果 =========='
+#    5: 'repayAmt'
+#    6: ':'
+#    7: '  客户数: '
+#    8: 'creditSum'
+#    9: '  合同数: '
+#   10: 'contractNoSum'
+#   11: '  还款金额: ¥'
+#   12: ': 暂无还款记录'
+# Names:
+#    0: verify_token
+#    1: messagebox
+#    2: showerror
+#    3: get_id_list
+#    4: log
+#    5: processor
+#    6: query_repay_statistics
+#    7: get
+# Varnames:
+#	self, id_list, cert_id, stats
+# Positional arguments:
+#	self
+# Local variables:
+#    1: id_list
+#    2: cert_id
+#    3: stats
+
+518:           0 RESUME               0
+
+519:           2 LOAD_FAST_BORROW     (self)
+               4 LOAD_ATTR            (NULL|self + verify_token)
+              24 CALL                 (0 positional)
+              32 TO_BOOL
+              40 POP_JUMP_IF_TRUE     (to 96)
+              44 NOT_TAKEN
+
+520:          46 LOAD_GLOBAL          (messagebox)
+              56 LOAD_ATTR            (showerror)
+              76 PUSH_NULL
+              78 LOAD_CONST           ("错误")
+              80 LOAD_CONST           ("请先设置有效的Token")
+              82 CALL                 (2 positional)
+              90 POP_TOP
+
+521:          92 LOAD_CONST           (None)
+              94 RETURN_VALUE
+
+523:     >>   96 LOAD_FAST_BORROW     (self)
+              98 LOAD_ATTR            (NULL|self + get_id_list)
+             118 CALL                 (0 positional)
+             126 STORE_FAST           (id_list)
+
+524:         128 LOAD_FAST_BORROW     (id_list)
+             130 TO_BOOL
+             138 POP_JUMP_IF_TRUE     (to 194)
+             142 NOT_TAKEN
+
+525:         144 LOAD_GLOBAL          (messagebox)
+             154 LOAD_ATTR            (showerror)
+             174 PUSH_NULL
+             176 LOAD_CONST           ("错误")
+             178 LOAD_CONST           ("请输入身份证号")
+             180 CALL                 (2 positional)
+             188 POP_TOP
+
+526:         190 LOAD_CONST           (None)
+             192 RETURN_VALUE
+
+528:     >>  194 LOAD_FAST_BORROW     (self)
+             196 LOAD_ATTR            (NULL|self + log)
+             216 LOAD_CONST           ("\n========== 查询还款结果 ==========")
+             218 CALL                 (1 positional)
+             226 POP_TOP
+
+530:         228 LOAD_FAST_BORROW     (id_list)
+             230 GET_ITER
+             232 FOR_ITER             (to 658)
+             236 STORE_FAST           (cert_id)
+
+531:         238 LOAD_FAST_BORROW     (self)
+             240 LOAD_ATTR            (processor)
+             260 LOAD_ATTR            (NULL|self + query_repay_statistics)
+             280 LOAD_FAST_BORROW     (cert_id)
+             282 CALL                 (1 positional)
+             290 STORE_FAST           (stats)
+
+532:         292 LOAD_FAST_BORROW     (stats)
+             294 TO_BOOL
+             302 POP_JUMP_IF_FALSE    (to 614)
+             306 NOT_TAKEN
+             308 LOAD_FAST_BORROW     (stats)
+             310 LOAD_ATTR            (NULL|self + get)
+             330 LOAD_CONST           ("repayAmt")
+             332 LOAD_SMALL_INT       0
+             334 CALL                 (2 positional)
+             342 LOAD_SMALL_INT       0
+             344 COMPARE_OP           (>)
+             348 POP_JUMP_IF_FALSE    (to 614)
+             352 NOT_TAKEN
+
+533:         354 LOAD_FAST_BORROW     (self)
+             356 LOAD_ATTR            (NULL|self + log)
+             376 LOAD_FAST_BORROW     (cert_id)
+             378 FORMAT_SIMPLE
+             380 LOAD_CONST           (":")
+             382 BUILD_STRING         2
+             384 CALL                 (1 positional)
+             392 POP_TOP
+
+534:         394 LOAD_FAST_BORROW     (self)
+             396 LOAD_ATTR            (NULL|self + log)
+             416 LOAD_CONST           ("  客户数: ")
+             418 LOAD_FAST_BORROW     (stats)
+             420 LOAD_ATTR            (NULL|self + get)
+             440 LOAD_CONST           ("creditSum")
+             442 LOAD_SMALL_INT       0
+             444 CALL                 (2 positional)
+             452 FORMAT_SIMPLE
+             454 BUILD_STRING         2
+             456 CALL                 (1 positional)
+             464 POP_TOP
+
+535:         466 LOAD_FAST_BORROW     (self)
+             468 LOAD_ATTR            (NULL|self + log)
+             488 LOAD_CONST           ("  合同数: ")
+             490 LOAD_FAST_BORROW     (stats)
+             492 LOAD_ATTR            (NULL|self + get)
+             512 LOAD_CONST           ("contractNoSum")
+             514 LOAD_SMALL_INT       0
+             516 CALL                 (2 positional)
+             524 FORMAT_SIMPLE
+             526 BUILD_STRING         2
+             528 CALL                 (1 positional)
+             536 POP_TOP
+
+536:         538 LOAD_FAST_BORROW     (self)
+             540 LOAD_ATTR            (NULL|self + log)
+             560 LOAD_CONST           ("  还款金额: ¥")
+             562 LOAD_FAST_BORROW     (stats)
+             564 LOAD_ATTR            (NULL|self + get)
+             584 LOAD_CONST           ("repayAmt")
+             586 LOAD_SMALL_INT       0
+             588 CALL                 (2 positional)
+             596 FORMAT_SIMPLE
+             598 BUILD_STRING         2
+             600 CALL                 (1 positional)
+             608 POP_TOP
+             610 JUMP_BACKWARD        (to 232)
+
+538:     >>  614 LOAD_FAST_BORROW     (self)
+             616 LOAD_ATTR            (NULL|self + log)
+             636 LOAD_FAST_BORROW     (cert_id)
+             638 FORMAT_SIMPLE
+             640 LOAD_CONST           (": 暂无还款记录")
+             642 BUILD_STRING         2
+             644 CALL                 (1 positional)
+             652 POP_TOP
+             654 JUMP_BACKWARD        (to 232)
+
+530:     >>  658 END_FOR
+             660 POP_ITER
+             662 LOAD_CONST           (None)
+             664 RETURN_VALUE
+
+
+# Method Name:       <lambda>
+# Filename:          gui.py
+# Argument count:    1
+# Position-only argument count: 0
+# Keyword-only arguments: 0
+# Number of locals:  1
+# Stack size:        2
+# Flags:             0x00000013 (NESTED | NEWLOCALS | OPTIMIZED)
+# First Line:        163
+# Constants:
+#    0: None
+# Names:
+#    0: on_login
+# Varnames:
+#	e
+# Positional arguments:
+#	e
+# Free variables:
+#    0: self
+               0 COPY_FREE_VARS       1
+
+163:           2 RESUME               0
+               4 LOAD_DEREF           (self)
+               6 LOAD_ATTR            (NULL|self + on_login)
+              26 CALL                 (0 positional)
+              34 RETURN_VALUE
+
