@@ -75,7 +75,6 @@ class App(tk.Tk):
                                  bg="#f7f9fc", fg="#22324a", insertbackground="#1f5d98",
                                  font=("Consolas", 11), padx=10, pady=8)
         self.contracts.grid(row=2, column=0, sticky="ew", padx=16, pady=(0, 14))
-        self.contracts.insert("1.0", "A260712024444431037\nA260506123300591240")
 
         actions = tk.Frame(root, bg="#f4f7fb")
         actions.grid(row=2, column=0, sticky="ew", pady=(0, 10))
