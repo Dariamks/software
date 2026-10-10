@@ -72,16 +72,16 @@ GUI 启动先显示登录页，输入配置的账号、密码后才能进入。�
 
 ## 激活码续期（管理员）
 
-客户先升级到支持激活码的 GUI 一次，之后无需为续期重新安装。登录页或主界面点击“激活码续期”，复制机器码发给管理员。机器码是本机当前系统用户的安装标识，保存在授权数据库里。
+客户先升级到支持通用激活码的 GUI 一次，之后无需为续期重新安装。登录页或主界面点击“激活码续期”，直接输入管理员提供的通用激活码，无需提供机器码。
 
 管理员在自己的 Mac 项目目录执行：
 
 ```bash
-./.venv/bin/python generate_activation.py --machine 客户机器码 --kind day
-./.venv/bin/python generate_activation.py --machine 客户机器码 --kind permanent
+./.venv/bin/python generate_activation.py --kind day
+./.venv/bin/python generate_activation.py --kind permanent
 ```
 
-把输出的整段激活码发给客户粘贴。day 在原有效期与当前时间中的较晚时间上增加 24 小时；permanent 永久解除期限，但仍需账号密码登录。每个码只能使用一次，必须对应机器码。激活前从未登录的用户会先激活原有一天试用，再增加一天。
+把输出的整段激活码发给客户粘贴。day 在原有效期与当前时间中的较晚时间上增加 24 小时；permanent 永久解除期限，但仍需账号密码登录。同一个通用码可以发给多台电脑，不限制台数；每个码在每台电脑的本地授权记录中只能使用一次。旧版机器绑定码继续有效。激活前从未登录的用户会先激活原有一天试用，再增加一天。
 
 管理员私钥保存在 `~/.single-payment-admin/signing-key.pem`，请单独安全备份，不要发送给客户或提交 GitHub。丢失私钥后无法继续为已发布的公钥生成有效激活码。EXE 只包含验证公钥，打包入口不导入生成工具。
 

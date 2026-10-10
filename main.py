@@ -99,11 +99,6 @@ class App(tk.Tk):
             existing.lift()
             self.activation_input.focus_set()
             return
-        try:
-            machine = self.license.machine_code()
-        except AccessError as exc:
-            messagebox.showerror("授权", str(exc))
-            return
         dialog = tk.Toplevel(self)
         self.activation_window = dialog
         dialog.title("激活码续期")
@@ -115,13 +110,8 @@ class App(tk.Tk):
         self.activation_notice = tk.StringVar(value=notice or "可续期一天或永久解锁，到期后也可以在这里激活。")
         ttk.Label(frame, textvariable=self.activation_notice, foreground="#b45309",
                   wraplength=500).pack(anchor="w", pady=(0, 12))
-        ttk.Label(frame, text="将机器码发给管理员，获取一天续期码或永久解锁码。").pack(anchor="w")
-        value = tk.StringVar(value=machine)
-        ttk.Entry(frame, textvariable=value, state="readonly").pack(fill="x", pady=10)
-        def copy():
-            self.clipboard_clear()
-            self.clipboard_append(machine)
-        ttk.Button(frame, text="复制机器码", command=copy).pack(anchor="w")
+        ttk.Label(frame, text="向管理员获取通用激活码，无需提供机器码。", wraplength=500).pack(anchor="w")
+        ttk.Label(frame, text="同一码可用于多台电脑，在每台电脑上仅可激活一次。", wraplength=500).pack(anchor="w", pady=(8, 0))
         ttk.Label(frame, text="粘贴激活码").pack(anchor="w", pady=(16, 4))
         code = tk.Text(frame, height=4, wrap="char")
         self.activation_input = code

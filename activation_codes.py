@@ -14,6 +14,6 @@ def verify(code, machine):
     sig = base64.urlsafe_b64decode(signature + '=' * (-len(signature) % 4))
     Ed25519PublicKey.from_public_bytes(bytes.fromhex(PUBLIC_KEY_HEX)).verify(sig, raw)
     data = json.loads(raw)
-    if data.get('v') != 1 or data.get('machine') != machine or data.get('kind') not in ('day', 'permanent') or not isinstance(data.get('id'), str):
+    if data.get('v') != 1 or data.get('machine') not in (machine, '*') or data.get('kind') not in ('day', 'permanent') or not isinstance(data.get('id'), str):
         raise ValueError('Invalid activation')
     return data

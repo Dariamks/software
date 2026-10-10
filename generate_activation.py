@@ -9,12 +9,12 @@ from license_public_key import PUBLIC_KEY_HEX
 
 
 def main():
-    parser = argparse.ArgumentParser(description='生成绑定机器码的一天续期码或永久激活码')
-    parser.add_argument('--machine', required=True, help='客户软件显示的机器码')
+    parser = argparse.ArgumentParser(description='生成不限机器数量的一天续期码或永久激活码')
+    parser.add_argument('--machine', default='*', help='可选：兼容旧版机器绑定码；默认生成通用码')
     parser.add_argument('--kind', required=True, choices=['day', 'permanent'])
     args = parser.parse_args()
     machine = args.machine.strip().upper()
-    if len(machine) != 32 or any(c not in '0123456789ABCDEF' for c in machine):
+    if machine != '*' and (len(machine) != 32 or any(c not in '0123456789ABCDEF' for c in machine)):
         parser.error('机器码应为 32 位字母数字，请完整复制')
     path = Path.home() / '.single-payment-admin/signing-key.pem'
     if not path.exists():

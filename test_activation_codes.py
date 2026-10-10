@@ -10,6 +10,29 @@ from access_control import LocalLicense, AccessError
 
 
 class RenewalTests(unittest.TestCase):
+    def test_universal_codes_work_on_multiple_installations(self):
+        key = Ed25519PrivateKey.generate()
+        def issue(kind):
+            raw = json.dumps({'v': 1, 'id': uuid.uuid4().hex, 'machine': '*', 'kind': kind}).encode()
+            return encode(raw) + '.' + encode(key.sign(raw))
+        day, permanent = issue('day'), issue('permanent')
+        with tempfile.TemporaryDirectory() as directory, patch('activation_codes.PUBLIC_KEY_HEX', key.public_key().public_bytes_raw().hex()), patch('access_control.verify_credentials', return_value=True):
+            machines = []
+            for index in range(3):
+                license = LocalLicense(Path(directory) / f'{index}.db', lambda: 100000.0)
+                license.login('test', 'test')
+                machines.append(license.machine_code())
+                original = license.expires_at
+                license.redeem(day)
+                self.assertEqual(license.expires_at, original + 86400)
+                with self.assertRaises(AccessError):
+                    license.redeem(day)
+                license.redeem(permanent)
+                restarted = LocalLicense(license.path, lambda: 100000.0 + 86400 * 365)
+                restarted.login('test', 'test')
+                self.assertTrue(restarted.permanent)
+            self.assertEqual(len(set(machines)), 3)
+
     def test_renewal_permanent_replay_and_binding(self):
         key = Ed25519PrivateKey.generate()
         with tempfile.TemporaryDirectory() as d, patch('activation_codes.PUBLIC_KEY_HEX', key.public_key().public_bytes_raw().hex()), patch('access_control.verify_credentials', return_value=True):
