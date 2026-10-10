@@ -41,8 +41,23 @@ class App(tk.Tk):
         tk.Label(header, text="批量查询、划扣与复核", bg="#1f3a5f", fg="#c8d6e8",
                  font=("Arial", 10)).pack(anchor="w", padx=26)
 
-        root = tk.Frame(self, bg="#f4f7fb", padx=22, pady=18)
-        root.pack(fill="both", expand=True)
+        viewport = ttk.Frame(self)
+        viewport.pack(fill="both", expand=True)
+        self.page = tk.Canvas(viewport, bg="#f4f7fb", highlightthickness=0)
+        page_scroll = ttk.Scrollbar(viewport, orient="vertical", command=self.page.yview)
+        page_scroll.pack(side="right", fill="y")
+        self.page.pack(side="left", fill="both", expand=True)
+        self.page.configure(yscrollcommand=page_scroll.set)
+        root = tk.Frame(self.page, bg="#f4f7fb", padx=22, pady=18)
+        content = self.page.create_window((0, 0), window=root, anchor="nw")
+
+        def resize_page(event=None):
+            self.page.itemconfigure(content, width=self.page.winfo_width(),
+                                    height=max(root.winfo_reqheight(), self.page.winfo_height()))
+            self.page.configure(scrollregion=self.page.bbox("all"))
+
+        root.bind("<Configure>", resize_page)
+        self.page.bind("<Configure>", resize_page)
         root.columnconfigure(0, weight=1)
         # 操作栏必须保留最小高度，剩余空间交给日志区域。
         root.rowconfigure(2, weight=0, minsize=58)
@@ -76,6 +91,9 @@ class App(tk.Tk):
                                  bg="#f7f9fc", fg="#22324a", insertbackground="#1f5d98",
                                  font=("Consolas", 11), padx=10, pady=8)
         self.contracts.grid(row=2, column=0, sticky="ew", padx=16, pady=(0, 14))
+        contracts_scroll = ttk.Scrollbar(work, orient="vertical", command=self.contracts.yview)
+        contracts_scroll.grid(row=2, column=1, sticky="ns", padx=(0, 12), pady=(0, 14))
+        self.contracts.configure(yscrollcommand=contracts_scroll.set)
 
         actions = tk.Frame(root, bg="#f4f7fb")
         actions.grid(row=2, column=0, sticky="ew", pady=(0, 10))
@@ -103,7 +121,34 @@ class App(tk.Tk):
         self.status = tk.Text(log_card, height=10, state=tk.DISABLED, relief="flat", bd=0,
                               bg="#fbfcfe", fg="#334155", font=("Consolas", 9), padx=10, pady=8)
         self.status.grid(row=1, column=0, sticky="nsew", padx=16, pady=(0, 14))
+        log_scroll = ttk.Scrollbar(log_card, orient="vertical", command=self.status.yview)
+        log_scroll.grid(row=1, column=1, sticky="ns", padx=(0, 12), pady=(0, 14))
+        self.status.configure(yscrollcommand=log_scroll.set, wrap="word")
         root.rowconfigure(3, weight=1)
+        self._bind_scroll(self)
+
+    def _bind_scroll(self, widget):
+        # Widget bindings run before Text's class binding, preventing double scrolling.
+        for sequence in ("<MouseWheel>", "<Button-4>", "<Button-5>"):
+            widget.bind(sequence, self._scroll, add="+")
+        for child in widget.winfo_children():
+            self._bind_scroll(child)
+
+    def _scroll(self, event):
+        if event.num in (4, 5):
+            units = -3 if event.num == 4 else 3
+        elif event.delta:
+            units = -max(1, abs(int(event.delta)) // 120) if event.delta > 0 else max(1, abs(int(event.delta)) // 120)
+        else:
+            return "break"
+        target = event.widget
+        if target in (self.contracts, self.status):
+            first, last = target.yview()
+            if (units < 0 and first > 0) or (units > 0 and last < 1):
+                target.yview_scroll(units, "units")
+                return "break"
+        self.page.yview_scroll(units, "units")
+        return "break"
 
     def log(self, text):
         self.after(0, self._append_log, text)
