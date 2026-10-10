@@ -12,7 +12,7 @@ from batch_single_payment import InputRow, process_one, resolve_review_user_id
 from single_payment_processor_recovered import SinglePaymentProcessor
 from result_display import format_result
 from parallel_batch import run_parallel
-from access_control import AccessError, LocalLicense
+from access_control import AccessError, LicenseExpired, LocalLicense
 
 
 class App(tk.Tk):
@@ -52,6 +52,9 @@ class App(tk.Tk):
     def _login(self):
         try:
             self.license.login(self.login_account.get(), self.login_password.get())
+        except LicenseExpired as exc:
+            self._activation_dialog(str(exc))
+            return
         except AccessError as exc:
             messagebox.showerror("无法登录", str(exc))
             return
@@ -72,7 +75,10 @@ class App(tk.Tk):
             self.stop_event.set()
             self._set_running(self.running)
             self.log(str(exc) + "；不再启动新合同，已开始的交易处理完毕后停止。")
-            messagebox.showerror("使用期限", str(exc))
+            if isinstance(exc, LicenseExpired):
+                self._activation_dialog(str(exc))
+            else:
+                messagebox.showerror("使用期限", str(exc))
             return False
         return True
 
@@ -85,18 +91,30 @@ class App(tk.Tk):
             return "授权状态：永久解锁"
         return "使用期限至：" + datetime.fromtimestamp(self.license.expires_at).strftime("%Y-%m-%d %H:%M:%S")
 
-    def _activation_dialog(self):
+    def _activation_dialog(self, notice=""):
+        existing = getattr(self, 'activation_window', None)
+        if existing is not None and existing.winfo_exists():
+            if notice:
+                self.activation_notice.set(notice)
+            existing.lift()
+            self.activation_input.focus_set()
+            return
         try:
             machine = self.license.machine_code()
         except AccessError as exc:
             messagebox.showerror("授权", str(exc))
             return
         dialog = tk.Toplevel(self)
+        self.activation_window = dialog
         dialog.title("激活码续期")
-        dialog.geometry("560x340")
+        dialog.geometry("580x430")
+        dialog.minsize(560, 410)
         dialog.transient(self)
         frame = ttk.Frame(dialog, padding=20)
         frame.pack(fill="both", expand=True)
+        self.activation_notice = tk.StringVar(value=notice or "可续期一天或永久解锁，到期后也可以在这里激活。")
+        ttk.Label(frame, textvariable=self.activation_notice, foreground="#b45309",
+                  wraplength=500).pack(anchor="w", pady=(0, 12))
         ttk.Label(frame, text="将机器码发给管理员，获取一天续期码或永久解锁码。").pack(anchor="w")
         value = tk.StringVar(value=machine)
         ttk.Entry(frame, textvariable=value, state="readonly").pack(fill="x", pady=10)
@@ -106,6 +124,7 @@ class App(tk.Tk):
         ttk.Button(frame, text="复制机器码", command=copy).pack(anchor="w")
         ttk.Label(frame, text="粘贴激活码").pack(anchor="w", pady=(16, 4))
         code = tk.Text(frame, height=4, wrap="char")
+        self.activation_input = code
         code.pack(fill="both", expand=True)
         def redeem():
             try:
@@ -122,7 +141,11 @@ class App(tk.Tk):
                     self.after(1000, self._watch_access)
             messagebox.showinfo("激活成功", self._license_label(), parent=dialog)
             dialog.destroy()
-        ttk.Button(frame, text="确认激活", command=redeem).pack(pady=(12, 0))
+        self.activation_submit = ttk.Button(frame, text="确认激活", command=redeem)
+        self.activation_submit.pack(pady=(12, 0))
+        dialog.update_idletasks()
+        dialog.minsize(max(560, frame.winfo_reqwidth()), max(410, frame.winfo_reqheight()))
+        code.focus_set()
 
     def _build(self):
         self.configure(bg="#f4f7fb")

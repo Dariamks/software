@@ -15,6 +15,10 @@ class AccessError(Exception):
     pass
 
 
+class LicenseExpired(AccessError):
+    pass
+
+
 def verify_credentials(account, password):
     digest = hashlib.pbkdf2_hmac('sha256', password.encode(), b'single-payment-login-v1', 240000).hex()
     return account.strip() == '13713533367' and hmac.compare_digest(
@@ -107,7 +111,7 @@ class LocalLicense:
         if self.deadline is None:
             raise AccessError('请先登录')
         if self.monotonic() >= self.deadline:
-            raise AccessError('软件的一天使用期限已到，无法继续使用')
+            raise LicenseExpired('软件使用期限已到，请输入激活码续期或永久解锁')
         self._check(activate=False)
 
     def _check(self, activate):
@@ -131,7 +135,7 @@ class LocalLicense:
                     raise AccessError('系统时间或授权记录异常，无法继续使用')
                 expires, permanent = self._expiry(db, expires, machine)
                 if not permanent and now >= expires:
-                    raise AccessError('软件的一天使用期限已到，无法继续使用')
+                    raise LicenseExpired('软件使用期限已到，请输入激活码续期或永久解锁')
                 db.execute('UPDATE activation SET last_seen=? WHERE id=1', (now,))
                 self.expires_at = expires
                 self.permanent = permanent
