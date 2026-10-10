@@ -13,6 +13,7 @@ def format_result(result):
         "amount_zero": "应还金额为零，已跳过",
         "missing_pay_account": "缺少还款银行卡，已跳过",
         "submit_failed": "提交失败",
+        "worker_failed": "处理异常，交易结果待核实，请勿直接重复提交",
     }
     for item in result.get("failed", []) + result.get("skipped", []):
         response = item.get("response") or {}

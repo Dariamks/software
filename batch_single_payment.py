@@ -117,7 +117,7 @@ def process_one(processor: SinglePaymentProcessor, row: InputRow, *, execute: bo
     out: dict[str, Any] = {"row": row.row_number, "contract_no": row.contract_no, "cert_id": row.cert_id,
                            "status": "dry_run" if not execute else "started", "logs": []}
     search = processor.search_wait_list(row.cert_id, row.contract_no, 100)
-    loans = _content(search)
+    loans = [loan for loan in _content(search) if loan.get("contractNo") == row.contract_no]
     if not loans:
         out["status"] = "no_wait_record" if search and search.get("code") == 0 else "search_failed"
         return out
@@ -157,7 +157,7 @@ def process_one(processor: SinglePaymentProcessor, row: InputRow, *, execute: bo
     if execute and out.get("submitted"):
         time.sleep(pause_seconds)
         review = processor.search_review_list(row.cert_id, row.contract_no, 100)
-        review_ids = [item.get("id") for item in _content(review) if item.get("transStatus") == "复核中" and item.get("id") is not None]
+        review_ids = [item.get("id") for item in _content(review) if item.get("contractNo") == row.contract_no and item.get("transStatus") == "复核中" and item.get("id") is not None]
         if review_ids:
             confirmation = processor.confirm_review(review_ids)
             returned = (confirmation or {}).get("data")

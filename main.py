@@ -10,6 +10,7 @@ from tkinter import messagebox, ttk
 from batch_single_payment import InputRow, process_one, resolve_review_user_id
 from single_payment_processor_recovered import SinglePaymentProcessor
 from result_display import format_result
+from parallel_batch import run_parallel
 
 
 class App(tk.Tk):
@@ -79,6 +80,13 @@ class App(tk.Tk):
         self.review_job_no = ttk.Entry(auth, width=18)
         self.review_job_no.insert(0, os.getenv("FUJFU_REVIEW_JOB_NO", "S80118"))
         self.review_job_no.grid(row=2, column=1, sticky="w", pady=(0, 14))
+        concurrency = tk.Frame(auth, bg="#ffffff")
+        concurrency.grid(row=3, column=0, columnspan=3, sticky="w", padx=16, pady=(0, 14))
+        tk.Label(concurrency, text="并行合同数", bg="#ffffff", fg="#516176").pack(side="left", padx=(0, 12))
+        self.workers = ttk.Combobox(concurrency, values=(2, 3, 4, 5, 6), state="readonly", width=5)
+        self.workers.set("2")
+        self.workers.pack(side="left")
+        tk.Label(concurrency, text="个合同同时处理", bg="#ffffff", fg="#718096").pack(side="left", padx=10)
 
         work = tk.Frame(root, bg="#ffffff", highlightbackground="#e1e8f0", highlightthickness=1)
         work.grid(row=1, column=0, sticky="ew", pady=(0, 14))
@@ -206,38 +214,54 @@ class App(tk.Tk):
         self.count_label.configure(text=f"已读取 {len(contracts)} 条合同")
         self.stop_event.clear()
         self._set_running(True)
-        threading.Thread(target=self._run, args=(contracts, execute), daemon=True).start()
+        settings = (self.token.get().strip(), self.review_job_no.get().strip(), int(self.workers.get()))
+        threading.Thread(target=self._run, args=(contracts, execute, settings), daemon=True).start()
 
-    def _run(self, contracts, execute):
-        reviewer_id = None
-        if execute:
-            users = self.processor.get_review_user_list()
-            reviewer_id = resolve_review_user_id(users, self.review_job_no.get().strip())
-            if not reviewer_id:
-                self.log(f"找不到复核人：{self.review_job_no.get().strip()}")
-                self.after(0, lambda: self._set_running(False))
-                return
-            self.log(f"复核人已匹配：{self.review_job_no.get().strip()}")
-        for index, contract in enumerate(contracts, start=1):
-            if self.stop_event.is_set():
-                self.log("已停止")
-                break
-            result = process_one(
-                self.processor, InputRow(index, contract, ""), execute=execute,
-                review_user_id=reviewer_id or "", submit_opinion="扣款",
-            )
-            self.log(format_result(result))
-        self.after(0, lambda: self._set_running(False))
+    def _run(self, contracts, execute, settings):
+        token, job_no, workers = settings
+
+        def factory():
+            processor = SinglePaymentProcessor(base_url=os.getenv("FUJFU_BASE_URL"))
+            processor.set_token(token)
+            return processor
+
+        try:
+            reviewer_id = ""
+            if execute:
+                processor = factory()
+                try:
+                    reviewer_id = resolve_review_user_id(processor.get_review_user_list(), job_no)
+                finally:
+                    processor.session.close()
+                if not reviewer_id:
+                    self.log(f"找不到复核人：{job_no}")
+                    return
+            self.log(f"开始处理 {len(contracts)} 个合同，并行数：{workers}")
+            completed = 0
+
+            def report(result):
+                nonlocal completed
+                completed += 1
+                self.log(format_result(result))
+                self.after(0, lambda n=completed: self.count_label.configure(text=f"已处理 {n}/{len(contracts)}"))
+
+            run_parallel(contracts, workers, self.stop_event, factory, execute, reviewer_id, report)
+            self.log("已停止，运行中的合同已处理完毕" if self.stop_event.is_set() else "本批次处理结束")
+        except Exception:
+            self.log("批次异常中止，请核实已提交交易状态后再操作")
+        finally:
+            self.after(0, lambda: self._set_running(False))
 
     def stop(self):
         self.stop_event.set()
-        self.log("正在停止，当前请求完成后停止")
+        self.log("正在停止：不再启动新合同，已开始的合同将完成当前划扣及复核流程")
 
     def _set_running(self, running):
         state = tk.DISABLED if running else tk.NORMAL
         self.query_btn.configure(state=state)
         self.execute_btn.configure(state=state)
         self.stop_btn.configure(state=tk.NORMAL if running else tk.DISABLED)
+        self.workers.configure(state="disabled" if running else "readonly")
 
 
 if __name__ == "__main__":
