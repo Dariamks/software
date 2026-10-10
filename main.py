@@ -44,7 +44,8 @@ class App(tk.Tk):
         root = tk.Frame(self, bg="#f4f7fb", padx=22, pady=18)
         root.pack(fill="both", expand=True)
         root.columnconfigure(0, weight=1)
-        root.rowconfigure(2, weight=1)
+        # 操作栏必须保留最小高度，剩余空间交给日志区域。
+        root.rowconfigure(2, weight=0, minsize=58)
 
         auth = tk.Frame(root, bg="#ffffff", highlightbackground="#e1e8f0", highlightthickness=1)
         auth.grid(row=0, column=0, sticky="ew", pady=(0, 14))
