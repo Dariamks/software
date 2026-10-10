@@ -30,18 +30,11 @@ jobs:
           --name "单笔划扣工具"
           main.py
 
-      - name: Build batch executable
-        run: >-
-          pyinstaller --noconfirm --clean --onefile --console
-          --name "单笔划扣批处理"
-          batch_single_payment.py
-
       - name: Collect release files
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path release | Out-Null
           Copy-Item dist\单笔划扣工具.exe release\
-          Copy-Item dist\单笔划扣批处理.exe release\
           Copy-Item README.md release\README.md
 
       - name: Upload build artifact

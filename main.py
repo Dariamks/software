@@ -5,12 +5,14 @@ import os
 import re
 import threading
 import tkinter as tk
+from datetime import datetime
 from tkinter import messagebox, ttk
 
 from batch_single_payment import InputRow, process_one, resolve_review_user_id
 from single_payment_processor_recovered import SinglePaymentProcessor
 from result_display import format_result
 from parallel_batch import run_parallel
+from access_control import AccessError, LocalLicense
 
 
 class App(tk.Tk):
@@ -21,7 +23,60 @@ class App(tk.Tk):
         self.minsize(700, 500)
         self.processor = SinglePaymentProcessor(base_url=os.getenv("FUJFU_BASE_URL"))
         self.stop_event = threading.Event()
+        self.license = LocalLicense()
+        self.access_valid = False
+        self._build_login()
+
+    def _build_login(self):
+        self.geometry("460x370")
+        self.minsize(440, 350)
+        self.configure(bg="#f4f7fb")
+        self.login_panel = tk.Frame(self, bg="#f4f7fb", padx=36, pady=26)
+        self.login_panel.pack(fill="both", expand=True)
+        tk.Label(self.login_panel, text="登录单笔划扣工具", bg="#f4f7fb",
+                 fg="#1f3a5f", font=("Arial", 18, "bold")).pack(anchor="w", pady=(0, 16))
+        tk.Label(self.login_panel, text="账号", bg="#f4f7fb").pack(anchor="w")
+        self.login_account = ttk.Entry(self.login_panel)
+        self.login_account.pack(fill="x", pady=(4, 12))
+        tk.Label(self.login_panel, text="密码", bg="#f4f7fb").pack(anchor="w")
+        self.login_password = ttk.Entry(self.login_panel, show="*")
+        self.login_password.pack(fill="x", pady=(4, 16))
+        ttk.Button(self.login_panel, text="登录", command=self._login).pack(fill="x")
+        tk.Label(self.login_panel, text="首次成功登录起可使用 24 小时，重启不会重置。",
+                 bg="#f4f7fb", fg="#718096", wraplength=360).pack(pady=16)
+        self.login_password.bind("<Return>", lambda event: self._login())
+        self.login_account.focus_set()
+
+    def _login(self):
+        try:
+            self.license.login(self.login_account.get(), self.login_password.get())
+        except AccessError as exc:
+            messagebox.showerror("无法登录", str(exc))
+            return
+        self.login_password.delete(0, "end")
+        self.login_panel.destroy()
+        self.access_valid = True
+        self.geometry("820x620")
+        self.minsize(700, 500)
         self._build()
+        self.log("使用期限至：" + datetime.fromtimestamp(self.license.expires_at).strftime("%Y-%m-%d %H:%M:%S"))
+        self.after(1000, self._watch_access)
+
+    def _check_access(self):
+        try:
+            self.license.check()
+        except AccessError as exc:
+            self.access_valid = False
+            self.stop_event.set()
+            self._set_running(False)
+            self.log(str(exc) + "；不再启动新合同，已开始的交易处理完毕后停止。")
+            messagebox.showerror("使用期限", str(exc))
+            return False
+        return True
+
+    def _watch_access(self):
+        if self._check_access():
+            self.after(1000, self._watch_access)
 
     def _build(self):
         self.configure(bg="#f4f7fb")
@@ -201,6 +256,8 @@ class App(tk.Tk):
         return result
 
     def start(self, execute):
+        if not self._check_access():
+            return
         if not self.set_token():
             return
         contracts = self._items()
@@ -221,6 +278,7 @@ class App(tk.Tk):
         token, job_no, workers = settings
 
         def factory():
+            self.license.check()
             processor = SinglePaymentProcessor(base_url=os.getenv("FUJFU_BASE_URL"))
             processor.set_token(token)
             return processor
@@ -257,7 +315,7 @@ class App(tk.Tk):
         self.log("正在停止：不再启动新合同，已开始的合同将完成当前划扣及复核流程")
 
     def _set_running(self, running):
-        state = tk.DISABLED if running else tk.NORMAL
+        state = tk.DISABLED if running or not self.access_valid else tk.NORMAL
         self.query_btn.configure(state=state)
         self.execute_btn.configure(state=state)
         self.stop_btn.configure(state=tk.NORMAL if running else tk.DISABLED)

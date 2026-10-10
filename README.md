@@ -60,4 +60,11 @@ A260506123300591240
 
 ## Windows 自动打包
 
-仓库中的 `.github/workflows/build-windows.yml` 会在推送到 `main` 或手动运行时使用 Windows runner 打包两个文件：`单笔划扣工具.exe`（GUI）和 `单笔划扣批处理.exe`（批量 XLSX 流程）。在 GitHub 的 Actions 页面下载 `single-payment-windows` artifact 即可。
+仓库中的 `.github/workflows/build-windows.yml` 会在推送到 `main` 或手动运行时使用 Windows runner 打包带登录校验的 `单笔划扣工具.exe`（GUI）。新版不再分发无登录校验的批处理 EXE。在 GitHub 的 Actions 页面下载 `single-payment-windows` artifact 即可。
+
+
+## 登录与一天有效期
+
+GUI 启动先显示登录页，输入配置的账号、密码后才能进入。密码以 PBKDF2 摘要保存在源码，不保存明文密码。每个操作系统用户首次成功登录后激活 24 小时期限，关闭、重启、重新打包不会重置同一路径的记录。到期时禁用新任务，已经开始的合同完成当前流程后停止。
+
+本地授权记录保存在 Windows 的 `%LOCALAPPDATA%/SinglePaymentTool/activation.sqlite3` 或 macOS 的 `~/Library/Application Support/SinglePaymentTool/activation.sqlite3`。本地检查包含时间回拨检查，但无法抵抗修改程序、删除记录或更换系统用户；需要严格授权时应改用服务端校验。旧 EXE 和源码命令行入口不具备这次新增的 GUI 限制。
