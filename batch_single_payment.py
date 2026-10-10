@@ -132,7 +132,7 @@ def process_one(processor: SinglePaymentProcessor, row: InputRow, *, execute: bo
         actual_pay = detail.get("actualPayAmt")
         if not actual_pay or str(actual_pay) in {"0", "0.00"}:
             current_pay = detail.get("currentPeriodPaymentAmt")
-            actual_pay = current_pay if current_pay and str(current_pay) != "0" else None
+            actual_pay = current_pay if current_pay and str(current_pay) not in {"0", "0.00"} else None
         if not actual_pay:
             out.setdefault("skipped", []).append({"contract_no": contract_no, "reason": "amount_zero"})
             continue
@@ -160,8 +160,12 @@ def process_one(processor: SinglePaymentProcessor, row: InputRow, *, execute: bo
         review_ids = [item.get("id") for item in _content(review) if item.get("transStatus") == "复核中" and item.get("id") is not None]
         if review_ids:
             confirmation = processor.confirm_review(review_ids)
+            returned = (confirmation or {}).get("data")
+            confirmed_ids = {str(item.get("id")) for item in returned
+                             if isinstance(item, dict) and not item.get("errorMsg")
+                             and item.get("transStatus") in {"已复核", "处理成功"}} if isinstance(returned, list) and confirmation.get("code") == 0 else set()
             out["review"] = {"ids": review_ids, "response": confirmation,
-                             "confirmed": len(review_ids) if confirmation and confirmation.get("code") == 0 else 0}
+                             "confirmed": len(confirmed_ids.intersection(map(str, review_ids)))}
     if execute:
         out["status"] = "completed" if not out.get("failed") else "completed_with_errors"
     return out

@@ -1,7 +1,6 @@
 """批量单笔划扣 GUI。合同号支持从文本中逐行粘贴。"""
 from __future__ import annotations
 
-import json
 import os
 import re
 import threading
@@ -10,6 +9,7 @@ from tkinter import messagebox, ttk
 
 from batch_single_payment import InputRow, process_one, resolve_review_user_id
 from single_payment_processor_recovered import SinglePaymentProcessor
+from result_display import format_result
 
 
 class App(tk.Tk):
@@ -216,7 +216,7 @@ class App(tk.Tk):
                 self.processor, InputRow(index, contract, ""), execute=execute,
                 review_user_id=reviewer_id or "", submit_opinion="扣款",
             )
-            self.log(json.dumps(result, ensure_ascii=False, default=str))
+            self.log(format_result(result))
         self.after(0, lambda: self._set_running(False))
 
     def stop(self):
