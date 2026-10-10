@@ -9,7 +9,8 @@ from datetime import datetime
 from tkinter import messagebox, ttk
 
 from batch_single_payment import InputRow, process_one, resolve_review_user_id
-from single_payment_processor_recovered import SinglePaymentProcessor
+from single_payment_processor_recovered import SinglePaymentProcessor, ReviewerListError
+from reviewers import reviewer_options
 from result_display import format_result
 from parallel_batch import run_parallel
 from access_control import AccessError, LicenseExpired, LocalLicense
@@ -187,14 +188,16 @@ class App(tk.Tk):
             row=1, column=0, sticky="w", padx=(16, 8), pady=(0, 14))
         self.token = ttk.Entry(auth, show="*")
         self.token.grid(row=1, column=1, sticky="ew", pady=(0, 14))
-        tk.Button(auth, text="验证 Token", command=self.set_token, bg="#e7f0fb", fg="#1f5d98",
+        tk.Button(auth, text="验证并加载人员", command=self.load_reviewers, bg="#e7f0fb", fg="#1f5d98",
                   activebackground="#d6e7f8", relief="flat", padx=14, pady=4).grid(
             row=1, column=2, padx=(10, 16), pady=(0, 14))
-        tk.Label(auth, text="复核人工号", bg="#ffffff", fg="#516176", font=("Arial", 10)).grid(
+        tk.Label(auth, text="复核人", bg="#ffffff", fg="#516176", font=("Arial", 10)).grid(
             row=2, column=0, sticky="w", padx=(16, 8), pady=(0, 14))
-        self.review_job_no = ttk.Entry(auth, width=18)
-        self.review_job_no.insert(0, os.getenv("FUJFU_REVIEW_JOB_NO", "S80118"))
+        self.review_job_no = ttk.Combobox(auth, width=28, state="readonly")
+        self.reviewer_loading = False
         self.review_job_no.grid(row=2, column=1, sticky="w", pady=(0, 14))
+        self.refresh_reviewers = ttk.Button(auth, text="刷新复核人", command=self.load_reviewers)
+        self.refresh_reviewers.grid(row=2, column=2, padx=(10, 16), pady=(0, 14))
         concurrency = tk.Frame(auth, bg="#ffffff")
         concurrency.grid(row=3, column=0, columnspan=3, sticky="w", padx=16, pady=(0, 14))
         tk.Label(concurrency, text="并行合同数", bg="#ffffff", fg="#516176").pack(side="left", padx=(0, 12))
@@ -292,6 +295,52 @@ class App(tk.Tk):
         self.status.delete("1.0", "end")
         self.status.configure(state=tk.DISABLED)
 
+    def load_reviewers(self):
+        if self.running or self.reviewer_loading or not self.set_token():
+            return
+        token = self.token.get().strip()
+        previous = self.review_job_no.get()
+        self.review_job_no.set('')
+        self.review_job_no.configure(values=())
+        self.reviewer_loading = True
+        self.refresh_reviewers.configure(state='disabled')
+        self.log('正在加载复核人列表…')
+
+        def load():
+            processor = SinglePaymentProcessor(base_url=os.getenv('FUJFU_BASE_URL'))
+            try:
+                processor.set_token(token)
+                users = processor.get_review_user_list()
+                options = reviewer_options(users)
+                if not options:
+                    error = '复核人列表为空或字段尚未适配，请提供 getReviewUserList 的 Response 以核对'
+                else:
+                    error = ''
+            except ReviewerListError as exc:
+                options, error = [], str(exc)
+            except Exception:
+                options, error = [], '加载复核人失败，请检查接口返回'
+            finally:
+                processor.session.close()
+            self.after(0, finish, options, error)
+
+        def finish(options, error):
+            self.reviewer_loading = False
+            self.refresh_reviewers.configure(state='normal')
+            if token != self.token.get().strip():
+                self.log('Token 已更改，请重新加载复核人')
+                return
+            if error:
+                self.log(error)
+                return
+            names = list(dict.fromkeys(label for label, _, _ in options))
+            self.review_job_no.configure(values=names)
+            if previous in names:
+                self.review_job_no.set(previous)
+            self.log(f'已加载 {len(names)} 位复核人，请按页面显示的工号和姓名选择')
+
+        threading.Thread(target=load, daemon=True).start()
+
     def set_token(self):
         token = self.token.get().strip()
         if not token:
@@ -316,6 +365,9 @@ class App(tk.Tk):
         return result
 
     def start(self, execute):
+        if self.reviewer_loading:
+            messagebox.showinfo('请稍候', '正在加载复核人列表')
+            return
         if not self._check_access():
             return
         if not self.set_token():
@@ -323,6 +375,9 @@ class App(tk.Tk):
         contracts = self._items()
         if not contracts:
             messagebox.showwarning("提示", "请粘贴至少一个合同编号")
+            return
+        if execute and not self.review_job_no.get():
+            messagebox.showwarning('请选择复核人', '点击“验证并加载人员”，然后从下拉框选择页面显示的复核人。')
             return
         if execute and not messagebox.askyesno(
             "确认执行", f"即将提交并复核 {len(contracts)} 个合同的划扣交易，确定继续吗？"
@@ -365,6 +420,8 @@ class App(tk.Tk):
 
             run_parallel(contracts, workers, self.stop_event, factory, execute, reviewer_id, report)
             self.log("已停止，运行中的合同已处理完毕" if self.stop_event.is_set() else "本批次处理结束")
+        except ReviewerListError as exc:
+            self.log(str(exc))
         except Exception:
             self.log("批次异常中止，请核实已提交交易状态后再操作")
         finally:
@@ -381,6 +438,8 @@ class App(tk.Tk):
         self.execute_btn.configure(state=state)
         self.stop_btn.configure(state=tk.NORMAL if running else tk.DISABLED)
         self.workers.configure(state="disabled" if running else "readonly")
+        self.review_job_no.configure(state="disabled" if running else "readonly")
+        self.refresh_reviewers.configure(state="disabled" if running or self.reviewer_loading else "normal")
 
 
 if __name__ == "__main__":

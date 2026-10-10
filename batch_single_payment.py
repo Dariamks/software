@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Any, Iterable, Mapping
 
 from single_payment_processor_recovered import SinglePaymentProcessor
+from reviewers import resolve_review_user_id
 
 NS = {"m": "http://schemas.openxmlformats.org/spreadsheetml/2006/main"}
 
@@ -93,23 +94,6 @@ def _content(result: Mapping[str, Any] | None) -> list[Mapping[str, Any]]:
     data = result.get("data") or {}
     return list(data.get("content") or []) if isinstance(data, Mapping) else []
 
-
-def resolve_review_user_id(users: Any, job_no: str) -> str | None:
-    """Resolve the portal's reviewer ID from getReviewUserList by job number."""
-    if isinstance(users, Mapping):
-        for key in ("content", "records", "list", "data"):
-            if key in users:
-                found = resolve_review_user_id(users[key], job_no)
-                if found:
-                    return found
-        if str(users.get("jobNo") or users.get("job_no") or "") == job_no:
-            return str(users.get("id") or users.get("userId") or users.get("reviewUserId") or "") or None
-    if isinstance(users, list):
-        for item in users:
-            found = resolve_review_user_id(item, job_no)
-            if found:
-                return found
-    return None
 
 
 def process_one(processor: SinglePaymentProcessor, row: InputRow, *, execute: bool,

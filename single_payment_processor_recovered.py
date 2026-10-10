@@ -13,6 +13,10 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 
 
+class ReviewerListError(Exception):
+    pass
+
+
 class SinglePaymentProcessor:
     def __init__(self, base_url=None, timeout=15):
         self.base_url = (base_url or (
@@ -98,9 +102,15 @@ class SinglePaymentProcessor:
             response = self.session.get(url, timeout=self.timeout)
             response.raise_for_status()
             result = response.json()
-            return result.get("data") if result.get("code") == 0 else None
-        except (requests.RequestException, ValueError):
-            return None
+            if not isinstance(result, dict) or result.get("code") != 0:
+                raise ReviewerListError("加载复核人失败：登录状态或权限校验未通过")
+            return result.get("data")
+        except requests.HTTPError as exc:
+            raise ReviewerListError(f"加载复核人失败：HTTP {exc.response.status_code}，请检查登录状态或网络环境") from exc
+        except requests.RequestException as exc:
+            raise ReviewerListError("加载复核人失败：网络连接异常或超时") from exc
+        except ValueError as exc:
+            raise ReviewerListError("加载复核人失败：接口返回格式异常") from exc
 
     def submit_single_payment(self, payment_data):
         url = f"{self.base_url}/submitSinglePaymentData"
