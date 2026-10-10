@@ -68,3 +68,21 @@ A260506123300591240
 GUI 启动先显示登录页，输入配置的账号、密码后才能进入。密码以 PBKDF2 摘要保存在源码，不保存明文密码。每个操作系统用户首次成功登录后激活 24 小时期限，关闭、重启、重新打包不会重置同一路径的记录。到期时禁用新任务，已经开始的合同完成当前流程后停止。
 
 本地授权记录保存在 Windows 的 `%LOCALAPPDATA%/SinglePaymentTool/activation.sqlite3` 或 macOS 的 `~/Library/Application Support/SinglePaymentTool/activation.sqlite3`。本地检查包含时间回拨检查，但无法抵抗修改程序、删除记录或更换系统用户；需要严格授权时应改用服务端校验。旧 EXE 和源码命令行入口不具备这次新增的 GUI 限制。
+
+
+## 激活码续期（管理员）
+
+客户先升级到支持激活码的 GUI 一次，之后无需为续期重新安装。登录页或主界面点击“激活码续期”，复制机器码发给管理员。机器码是本机当前系统用户的安装标识，保存在授权数据库里。
+
+管理员在自己的 Mac 项目目录执行：
+
+```bash
+./.venv/bin/python generate_activation.py --machine 客户机器码 --kind day
+./.venv/bin/python generate_activation.py --machine 客户机器码 --kind permanent
+```
+
+把输出的整段激活码发给客户粘贴。day 在原有效期与当前时间中的较晚时间上增加 24 小时；permanent 永久解除期限，但仍需账号密码登录。每个码只能使用一次，必须对应机器码。激活前从未登录的用户会先激活原有一天试用，再增加一天。
+
+管理员私钥保存在 `~/.single-payment-admin/signing-key.pem`，请单独安全备份，不要发送给客户或提交 GitHub。丢失私钥后无法继续为已发布的公钥生成有效激活码。EXE 只包含验证公钥，打包入口不导入生成工具。
+
+这是离线授权，签名可以防止自行伪造续期码，但不能阻止有源码的人修改程序，也不能防止删除或还原本地授权数据库。

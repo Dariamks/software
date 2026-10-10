@@ -4,3 +4,6 @@ __pycache__/
 *.log
 single_payment_results*.jsonl
 .DS_Store
+
+*.pem
+*.sqlite3

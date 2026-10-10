@@ -25,11 +25,12 @@ class App(tk.Tk):
         self.stop_event = threading.Event()
         self.license = LocalLicense()
         self.access_valid = False
+        self.running = False
         self._build_login()
 
     def _build_login(self):
-        self.geometry("460x370")
-        self.minsize(440, 350)
+        self.geometry("460x430")
+        self.minsize(440, 420)
         self.configure(bg="#f4f7fb")
         self.login_panel = tk.Frame(self, bg="#f4f7fb", padx=36, pady=26)
         self.login_panel.pack(fill="both", expand=True)
@@ -42,6 +43,7 @@ class App(tk.Tk):
         self.login_password = ttk.Entry(self.login_panel, show="*")
         self.login_password.pack(fill="x", pady=(4, 16))
         ttk.Button(self.login_panel, text="登录", command=self._login).pack(fill="x")
+        ttk.Button(self.login_panel, text="激活码续期 / 永久解锁", command=self._activation_dialog).pack(fill="x", pady=(10, 0))
         tk.Label(self.login_panel, text="首次成功登录起可使用 24 小时，重启不会重置。",
                  bg="#f4f7fb", fg="#718096", wraplength=360).pack(pady=16)
         self.login_password.bind("<Return>", lambda event: self._login())
@@ -59,7 +61,7 @@ class App(tk.Tk):
         self.geometry("820x620")
         self.minsize(700, 500)
         self._build()
-        self.log("使用期限至：" + datetime.fromtimestamp(self.license.expires_at).strftime("%Y-%m-%d %H:%M:%S"))
+        self.log(self._license_label())
         self.after(1000, self._watch_access)
 
     def _check_access(self):
@@ -68,7 +70,7 @@ class App(tk.Tk):
         except AccessError as exc:
             self.access_valid = False
             self.stop_event.set()
-            self._set_running(False)
+            self._set_running(self.running)
             self.log(str(exc) + "；不再启动新合同，已开始的交易处理完毕后停止。")
             messagebox.showerror("使用期限", str(exc))
             return False
@@ -77,6 +79,50 @@ class App(tk.Tk):
     def _watch_access(self):
         if self._check_access():
             self.after(1000, self._watch_access)
+
+    def _license_label(self):
+        if self.license.permanent:
+            return "授权状态：永久解锁"
+        return "使用期限至：" + datetime.fromtimestamp(self.license.expires_at).strftime("%Y-%m-%d %H:%M:%S")
+
+    def _activation_dialog(self):
+        try:
+            machine = self.license.machine_code()
+        except AccessError as exc:
+            messagebox.showerror("授权", str(exc))
+            return
+        dialog = tk.Toplevel(self)
+        dialog.title("激活码续期")
+        dialog.geometry("560x340")
+        dialog.transient(self)
+        frame = ttk.Frame(dialog, padding=20)
+        frame.pack(fill="both", expand=True)
+        ttk.Label(frame, text="将机器码发给管理员，获取一天续期码或永久解锁码。").pack(anchor="w")
+        value = tk.StringVar(value=machine)
+        ttk.Entry(frame, textvariable=value, state="readonly").pack(fill="x", pady=10)
+        def copy():
+            self.clipboard_clear()
+            self.clipboard_append(machine)
+        ttk.Button(frame, text="复制机器码", command=copy).pack(anchor="w")
+        ttk.Label(frame, text="粘贴激活码").pack(anchor="w", pady=(16, 4))
+        code = tk.Text(frame, height=4, wrap="char")
+        code.pack(fill="both", expand=True)
+        def redeem():
+            try:
+                self.license.redeem(code.get("1.0", "end").strip())
+            except AccessError as exc:
+                messagebox.showerror("激活失败", str(exc), parent=dialog)
+                return
+            if hasattr(self, 'execute_btn'):
+                was_valid = self.access_valid
+                self.access_valid = True
+                self._set_running(self.running)
+                self.log(self._license_label())
+                if not was_valid:
+                    self.after(1000, self._watch_access)
+            messagebox.showinfo("激活成功", self._license_label(), parent=dialog)
+            dialog.destroy()
+        ttk.Button(frame, text="确认激活", command=redeem).pack(pady=(12, 0))
 
     def _build(self):
         self.configure(bg="#f4f7fb")
@@ -92,6 +138,7 @@ class App(tk.Tk):
         header = tk.Frame(self, bg="#1f3a5f", height=76)
         header.pack(fill="x")
         header.pack_propagate(False)
+        ttk.Button(header, text="激活码续期", command=self._activation_dialog).pack(side="right", padx=20)
         tk.Label(header, text="单笔划扣工具", bg="#1f3a5f", fg="white",
                  font=("Arial", 19, "bold")).pack(anchor="w", padx=24, pady=(13, 0))
         tk.Label(header, text="批量查询、划扣与复核", bg="#1f3a5f", fg="#c8d6e8",
@@ -315,6 +362,7 @@ class App(tk.Tk):
         self.log("正在停止：不再启动新合同，已开始的合同将完成当前划扣及复核流程")
 
     def _set_running(self, running):
+        self.running = running
         state = tk.DISABLED if running or not self.access_valid else tk.NORMAL
         self.query_btn.configure(state=state)
         self.execute_btn.configure(state=state)
