@@ -118,6 +118,11 @@ class App(tk.Tk):
         log_card.rowconfigure(1, weight=1)
         tk.Label(log_card, text="处理日志", bg="#ffffff", fg="#1f3a5f", font=("Arial", 11, "bold")).grid(
             row=0, column=0, sticky="w", padx=16, pady=(11, 7))
+        self.clear_log_btn = tk.Button(
+            log_card, text="清空日志", command=self.clear_log,
+            bg="#e7f0fb", fg="#1f5d98", activebackground="#d6e7f8",
+            relief="flat", padx=12, pady=4)
+        self.clear_log_btn.grid(row=0, column=0, sticky="e", padx=16, pady=(11, 7))
         self.status = tk.Text(log_card, height=10, state=tk.DISABLED, relief="flat", bd=0,
                               bg="#fbfcfe", fg="#334155", font=("Consolas", 9), padx=10, pady=8)
         self.status.grid(row=1, column=0, sticky="nsew", padx=16, pady=(0, 14))
@@ -157,6 +162,11 @@ class App(tk.Tk):
         self.status.configure(state=tk.NORMAL)
         self.status.insert("end", text + "\n")
         self.status.see("end")
+        self.status.configure(state=tk.DISABLED)
+
+    def clear_log(self):
+        self.status.configure(state=tk.NORMAL)
+        self.status.delete("1.0", "end")
         self.status.configure(state=tk.DISABLED)
 
     def set_token(self):
